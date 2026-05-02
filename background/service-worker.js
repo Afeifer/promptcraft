@@ -1,6 +1,12 @@
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
 const GITHUB_REPO = 'Afeifer/promptcraft';
 const CURRENT_VERSION = '1.1.0';
+
+const AVAILABLE_MODELS = [
+  { id: 'gemini-2.0-flash', name: 'Gemini 2.0 Flash' },
+  { id: 'gemini-2.0-flash-lite', name: 'Gemini 2.0 Flash-Lite' },
+  { id: 'gemini-1.5-flash', name: 'Gemini 1.5 Flash' }
+];
 
 // Open Side Panel when clicking the extension icon
 chrome.action.onClicked.addListener((tab) => {
@@ -9,7 +15,7 @@ chrome.action.onClicked.addListener((tab) => {
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'enhancePrompt') {
-    enhancePrompt(request.prompt, request.apiKey, request.lang)
+    enhanceWithFallback(request.prompt, request.apiKey, request.lang, request.model)
       .then(result => sendResponse(result))
       .catch(error => sendResponse({ success: false, error: error.message }));
     return true;
@@ -21,9 +27,49 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       .catch(error => sendResponse({ hasUpdate: false, error: error.message }));
     return true;
   }
+
+  if (request.action === 'getModels') {
+    sendResponse({ models: AVAILABLE_MODELS });
+    return false;
+  }
 });
 
-async function enhancePrompt(prompt, apiKey, lang) {
+async function enhanceWithFallback(prompt, apiKey, lang, preferredModel) {
+  const modelOrder = buildModelOrder(preferredModel);
+  let lastError = null;
+
+  for (const modelId of modelOrder) {
+    try {
+      const result = await callGemini(prompt, apiKey, lang, modelId);
+      return { ...result, usedModel: modelId };
+    } catch (error) {
+      lastError = error;
+      if (isQuotaError(error)) {
+        continue;
+      }
+      throw error;
+    }
+  }
+
+  throw lastError || new Error('All models unavailable');
+}
+
+function buildModelOrder(preferredModel) {
+  const allIds = AVAILABLE_MODELS.map(m => m.id);
+  if (!preferredModel || !allIds.includes(preferredModel)) {
+    return allIds;
+  }
+  return [preferredModel, ...allIds.filter(id => id !== preferredModel)];
+}
+
+function isQuotaError(error) {
+  const msg = error.message || '';
+  return msg.includes('quota') || msg.includes('Quota') ||
+         msg.includes('rate') || msg.includes('429') ||
+         msg.includes('limit');
+}
+
+async function callGemini(prompt, apiKey, lang, modelId) {
   const systemInstructions = {
     en: `You are an expert prompt engineer. Your task is to enhance and improve the given prompt to get better results from AI models.
 
@@ -58,25 +104,15 @@ Regeln:
   };
 
   const systemPrompt = systemInstructions[lang] || systemInstructions.en;
+  const url = `${GEMINI_BASE_URL}/${modelId}:generateContent?key=${apiKey}`;
 
-  const response = await fetch(`${GEMINI_API_URL}?key=${apiKey}`, {
+  const response = await fetch(url, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      system_instruction: {
-        parts: [{ text: systemPrompt }]
-      },
-      contents: [
-        {
-          parts: [{ text: prompt }]
-        }
-      ],
-      generationConfig: {
-        temperature: 0.7,
-        maxOutputTokens: 2048
-      }
+      system_instruction: { parts: [{ text: systemPrompt }] },
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: { temperature: 0.7, maxOutputTokens: 2048 }
     })
   });
 

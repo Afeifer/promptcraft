@@ -313,16 +313,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         action: 'enhancePrompt',
         prompt: currentPrompt,
         apiKey: settings.apiKey,
-        lang: promptLang
+        lang: promptLang,
+        model: settings.model || 'gemini-2.0-flash'
       });
 
       if (response && response.success) {
         currentPrompt = response.enhanced;
         document.getElementById('generated-prompt').textContent = currentPrompt;
         statusEl.className = 'enhance-status success';
-        statusEl.textContent = currentLang === 'ru' ? 'Промпт улучшен!' :
+        const modelUsed = response.usedModel ? ` (${response.usedModel})` : '';
+        statusEl.textContent = (currentLang === 'ru' ? 'Промпт улучшен!' :
                                currentLang === 'de' ? 'Prompt verbessert!' :
-                               'Prompt enhanced!';
+                               'Prompt enhanced!') + modelUsed;
 
         // Update history with enhanced version
         await storage.addToHistory({
@@ -470,6 +472,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('settings-prompt-lang').value = promptLang;
     storage.getSettings().then(s => {
       document.getElementById('settings-api-key').value = s.apiKey || '';
+      document.getElementById('settings-model').value = s.model || 'gemini-2.0-flash';
     });
   }
 
@@ -477,11 +480,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const newLang = document.getElementById('settings-lang').value;
     const newPromptLang = document.getElementById('settings-prompt-lang').value;
     const apiKey = document.getElementById('settings-api-key').value.trim();
+    const model = document.getElementById('settings-model').value;
 
     await storage.saveSettings({
       lang: newLang,
       promptLang: newPromptLang,
-      apiKey
+      apiKey,
+      model
     });
 
     currentLang = newLang;

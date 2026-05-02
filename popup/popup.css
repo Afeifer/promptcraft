@@ -677,6 +677,15 @@ body::-webkit-scrollbar-thumb {
   transform: translateX(-50%) translateY(0);
 }
 
+/* === Settings Hint === */
+.settings-hint {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  opacity: 0.7;
+  line-height: 1.4;
+}
+
 /* === Settings Button (prominent) === */
 .settings-btn {
   display: flex;

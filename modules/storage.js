@@ -12,7 +12,8 @@ class PromptStorage {
         resolve(result[this.SETTINGS_KEY] || {
           lang: 'en',
           promptLang: 'en',
-          apiKey: ''
+          apiKey: '',
+          model: 'gemini-2.0-flash'
         });
       });
     });

@@ -425,6 +425,12 @@
   "settingsApiKeyFree": {
     "message": "Это полностью бесплатно — до 1500 запросов в день!"
   },
+  "settingsModel": {
+    "message": "AI Модель"
+  },
+  "settingsModelHint": {
+    "message": "Если у выбранной модели закончится квота, расширение автоматически попробует другие модели."
+  },
   "settingsVersion": {
     "message": "Версия"
   },

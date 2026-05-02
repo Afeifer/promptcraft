@@ -425,6 +425,12 @@
   "settingsApiKeyFree": {
     "message": "Es ist völlig kostenlos — bis zu 1.500 Anfragen pro Tag!"
   },
+  "settingsModel": {
+    "message": "AI-Modell"
+  },
+  "settingsModelHint": {
+    "message": "Wenn das gewählte Modell sein Kontingent erreicht, wechselt die Erweiterung automatisch zu anderen Modellen."
+  },
   "settingsVersion": {
     "message": "Version"
   },

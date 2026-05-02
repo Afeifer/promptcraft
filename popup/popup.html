@@ -213,6 +213,16 @@
       </div>
 
       <div class="settings-group">
+        <label class="settings-label" data-i18n="settingsModel">AI Model</label>
+        <select id="settings-model" class="input-select">
+          <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+          <option value="gemini-2.0-flash-lite">Gemini 2.0 Flash-Lite</option>
+          <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
+        </select>
+        <p class="settings-hint" data-i18n="settingsModelHint">If the selected model hits its quota limit, the extension will automatically try other models.</p>
+      </div>
+
+      <div class="settings-group">
         <label class="settings-label" data-i18n="settingsVersion">Version</label>
         <div class="update-check-row">
           <span class="version-label">v1.1.0</span>

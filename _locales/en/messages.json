@@ -425,6 +425,12 @@
   "settingsApiKeyFree": {
     "message": "It's completely free — up to 1,500 requests per day!"
   },
+  "settingsModel": {
+    "message": "AI Model"
+  },
+  "settingsModelHint": {
+    "message": "If the selected model hits its quota limit, the extension will automatically try other models."
+  },
   "settingsVersion": {
     "message": "Version"
   },
