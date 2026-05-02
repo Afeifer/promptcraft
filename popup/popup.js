@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const generator = new PromptGenerator();
   const storage = new PromptStorage();
+  const auth = new PromptCraftAuth();
 
   // State
   let currentStep = 1;
@@ -23,6 +24,76 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Load i18n
   await loadMessages(currentLang);
   applyI18n();
+
+  // ==================== Auth ====================
+
+  await auth.init();
+  updateAuthUI();
+
+  function updateAuthUI() {
+    const loginBtn = document.getElementById('btn-login');
+    const profileEl = document.getElementById('user-profile');
+    const settingsLoggedOut = document.getElementById('settings-logged-out');
+    const settingsLoggedIn = document.getElementById('settings-logged-in');
+
+    if (auth.isSignedIn()) {
+      const user = auth.getUser();
+      loginBtn.classList.add('hidden');
+      profileEl.classList.remove('hidden');
+
+      const avatar = document.getElementById('user-avatar');
+      if (user.photo) {
+        avatar.src = user.photo;
+      } else {
+        avatar.src = '';
+        avatar.style.display = 'none';
+      }
+      document.getElementById('user-name').textContent = user.name;
+
+      settingsLoggedOut.classList.add('hidden');
+      settingsLoggedIn.classList.remove('hidden');
+
+      const settingsAvatar = document.getElementById('settings-user-avatar');
+      if (user.photo) {
+        settingsAvatar.src = user.photo;
+      } else {
+        settingsAvatar.style.display = 'none';
+      }
+      document.getElementById('settings-user-name').textContent = user.name;
+      document.getElementById('settings-user-email').textContent = user.email;
+    } else {
+      loginBtn.classList.remove('hidden');
+      profileEl.classList.add('hidden');
+      settingsLoggedOut.classList.remove('hidden');
+      settingsLoggedIn.classList.add('hidden');
+    }
+  }
+
+  async function handleSignIn() {
+    try {
+      await auth.signIn();
+      updateAuthUI();
+      showToast(msg('loginSuccess'));
+    } catch (e) {
+      showToast(e.message || 'Sign in failed');
+    }
+  }
+
+  async function handleSignOut() {
+    await auth.signOut();
+    updateAuthUI();
+    showToast(msg('logoutSuccess'));
+  }
+
+  document.getElementById('btn-login').addEventListener('click', handleSignIn);
+  document.getElementById('btn-google-signin').addEventListener('click', handleSignIn);
+  document.getElementById('btn-signout').addEventListener('click', handleSignOut);
+
+  document.getElementById('user-profile').addEventListener('click', () => {
+    previousView = document.querySelector('.view.active')?.id.replace('view-', '') || 'builder';
+    loadSettingsUI();
+    showView('settings');
+  });
 
   // ==================== i18n ====================
 

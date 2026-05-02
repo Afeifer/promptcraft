@@ -425,6 +425,27 @@
   "settingsApiKeyFree": {
     "message": "Это полностью бесплатно — до 1500 запросов в день!"
   },
+  "btnLogin": {
+    "message": "Войти"
+  },
+  "btnGoogleSignIn": {
+    "message": "Войти через Google"
+  },
+  "btnSignOut": {
+    "message": "Выйти"
+  },
+  "settingsAccount": {
+    "message": "Аккаунт"
+  },
+  "settingsLoginHint": {
+    "message": "Войдите, чтобы синхронизировать данные и получать новости о новых функциях."
+  },
+  "loginSuccess": {
+    "message": "Вход выполнен!"
+  },
+  "logoutSuccess": {
+    "message": "Выход выполнен"
+  },
   "settingsModel": {
     "message": "AI Модель"
   },

@@ -425,6 +425,27 @@
   "settingsApiKeyFree": {
     "message": "It's completely free — up to 1,500 requests per day!"
   },
+  "btnLogin": {
+    "message": "Sign In"
+  },
+  "btnGoogleSignIn": {
+    "message": "Sign in with Google"
+  },
+  "btnSignOut": {
+    "message": "Sign Out"
+  },
+  "settingsAccount": {
+    "message": "Account"
+  },
+  "settingsLoginHint": {
+    "message": "Sign in to sync your data and receive updates about new features."
+  },
+  "loginSuccess": {
+    "message": "Signed in successfully!"
+  },
+  "logoutSuccess": {
+    "message": "Signed out"
+  },
   "settingsModel": {
     "message": "AI Model"
   },

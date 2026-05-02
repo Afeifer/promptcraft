@@ -425,6 +425,27 @@
   "settingsApiKeyFree": {
     "message": "Es ist völlig kostenlos — bis zu 1.500 Anfragen pro Tag!"
   },
+  "btnLogin": {
+    "message": "Anmelden"
+  },
+  "btnGoogleSignIn": {
+    "message": "Mit Google anmelden"
+  },
+  "btnSignOut": {
+    "message": "Abmelden"
+  },
+  "settingsAccount": {
+    "message": "Konto"
+  },
+  "settingsLoginHint": {
+    "message": "Melden Sie sich an, um Ihre Daten zu synchronisieren und Updates zu neuen Funktionen zu erhalten."
+  },
+  "loginSuccess": {
+    "message": "Erfolgreich angemeldet!"
+  },
+  "logoutSuccess": {
+    "message": "Abgemeldet"
+  },
   "settingsModel": {
     "message": "AI-Modell"
   },

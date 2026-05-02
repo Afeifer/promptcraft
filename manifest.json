@@ -26,7 +26,8 @@
   "permissions": [
     "storage",
     "activeTab",
-    "sidePanel"
+    "sidePanel",
+    "identity"
   ],
   "content_scripts": [
     {
