@@ -724,6 +724,46 @@
     "message": "Seitenverhältnis"
   },
 
+  "moodDramatic": {
+    "message": "Dramatisch Cineastisch"
+  },
+  "moodPeaceful": {
+    "message": "Friedlich Ruhig"
+  },
+  "moodMysterious": {
+    "message": "Geheimnisvoll Dunkel"
+  },
+  "moodVibrant": {
+    "message": "Lebendig Farbenfroh"
+  },
+  "moodNostalgic": {
+    "message": "Nostalgisch Vintage"
+  },
+  "moodFuturistic": {
+    "message": "Futuristisch Cyberpunk"
+  },
+  "moodRomantic": {
+    "message": "Romantisch Sanfter Schein"
+  },
+  "moodEpic": {
+    "message": "Episch Heroisch"
+  },
+  "moodMinimalist": {
+    "message": "Minimalistisch Sauber"
+  },
+  "moodHorror": {
+    "message": "Horror Unheimlich"
+  },
+  "moodDreamy": {
+    "message": "Verträumt Ätherisch"
+  },
+  "moodDark": {
+    "message": "Dunkel Stimmungsvoll"
+  },
+  "moodDocumentary": {
+    "message": "Dokumentarisch Natürlich"
+  },
+
   "pinImageGen": {
     "message": "Bildgenerator"
   },

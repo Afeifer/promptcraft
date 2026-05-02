@@ -250,8 +250,19 @@ const PROMPT_TEMPLATES = {
       {
         id: "mood",
         labelKey: "imageMood",
-        type: "text",
-        placeholder: "e.g., dramatic, peaceful, mysterious, vibrant, cinematic"
+        type: "pills",
+        options: [
+          { value: "dramatic cinematic", labelKey: "moodDramatic" },
+          { value: "peaceful serene", labelKey: "moodPeaceful" },
+          { value: "mysterious dark", labelKey: "moodMysterious" },
+          { value: "vibrant colorful", labelKey: "moodVibrant" },
+          { value: "nostalgic vintage", labelKey: "moodNostalgic" },
+          { value: "futuristic cyberpunk", labelKey: "moodFuturistic" },
+          { value: "romantic soft glow", labelKey: "moodRomantic" },
+          { value: "epic heroic", labelKey: "moodEpic" },
+          { value: "minimalist clean", labelKey: "moodMinimalist" },
+          { value: "horror eerie", labelKey: "moodHorror" }
+        ]
       },
       {
         id: "negativePrompt",
@@ -540,8 +551,19 @@ const PROMPT_TEMPLATES = {
       {
         id: "videoMood",
         labelKey: "videoMood",
-        type: "text",
-        placeholder: "e.g., epic, dreamy, intense, nostalgic, futuristic"
+        type: "pills",
+        options: [
+          { value: "epic cinematic", labelKey: "moodEpic" },
+          { value: "dreamy ethereal", labelKey: "moodDreamy" },
+          { value: "intense dramatic", labelKey: "moodDramatic" },
+          { value: "nostalgic warm film", labelKey: "moodNostalgic" },
+          { value: "futuristic neon", labelKey: "moodFuturistic" },
+          { value: "dark moody", labelKey: "moodDark" },
+          { value: "bright vibrant", labelKey: "moodVibrant" },
+          { value: "romantic pastel", labelKey: "moodRomantic" },
+          { value: "horror cold tones", labelKey: "moodHorror" },
+          { value: "documentary natural", labelKey: "moodDocumentary" }
+        ]
       },
       {
         id: "duration",

@@ -724,6 +724,46 @@
     "message": "Aspect Ratio"
   },
 
+  "moodDramatic": {
+    "message": "Dramatic Cinematic"
+  },
+  "moodPeaceful": {
+    "message": "Peaceful Serene"
+  },
+  "moodMysterious": {
+    "message": "Mysterious Dark"
+  },
+  "moodVibrant": {
+    "message": "Vibrant Colorful"
+  },
+  "moodNostalgic": {
+    "message": "Nostalgic Vintage"
+  },
+  "moodFuturistic": {
+    "message": "Futuristic Cyberpunk"
+  },
+  "moodRomantic": {
+    "message": "Romantic Soft Glow"
+  },
+  "moodEpic": {
+    "message": "Epic Heroic"
+  },
+  "moodMinimalist": {
+    "message": "Minimalist Clean"
+  },
+  "moodHorror": {
+    "message": "Horror Eerie"
+  },
+  "moodDreamy": {
+    "message": "Dreamy Ethereal"
+  },
+  "moodDark": {
+    "message": "Dark Moody"
+  },
+  "moodDocumentary": {
+    "message": "Documentary Natural"
+  },
+
   "pinImageGen": {
     "message": "Image Generator"
   },

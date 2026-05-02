@@ -724,6 +724,46 @@
     "message": "Соотношение сторон"
   },
 
+  "moodDramatic": {
+    "message": "Драматичный кинематографичный"
+  },
+  "moodPeaceful": {
+    "message": "Спокойный умиротворённый"
+  },
+  "moodMysterious": {
+    "message": "Загадочный тёмный"
+  },
+  "moodVibrant": {
+    "message": "Яркий красочный"
+  },
+  "moodNostalgic": {
+    "message": "Ностальгический винтаж"
+  },
+  "moodFuturistic": {
+    "message": "Футуристичный киберпанк"
+  },
+  "moodRomantic": {
+    "message": "Романтичный мягкий"
+  },
+  "moodEpic": {
+    "message": "Эпичный героический"
+  },
+  "moodMinimalist": {
+    "message": "Минималистичный чистый"
+  },
+  "moodHorror": {
+    "message": "Ужасы жуткий"
+  },
+  "moodDreamy": {
+    "message": "Мечтательный воздушный"
+  },
+  "moodDark": {
+    "message": "Тёмный мрачный"
+  },
+  "moodDocumentary": {
+    "message": "Документальный натуральный"
+  },
+
   "pinImageGen": {
     "message": "Генератор изображения"
   },
