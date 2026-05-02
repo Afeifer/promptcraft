@@ -1,0 +1,257 @@
+{
+  "extName": {
+    "message": "PromptCraft"
+  },
+  "extDescription": {
+    "message": "Erstellen Sie perfekte AI-Prompts für jede Aufgabe. Schritt-für-Schritt-Builder + optionale AI-Verbesserung."
+  },
+  "step1Title": {
+    "message": "Was brauchen Sie?"
+  },
+  "step2Title": {
+    "message": "Beschreiben Sie Ihre Aufgabe"
+  },
+  "step3Title": {
+    "message": "Details"
+  },
+  "step4Title": {
+    "message": "Kontext"
+  },
+  "step5Title": {
+    "message": "Ihr Prompt ist fertig!"
+  },
+  "step2Placeholder": {
+    "message": "Beschreiben Sie in eigenen Worten, was Sie brauchen..."
+  },
+  "step4Placeholder": {
+    "message": "Gibt es etwas Wichtiges, das die AI wissen sollte? (optional)"
+  },
+  "catCode": {
+    "message": "Code"
+  },
+  "catText": {
+    "message": "Text"
+  },
+  "catImage": {
+    "message": "Bilder"
+  },
+  "catAnalysis": {
+    "message": "Analyse"
+  },
+  "catTranslation": {
+    "message": "Übersetzung"
+  },
+  "catLearning": {
+    "message": "Lernen"
+  },
+  "catChat": {
+    "message": "Chat"
+  },
+  "catOther": {
+    "message": "Sonstiges"
+  },
+  "btnNext": {
+    "message": "Weiter"
+  },
+  "btnBack": {
+    "message": "Zurück"
+  },
+  "btnGenerate": {
+    "message": "Prompt erstellen"
+  },
+  "btnCopy": {
+    "message": "Kopieren"
+  },
+  "btnCopied": {
+    "message": "Kopiert!"
+  },
+  "btnEnhance": {
+    "message": "Mit AI verbessern"
+  },
+  "btnNewPrompt": {
+    "message": "Neuer Prompt"
+  },
+  "btnHistory": {
+    "message": "Verlauf"
+  },
+  "btnSettings": {
+    "message": "Einstellungen"
+  },
+  "btnFavorite": {
+    "message": "Zu Favoriten"
+  },
+  "btnFavorited": {
+    "message": "Gespeichert!"
+  },
+  "settingsTitle": {
+    "message": "Einstellungen"
+  },
+  "settingsApiKey": {
+    "message": "Gemini API-Schlüssel (optional)"
+  },
+  "settingsApiKeyPlaceholder": {
+    "message": "Fügen Sie Ihren Gemini API-Schlüssel ein"
+  },
+  "settingsApiKeyHint": {
+    "message": "Holen Sie sich einen kostenlosen Schlüssel auf aistudio.google.com"
+  },
+  "settingsLanguage": {
+    "message": "Sprache der Oberfläche"
+  },
+  "settingsPromptLang": {
+    "message": "Prompt-Sprache"
+  },
+  "settingsSave": {
+    "message": "Speichern"
+  },
+  "settingsSaved": {
+    "message": "Gespeichert!"
+  },
+  "historyTitle": {
+    "message": "Prompt-Verlauf"
+  },
+  "historyEmpty": {
+    "message": "Noch keine Prompts. Erstellen Sie Ihren ersten!"
+  },
+  "favoritesTitle": {
+    "message": "Favoriten"
+  },
+  "favoritesEmpty": {
+    "message": "Noch keine Favoriten. Markieren Sie einen Prompt mit einem Stern."
+  },
+  "enhancing": {
+    "message": "AI verbessert Ihren Prompt..."
+  },
+  "enhanceNoKey": {
+    "message": "Fügen Sie einen Gemini API-Schlüssel in den Einstellungen hinzu"
+  },
+  "langCode": {
+    "message": "Sprache"
+  },
+  "langFramework": {
+    "message": "Framework"
+  },
+  "langComplexity": {
+    "message": "Komplexität"
+  },
+  "textTone": {
+    "message": "Ton"
+  },
+  "textAudience": {
+    "message": "Zielgruppe"
+  },
+  "textLength": {
+    "message": "Länge"
+  },
+  "imageStyle": {
+    "message": "Stil"
+  },
+  "imageMood": {
+    "message": "Stimmung"
+  },
+  "imageAspect": {
+    "message": "Seitenverhältnis"
+  },
+  "analysisDepth": {
+    "message": "Tiefe"
+  },
+  "analysisFormat": {
+    "message": "Ausgabeformat"
+  },
+  "transFrom": {
+    "message": "Von"
+  },
+  "transTo": {
+    "message": "Nach"
+  },
+  "transStyle": {
+    "message": "Stil"
+  },
+  "learnLevel": {
+    "message": "Niveau"
+  },
+  "learnStyle": {
+    "message": "Lehrstil"
+  },
+  "complexityBeginner": {
+    "message": "Anfänger"
+  },
+  "complexityIntermediate": {
+    "message": "Fortgeschritten"
+  },
+  "complexityAdvanced": {
+    "message": "Experte"
+  },
+  "toneFormal": {
+    "message": "Formell"
+  },
+  "toneCasual": {
+    "message": "Locker"
+  },
+  "toneCreative": {
+    "message": "Kreativ"
+  },
+  "toneProfessional": {
+    "message": "Professionell"
+  },
+  "toneAcademic": {
+    "message": "Akademisch"
+  },
+  "lengthShort": {
+    "message": "Kurz"
+  },
+  "lengthMedium": {
+    "message": "Mittel"
+  },
+  "lengthLong": {
+    "message": "Lang"
+  },
+  "lengthDetailed": {
+    "message": "Sehr detailliert"
+  },
+  "depthOverview": {
+    "message": "Schnellüberblick"
+  },
+  "depthStandard": {
+    "message": "Standard"
+  },
+  "depthDeep": {
+    "message": "Tiefenanalyse"
+  },
+  "stylePhotorealistic": {
+    "message": "Fotorealistisch"
+  },
+  "styleDigitalArt": {
+    "message": "Digitale Kunst"
+  },
+  "styleOilPainting": {
+    "message": "Ölmalerei"
+  },
+  "styleWatercolor": {
+    "message": "Aquarell"
+  },
+  "styleAnime": {
+    "message": "Anime"
+  },
+  "styleMinimalist": {
+    "message": "Minimalistisch"
+  },
+  "style3D": {
+    "message": "3D-Rendering"
+  },
+  "styleSketch": {
+    "message": "Skizze"
+  },
+  "tabBuilder": {
+    "message": "Builder"
+  },
+  "tabHistory": {
+    "message": "Verlauf"
+  },
+  "tabFavorites": {
+    "message": "Favoriten"
+  },
+  "deleteConfirm": {
+    "message": "Diesen Prompt löschen?"
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "extName": {
+    "message": "PromptCraft"
+  },
+  "extDescription": {
+    "message": "Create perfect AI prompts for any task. Step-by-step builder + optional AI enhancement."
+  },
+  "step1Title": {
+    "message": "What do you need?"
+  },
+  "step2Title": {
+    "message": "Describe your task"
+  },
+  "step3Title": {
+    "message": "Details"
+  },
+  "step4Title": {
+    "message": "Context"
+  },
+  "step5Title": {
+    "message": "Your prompt is ready!"
+  },
+  "step2Placeholder": {
+    "message": "Describe what you need in your own words..."
+  },
+  "step4Placeholder": {
+    "message": "Is there anything important the AI should know? (optional)"
+  },
+  "catCode": {
+    "message": "Code"
+  },
+  "catText": {
+    "message": "Text"
+  },
+  "catImage": {
+    "message": "Images"
+  },
+  "catAnalysis": {
+    "message": "Analysis"
+  },
+  "catTranslation": {
+    "message": "Translation"
+  },
+  "catLearning": {
+    "message": "Learning"
+  },
+  "catChat": {
+    "message": "Chat"
+  },
+  "catOther": {
+    "message": "Other"
+  },
+  "btnNext": {
+    "message": "Next"
+  },
+  "btnBack": {
+    "message": "Back"
+  },
+  "btnGenerate": {
+    "message": "Generate Prompt"
+  },
+  "btnCopy": {
+    "message": "Copy"
+  },
+  "btnCopied": {
+    "message": "Copied!"
+  },
+  "btnEnhance": {
+    "message": "Enhance with AI"
+  },
+  "btnNewPrompt": {
+    "message": "New Prompt"
+  },
+  "btnHistory": {
+    "message": "History"
+  },
+  "btnSettings": {
+    "message": "Settings"
+  },
+  "btnFavorite": {
+    "message": "Save to favorites"
+  },
+  "btnFavorited": {
+    "message": "Saved!"
+  },
+  "settingsTitle": {
+    "message": "Settings"
+  },
+  "settingsApiKey": {
+    "message": "Gemini API Key (optional)"
+  },
+  "settingsApiKeyPlaceholder": {
+    "message": "Paste your Gemini API key here"
+  },
+  "settingsApiKeyHint": {
+    "message": "Get a free key at aistudio.google.com"
+  },
+  "settingsLanguage": {
+    "message": "Interface Language"
+  },
+  "settingsPromptLang": {
+    "message": "Prompt Language"
+  },
+  "settingsSave": {
+    "message": "Save"
+  },
+  "settingsSaved": {
+    "message": "Saved!"
+  },
+  "historyTitle": {
+    "message": "Prompt History"
+  },
+  "historyEmpty": {
+    "message": "No prompts yet. Create your first one!"
+  },
+  "favoritesTitle": {
+    "message": "Favorites"
+  },
+  "favoritesEmpty": {
+    "message": "No favorites yet. Star a prompt to save it here."
+  },
+  "enhancing": {
+    "message": "AI is improving your prompt..."
+  },
+  "enhanceNoKey": {
+    "message": "Add a Gemini API key in Settings to use AI enhancement"
+  },
+  "langCode": {
+    "message": "Language"
+  },
+  "langFramework": {
+    "message": "Framework"
+  },
+  "langComplexity": {
+    "message": "Complexity"
+  },
+  "textTone": {
+    "message": "Tone"
+  },
+  "textAudience": {
+    "message": "Audience"
+  },
+  "textLength": {
+    "message": "Length"
+  },
+  "imageStyle": {
+    "message": "Style"
+  },
+  "imageMood": {
+    "message": "Mood"
+  },
+  "imageAspect": {
+    "message": "Aspect Ratio"
+  },
+  "analysisDepth": {
+    "message": "Depth"
+  },
+  "analysisFormat": {
+    "message": "Output Format"
+  },
+  "transFrom": {
+    "message": "From"
+  },
+  "transTo": {
+    "message": "To"
+  },
+  "transStyle": {
+    "message": "Style"
+  },
+  "learnLevel": {
+    "message": "Level"
+  },
+  "learnStyle": {
+    "message": "Teaching Style"
+  },
+  "complexityBeginner": {
+    "message": "Beginner"
+  },
+  "complexityIntermediate": {
+    "message": "Intermediate"
+  },
+  "complexityAdvanced": {
+    "message": "Advanced"
+  },
+  "toneFormal": {
+    "message": "Formal"
+  },
+  "toneCasual": {
+    "message": "Casual"
+  },
+  "toneCreative": {
+    "message": "Creative"
+  },
+  "toneProfessional": {
+    "message": "Professional"
+  },
+  "toneAcademic": {
+    "message": "Academic"
+  },
+  "lengthShort": {
+    "message": "Short"
+  },
+  "lengthMedium": {
+    "message": "Medium"
+  },
+  "lengthLong": {
+    "message": "Long"
+  },
+  "lengthDetailed": {
+    "message": "Very Detailed"
+  },
+  "depthOverview": {
+    "message": "Quick Overview"
+  },
+  "depthStandard": {
+    "message": "Standard"
+  },
+  "depthDeep": {
+    "message": "Deep Dive"
+  },
+  "stylePhotorealistic": {
+    "message": "Photorealistic"
+  },
+  "styleDigitalArt": {
+    "message": "Digital Art"
+  },
+  "styleOilPainting": {
+    "message": "Oil Painting"
+  },
+  "styleWatercolor": {
+    "message": "Watercolor"
+  },
+  "styleAnime": {
+    "message": "Anime"
+  },
+  "styleMinimalist": {
+    "message": "Minimalist"
+  },
+  "style3D": {
+    "message": "3D Render"
+  },
+  "styleSketch": {
+    "message": "Sketch"
+  },
+  "tabBuilder": {
+    "message": "Builder"
+  },
+  "tabHistory": {
+    "message": "History"
+  },
+  "tabFavorites": {
+    "message": "Favorites"
+  },
+  "deleteConfirm": {
+    "message": "Delete this prompt?"
+  }
+}

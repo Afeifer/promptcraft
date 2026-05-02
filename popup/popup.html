@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400">
+  <title>PromptCraft</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <span class="logo">⚡</span>
+        <h1 class="app-title">PromptCraft</h1>
+      </div>
+      <div class="header-right">
+        <button id="btn-settings" class="icon-btn" title="Settings">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="builder" data-i18n="tabBuilder">Builder</button>
+      <button class="tab" data-tab="history" data-i18n="tabHistory">History</button>
+      <button class="tab" data-tab="favorites" data-i18n="tabFavorites">Favorites</button>
+    </nav>
+
+    <!-- Builder View -->
+    <div id="view-builder" class="view active">
+      <!-- Progress bar -->
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar"></div>
+        <div class="progress-steps">
+          <span class="progress-step active" data-step="1">1</span>
+          <span class="progress-step" data-step="2">2</span>
+          <span class="progress-step" data-step="3">3</span>
+          <span class="progress-step" data-step="4">4</span>
+          <span class="progress-step" data-step="5">5</span>
+        </div>
+      </div>
+
+      <!-- Step 1: Category -->
+      <div class="step active" id="step-1">
+        <h2 class="step-title" data-i18n="step1Title">What do you need?</h2>
+        <div class="category-grid">
+          <button class="category-card" data-category="code">
+            <span class="category-icon">💻</span>
+            <span class="category-label" data-i18n="catCode">Code</span>
+          </button>
+          <button class="category-card" data-category="text">
+            <span class="category-icon">✍️</span>
+            <span class="category-label" data-i18n="catText">Text</span>
+          </button>
+          <button class="category-card" data-category="image">
+            <span class="category-icon">🎨</span>
+            <span class="category-label" data-i18n="catImage">Images</span>
+          </button>
+          <button class="category-card" data-category="analysis">
+            <span class="category-icon">📊</span>
+            <span class="category-label" data-i18n="catAnalysis">Analysis</span>
+          </button>
+          <button class="category-card" data-category="translation">
+            <span class="category-icon">🌐</span>
+            <span class="category-label" data-i18n="catTranslation">Translation</span>
+          </button>
+          <button class="category-card" data-category="learning">
+            <span class="category-icon">🎓</span>
+            <span class="category-label" data-i18n="catLearning">Learning</span>
+          </button>
+          <button class="category-card" data-category="chat">
+            <span class="category-icon">💬</span>
+            <span class="category-label" data-i18n="catChat">Chat</span>
+          </button>
+          <button class="category-card" data-category="other">
+            <span class="category-icon">⚡</span>
+            <span class="category-label" data-i18n="catOther">Other</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Task Description -->
+      <div class="step" id="step-2">
+        <h2 class="step-title" data-i18n="step2Title">Describe your task</h2>
+        <textarea id="task-description" class="input-textarea" rows="5" data-i18n-placeholder="step2Placeholder" placeholder="Describe what you need in your own words..."></textarea>
+        <div class="step-actions">
+          <button class="btn btn-secondary" id="btn-back-2" data-i18n="btnBack">Back</button>
+          <button class="btn btn-primary" id="btn-next-2" data-i18n="btnNext">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Details (dynamic based on category) -->
+      <div class="step" id="step-3">
+        <h2 class="step-title" data-i18n="step3Title">Details</h2>
+        <div id="details-fields" class="details-container">
+          <!-- Dynamically populated -->
+        </div>
+        <div class="step-actions">
+          <button class="btn btn-secondary" id="btn-back-3" data-i18n="btnBack">Back</button>
+          <button class="btn btn-primary" id="btn-next-3" data-i18n="btnNext">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Context -->
+      <div class="step" id="step-4">
+        <h2 class="step-title" data-i18n="step4Title">Context</h2>
+        <textarea id="task-context" class="input-textarea" rows="4" data-i18n-placeholder="step4Placeholder" placeholder="Is there anything important the AI should know? (optional)"></textarea>
+        <div class="step-actions">
+          <button class="btn btn-secondary" id="btn-back-4" data-i18n="btnBack">Back</button>
+          <button class="btn btn-primary btn-generate" id="btn-generate" data-i18n="btnGenerate">Generate Prompt</button>
+        </div>
+      </div>
+
+      <!-- Step 5: Result -->
+      <div class="step" id="step-5">
+        <h2 class="step-title" data-i18n="step5Title">Your prompt is ready!</h2>
+        <div class="result-container">
+          <div id="generated-prompt" class="prompt-output"></div>
+          <div class="result-actions">
+            <button class="btn btn-primary btn-copy" id="btn-copy">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <span data-i18n="btnCopy">Copy</span>
+            </button>
+            <button class="btn btn-accent" id="btn-enhance">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              <span data-i18n="btnEnhance">Enhance with AI</span>
+            </button>
+            <button class="btn btn-icon" id="btn-favorite" title="Save to favorites">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </button>
+          </div>
+          <div id="enhance-status" class="enhance-status hidden"></div>
+        </div>
+        <div class="step-actions">
+          <button class="btn btn-secondary" id="btn-new-prompt" data-i18n="btnNewPrompt">New Prompt</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- History View -->
+    <div id="view-history" class="view">
+      <div id="history-list" class="prompt-list">
+        <p class="empty-state" data-i18n="historyEmpty">No prompts yet. Create your first one!</p>
+      </div>
+    </div>
+
+    <!-- Favorites View -->
+    <div id="view-favorites" class="view">
+      <div id="favorites-list" class="prompt-list">
+        <p class="empty-state" data-i18n="favoritesEmpty">No favorites yet. Star a prompt to save it here.</p>
+      </div>
+    </div>
+
+    <!-- Settings View -->
+    <div id="view-settings" class="view">
+      <h2 class="step-title" data-i18n="settingsTitle">Settings</h2>
+
+      <div class="settings-group">
+        <label class="settings-label" data-i18n="settingsLanguage">Interface Language</label>
+        <select id="settings-lang" class="input-select">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </div>
+
+      <div class="settings-group">
+        <label class="settings-label" data-i18n="settingsPromptLang">Prompt Language</label>
+        <select id="settings-prompt-lang" class="input-select">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </div>
+
+      <div class="settings-group">
+        <label class="settings-label" data-i18n="settingsApiKey">Gemini API Key (optional)</label>
+        <input type="password" id="settings-api-key" class="input-text" data-i18n-placeholder="settingsApiKeyPlaceholder" placeholder="Paste your Gemini API key here">
+        <a href="https://aistudio.google.com/apikey" target="_blank" class="settings-hint" data-i18n="settingsApiKeyHint">Get a free key at aistudio.google.com</a>
+      </div>
+
+      <div class="step-actions">
+        <button class="btn btn-secondary" id="btn-settings-back" data-i18n="btnBack">Back</button>
+        <button class="btn btn-primary" id="btn-settings-save" data-i18n="settingsSave">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../modules/templates.js"></script>
+  <script src="../modules/generator.js"></script>
+  <script src="../modules/storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

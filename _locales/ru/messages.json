@@ -1,0 +1,257 @@
+{
+  "extName": {
+    "message": "PromptCraft"
+  },
+  "extDescription": {
+    "message": "Создавайте идеальные AI-промпты для любой задачи. Пошаговый конструктор + улучшение через AI."
+  },
+  "step1Title": {
+    "message": "Что вам нужно?"
+  },
+  "step2Title": {
+    "message": "Опишите задачу"
+  },
+  "step3Title": {
+    "message": "Детали"
+  },
+  "step4Title": {
+    "message": "Контекст"
+  },
+  "step5Title": {
+    "message": "Ваш промпт готов!"
+  },
+  "step2Placeholder": {
+    "message": "Опишите что вам нужно своими словами..."
+  },
+  "step4Placeholder": {
+    "message": "Есть что-то важное, что AI должен знать? (необязательно)"
+  },
+  "catCode": {
+    "message": "Код"
+  },
+  "catText": {
+    "message": "Текст"
+  },
+  "catImage": {
+    "message": "Изображения"
+  },
+  "catAnalysis": {
+    "message": "Анализ"
+  },
+  "catTranslation": {
+    "message": "Перевод"
+  },
+  "catLearning": {
+    "message": "Обучение"
+  },
+  "catChat": {
+    "message": "Общение"
+  },
+  "catOther": {
+    "message": "Другое"
+  },
+  "btnNext": {
+    "message": "Далее"
+  },
+  "btnBack": {
+    "message": "Назад"
+  },
+  "btnGenerate": {
+    "message": "Создать промпт"
+  },
+  "btnCopy": {
+    "message": "Копировать"
+  },
+  "btnCopied": {
+    "message": "Скопировано!"
+  },
+  "btnEnhance": {
+    "message": "Улучшить с AI"
+  },
+  "btnNewPrompt": {
+    "message": "Новый промпт"
+  },
+  "btnHistory": {
+    "message": "История"
+  },
+  "btnSettings": {
+    "message": "Настройки"
+  },
+  "btnFavorite": {
+    "message": "В избранное"
+  },
+  "btnFavorited": {
+    "message": "Сохранено!"
+  },
+  "settingsTitle": {
+    "message": "Настройки"
+  },
+  "settingsApiKey": {
+    "message": "Gemini API ключ (необязательно)"
+  },
+  "settingsApiKeyPlaceholder": {
+    "message": "Вставьте ваш Gemini API ключ"
+  },
+  "settingsApiKeyHint": {
+    "message": "Получите бесплатный ключ на aistudio.google.com"
+  },
+  "settingsLanguage": {
+    "message": "Язык интерфейса"
+  },
+  "settingsPromptLang": {
+    "message": "Язык промпта"
+  },
+  "settingsSave": {
+    "message": "Сохранить"
+  },
+  "settingsSaved": {
+    "message": "Сохранено!"
+  },
+  "historyTitle": {
+    "message": "История промптов"
+  },
+  "historyEmpty": {
+    "message": "Пока нет промптов. Создайте первый!"
+  },
+  "favoritesTitle": {
+    "message": "Избранное"
+  },
+  "favoritesEmpty": {
+    "message": "Пока нет избранных. Нажмите звёздочку, чтобы сохранить промпт."
+  },
+  "enhancing": {
+    "message": "AI улучшает ваш промпт..."
+  },
+  "enhanceNoKey": {
+    "message": "Добавьте Gemini API ключ в Настройках для улучшения через AI"
+  },
+  "langCode": {
+    "message": "Язык"
+  },
+  "langFramework": {
+    "message": "Фреймворк"
+  },
+  "langComplexity": {
+    "message": "Сложность"
+  },
+  "textTone": {
+    "message": "Тон"
+  },
+  "textAudience": {
+    "message": "Аудитория"
+  },
+  "textLength": {
+    "message": "Длина"
+  },
+  "imageStyle": {
+    "message": "Стиль"
+  },
+  "imageMood": {
+    "message": "Настроение"
+  },
+  "imageAspect": {
+    "message": "Соотношение сторон"
+  },
+  "analysisDepth": {
+    "message": "Глубина"
+  },
+  "analysisFormat": {
+    "message": "Формат вывода"
+  },
+  "transFrom": {
+    "message": "С"
+  },
+  "transTo": {
+    "message": "На"
+  },
+  "transStyle": {
+    "message": "Стиль"
+  },
+  "learnLevel": {
+    "message": "Уровень"
+  },
+  "learnStyle": {
+    "message": "Стиль обучения"
+  },
+  "complexityBeginner": {
+    "message": "Начинающий"
+  },
+  "complexityIntermediate": {
+    "message": "Средний"
+  },
+  "complexityAdvanced": {
+    "message": "Продвинутый"
+  },
+  "toneFormal": {
+    "message": "Формальный"
+  },
+  "toneCasual": {
+    "message": "Разговорный"
+  },
+  "toneCreative": {
+    "message": "Креативный"
+  },
+  "toneProfessional": {
+    "message": "Профессиональный"
+  },
+  "toneAcademic": {
+    "message": "Академический"
+  },
+  "lengthShort": {
+    "message": "Короткий"
+  },
+  "lengthMedium": {
+    "message": "Средний"
+  },
+  "lengthLong": {
+    "message": "Длинный"
+  },
+  "lengthDetailed": {
+    "message": "Очень детальный"
+  },
+  "depthOverview": {
+    "message": "Краткий обзор"
+  },
+  "depthStandard": {
+    "message": "Стандартный"
+  },
+  "depthDeep": {
+    "message": "Глубокий анализ"
+  },
+  "stylePhotorealistic": {
+    "message": "Фотореализм"
+  },
+  "styleDigitalArt": {
+    "message": "Цифровое искусство"
+  },
+  "styleOilPainting": {
+    "message": "Масляная живопись"
+  },
+  "styleWatercolor": {
+    "message": "Акварель"
+  },
+  "styleAnime": {
+    "message": "Аниме"
+  },
+  "styleMinimalist": {
+    "message": "Минимализм"
+  },
+  "style3D": {
+    "message": "3D рендер"
+  },
+  "styleSketch": {
+    "message": "Скетч"
+  },
+  "tabBuilder": {
+    "message": "Конструктор"
+  },
+  "tabHistory": {
+    "message": "История"
+  },
+  "tabFavorites": {
+    "message": "Избранное"
+  },
+  "deleteConfirm": {
+    "message": "Удалить этот промпт?"
+  }
+}
