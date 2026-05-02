@@ -112,14 +112,14 @@ const PROMPT_TEMPLATES = {
 
   image: {
     role: {
-      en: "You are a professional photographer and AI art director with expertise in lighting, composition, and visual storytelling. You craft highly detailed, technically precise image generation prompts.",
-      ru: "Ты — профессиональный фотограф и AI арт-директор с экспертизой в освещении, композиции и визуальном сторителлинге. Ты создаёшь высокодетализированные, технически точные промпты для генерации изображений.",
-      de: "Du bist ein professioneller Fotograf und AI Art Director mit Expertise in Beleuchtung, Komposition und visuellem Storytelling. Du erstellst hochdetaillierte, technisch präzise Bildgenerierungs-Prompts."
+      en: "You are a professional photographer and AI art director with expertise in lighting, composition, and visual storytelling. You craft highly detailed, technically precise image generation prompts optimized for {platform}.",
+      ru: "Ты — профессиональный фотограф и AI арт-директор с экспертизой в освещении, композиции и визуальном сторителлинге. Ты создаёшь высокодетализированные, технически точные промпты для генерации изображений, оптимизированные для {platform}.",
+      de: "Du bist ein professioneller Fotograf und AI Art Director mit Expertise in Beleuchtung, Komposition und visuellem Storytelling. Du erstellst hochdetaillierte, technisch präzise Bildgenerierungs-Prompts, optimiert für {platform}."
     },
     task: {
-      en: "Create a professional-grade image generation prompt for: {description}",
-      ru: "Создай промпт профессионального уровня для генерации изображения: {description}",
-      de: "Erstelle einen professionellen Bildgenerierungs-Prompt für: {description}"
+      en: "Create a professional-grade image generation prompt for {platform}: {description}",
+      ru: "Создай промпт профессионального уровня для {platform}: {description}",
+      de: "Erstelle einen professionellen Bildgenerierungs-Prompt für {platform}: {description}"
     },
     context: {
       en: "Additional context: {context}",
@@ -127,22 +127,54 @@ const PROMPT_TEMPLATES = {
       de: "Zusätzlicher Kontext: {context}"
     },
     details: {
-      en: "Visual style: {style}\nMood/Atmosphere: {mood}\nAspect ratio: {aspect}\n\nPhotography specifications:\n- Lighting: {lighting}\n- Light direction: {lightDir}\n- Camera angle: {angle}\n- Focal length/Lens: {focal}\n- Composition: {composition}\n\nInclude in the prompt:\n- Precise color palette and color temperature\n- Depth of field and focus point\n- Textures, materials, and surface details\n- Environment, background, and atmosphere\n- Post-processing style (cinematic color grading, film grain, etc.)",
-      ru: "Визуальный стиль: {style}\nНастроение/Атмосфера: {mood}\nСоотношение сторон: {aspect}\n\nФотографические параметры:\n- Освещение: {lighting}\n- Направление света: {lightDir}\n- Ракурс камеры: {angle}\n- Фокусное расстояние/Объектив: {focal}\n- Композиция: {composition}\n\nВключи в промпт:\n- Точную цветовую палитру и цветовую температуру\n- Глубину резкости и точку фокуса\n- Текстуры, материалы и детали поверхностей\n- Окружение, фон и атмосферу\n- Стиль постобработки (кинематографическая цветокоррекция, зернистость плёнки и т.д.)",
-      de: "Visueller Stil: {style}\nStimmung/Atmosphäre: {mood}\nSeitenverhältnis: {aspect}\n\nFotografie-Spezifikationen:\n- Beleuchtung: {lighting}\n- Lichtrichtung: {lightDir}\n- Kamerawinkel: {angle}\n- Brennweite/Objektiv: {focal}\n- Komposition: {composition}\n\nFüge in den Prompt ein:\n- Präzise Farbpalette und Farbtemperatur\n- Schärfentiefe und Fokuspunkt\n- Texturen, Materialien und Oberflächendetails\n- Umgebung, Hintergrund und Atmosphäre\n- Nachbearbeitungsstil (cineastische Farbkorrektur, Filmkorn usw.)"
+      en: "Target platform: {platform}\nCamera/Lens: {camera}\nVisual style: {style}\nMood/Atmosphere: {mood}\nAspect ratio: {aspect}\n\nMulti-layer composition:\n- Foreground: describe foreground elements (bokeh, objects, framing)\n- Midground: main subject placement and details\n- Background: environment, depth, atmospheric perspective\n\nPhotography specifications:\n- Lighting: {lighting} (include color temperature, e.g., 5600K)\n- Light direction: {lightDir}\n- Camera angle: {angle}\n- Focal length/Lens: {focal}\n- Composition: {composition}\n\nColor palette: specify dominant colors, tonal contrast, and color grading\nNegative prompt: {negativePrompt}\n\nInclude in the prompt:\n- Precise color palette and color temperature\n- Depth of field, aperture (e.g., f/2.0), ISO, and focus point\n- Textures, materials, and surface details\n- Film stock simulation (e.g., Kodak Portra 400, Fuji Velvia)\n- Post-processing style (cinematic color grading, film grain, bloom, etc.)\n- Quality tags: ultra-realistic, 8k, high detail",
+      ru: "Целевая платформа: {platform}\nКамера/Объектив: {camera}\nВизуальный стиль: {style}\nНастроение/Атмосфера: {mood}\nСоотношение сторон: {aspect}\n\nМногослойная композиция:\n- Передний план: элементы переднего плана (боке, объекты, обрамление)\n- Средний план: размещение главного объекта и детали\n- Задний план: окружение, глубина, воздушная перспектива\n\nФотографические параметры:\n- Освещение: {lighting} (включи цветовую температуру, напр. 5600K)\n- Направление света: {lightDir}\n- Ракурс камеры: {angle}\n- Фокусное расстояние/Объектив: {focal}\n- Композиция: {composition}\n\nЦветовая палитра: укажи доминирующие цвета, тональный контраст и цветокоррекцию\nNegative prompt: {negativePrompt}\n\nВключи в промпт:\n- Точную цветовую палитру и цветовую температуру\n- Глубину резкости, диафрагму (напр. f/2.0), ISO и точку фокуса\n- Текстуры, материалы и детали поверхностей\n- Симуляцию фотоплёнки (напр. Kodak Portra 400, Fuji Velvia)\n- Стиль постобработки (кинематографическая цветокоррекция, зернистость плёнки, bloom и т.д.)\n- Теги качества: ultra-realistic, 8k, high detail",
+      de: "Zielplattform: {platform}\nKamera/Objektiv: {camera}\nVisueller Stil: {style}\nStimmung/Atmosphäre: {mood}\nSeitenverhältnis: {aspect}\n\nMehrschichtige Komposition:\n- Vordergrund: Vordergrund-Elemente (Bokeh, Objekte, Rahmung)\n- Mittelgrund: Platzierung und Details des Hauptmotivs\n- Hintergrund: Umgebung, Tiefe, atmosphärische Perspektive\n\nFotografie-Spezifikationen:\n- Beleuchtung: {lighting} (inkl. Farbtemperatur, z.B. 5600K)\n- Lichtrichtung: {lightDir}\n- Kamerawinkel: {angle}\n- Brennweite/Objektiv: {focal}\n- Komposition: {composition}\n\nFarbpalette: dominante Farben, Tonkontrast und Farbkorrektur angeben\nNegative Prompt: {negativePrompt}\n\nFüge in den Prompt ein:\n- Präzise Farbpalette und Farbtemperatur\n- Schärfentiefe, Blende (z.B. f/2.0), ISO und Fokuspunkt\n- Texturen, Materialien und Oberflächendetails\n- Filmsimulation (z.B. Kodak Portra 400, Fuji Velvia)\n- Nachbearbeitungsstil (cineastische Farbkorrektur, Filmkorn, Bloom usw.)\n- Qualitäts-Tags: ultra-realistic, 8k, high detail"
     },
     format: {
-      en: "Output: A single, professional prompt ready for Midjourney, DALL-E, or Stable Diffusion. Structure it as comma-separated descriptors, starting with subject, then style, lighting, camera settings, mood, and finishing with technical quality tags (8K, ultra-detailed, professional photography).",
-      ru: "Вывод: Один профессиональный промпт для Midjourney, DALL-E или Stable Diffusion. Структурируй как дескрипторы через запятую: сначала объект, затем стиль, освещение, настройки камеры, настроение, и в конце теги качества (8K, ultra-detailed, professional photography).",
-      de: "Ausgabe: Ein einzelner, professioneller Prompt für Midjourney, DALL-E oder Stable Diffusion. Strukturiere ihn als kommagetrennte Deskriptoren: Subjekt, Stil, Beleuchtung, Kameraeinstellungen, Stimmung, und abschließend Qualitäts-Tags (8K, ultra-detailed, professional photography)."
+      en: "Output: A single, professional prompt optimized for {platform}. Use the platform's native syntax and parameters. Structure with multi-layer composition ([Foreground], [Midground], [Background]), then [Lighting & Color], [Technical], and end with negative prompt (--no for Midjourney, Negative prompt: for SD).",
+      ru: "Вывод: Один профессиональный промпт, оптимизированный для {platform}. Используй нативный синтаксис платформы. Структурируй с многослойной композицией ([Передний план], [Средний план], [Задний план]), затем [Свет и Цвет], [Технические параметры], и в конце negative prompt.",
+      de: "Ausgabe: Ein einzelner, professioneller Prompt optimiert für {platform}. Verwende die native Syntax der Plattform. Strukturiere mit Mehrschicht-Komposition ([Vordergrund], [Mittelgrund], [Hintergrund]), dann [Licht & Farbe], [Technik], und am Ende Negative Prompt."
     },
     fields: [
+      {
+        id: "platform",
+        labelKey: "imagePlatform",
+        type: "pills",
+        options: [
+          { value: "Midjourney v7", labelKey: "platMidjourney" },
+          { value: "DALL-E 3+", labelKey: "platDalle" },
+          { value: "Flux 2 Pro", labelKey: "platFlux" },
+          { value: "Stable Diffusion 3.5", labelKey: "platSD" },
+          { value: "Adobe Firefly", labelKey: "platFirefly" },
+          { value: "Leonardo AI", labelKey: "platLeonardo" },
+          { value: "Ideogram 2.0", labelKey: "platIdeogram" },
+          { value: "Krea AI", labelKey: "platKrea" },
+          { value: "Imagen 3", labelKey: "platImagen" },
+          { value: "SenseNova U1", labelKey: "platSenseNova" }
+        ]
+      },
+      {
+        id: "camera",
+        labelKey: "imageCamera",
+        type: "pills",
+        options: [
+          { value: "Canon EOS R5, 85mm f/1.4", labelKey: "camCanon85" },
+          { value: "Sony A7R V, 35mm f/1.4", labelKey: "camSony35" },
+          { value: "Nikon Z9, 50mm f/1.2", labelKey: "camNikon50" },
+          { value: "Hasselblad X2D, 90mm f/2.5", labelKey: "camHasselblad" },
+          { value: "iPhone 16 Pro", labelKey: "camIphone" },
+          { value: "ARRI Alexa LF, 85mm f/2.8", labelKey: "camArri" }
+        ]
+      },
       {
         id: "style",
         labelKey: "imageStyle",
         type: "pills",
         options: [
           { value: "photorealistic", labelKey: "stylePhotorealistic" },
+          { value: "cinematic editorial", labelKey: "styleCinematic" },
+          { value: "fashion editorial", labelKey: "styleFashion" },
           { value: "digital art", labelKey: "styleDigitalArt" },
           { value: "oil painting", labelKey: "styleOilPainting" },
           { value: "watercolor", labelKey: "styleWatercolor" },
@@ -157,12 +189,13 @@ const PROMPT_TEMPLATES = {
         labelKey: "imageLighting",
         type: "pills",
         options: [
-          { value: "natural light", labelKey: "lightNatural" },
+          { value: "natural light 5600K", labelKey: "lightNatural" },
           { value: "studio lighting", labelKey: "lightStudio" },
-          { value: "golden hour", labelKey: "lightGoldenHour" },
+          { value: "golden hour 3200K", labelKey: "lightGoldenHour" },
           { value: "dramatic chiaroscuro", labelKey: "lightDramatic" },
-          { value: "soft diffused", labelKey: "lightSoft" },
-          { value: "neon/RGB", labelKey: "lightNeon" }
+          { value: "soft diffused high-key", labelKey: "lightSoft" },
+          { value: "neon/RGB cyberpunk", labelKey: "lightNeon" },
+          { value: "cinematic rim light", labelKey: "lightRim" }
         ]
       },
       {
@@ -182,7 +215,7 @@ const PROMPT_TEMPLATES = {
         labelKey: "imageAngle",
         type: "pills",
         options: [
-          { value: "low angle", labelKey: "angleLow" },
+          { value: "low angle from ground level", labelKey: "angleLow" },
           { value: "eye level", labelKey: "angleEye" },
           { value: "high angle", labelKey: "angleHigh" },
           { value: "bird's eye view", labelKey: "angleBird" },
@@ -210,20 +243,27 @@ const PROMPT_TEMPLATES = {
           { value: "centered composition", labelKey: "compCentered" },
           { value: "leading lines", labelKey: "compLeadingLines" },
           { value: "symmetry", labelKey: "compSymmetry" },
-          { value: "negative space", labelKey: "compNegativeSpace" }
+          { value: "negative space", labelKey: "compNegativeSpace" },
+          { value: "three-layer depth", labelKey: "compThreeLayer" }
         ]
       },
       {
         id: "mood",
         labelKey: "imageMood",
         type: "text",
-        placeholder: "e.g., dramatic, peaceful, mysterious, vibrant"
+        placeholder: "e.g., dramatic, peaceful, mysterious, vibrant, cinematic"
+      },
+      {
+        id: "negativePrompt",
+        labelKey: "imageNegative",
+        type: "text",
+        placeholder: "e.g., flat lighting, distorted faces, blurry, low quality"
       },
       {
         id: "aspect",
         labelKey: "imageAspect",
         type: "pills",
-        options: ["1:1", "16:9", "9:16", "4:3", "3:2"]
+        options: ["1:1", "16:9", "9:16", "4:3", "3:2", "2:3"]
       }
     ]
   },
@@ -373,6 +413,156 @@ const PROMPT_TEMPLATES = {
     ]
   },
 
+  video: {
+    role: {
+      en: "You are a professional cinematographer and video production expert with deep knowledge of camera movement, visual storytelling, pacing, and AI video generation. You create highly detailed, technically precise video generation prompts optimized for {videoPlatform}.",
+      ru: "Ты — профессиональный кинематографист и эксперт по видеопроизводству с глубокими знаниями движения камеры, визуального сторителлинга, ритма и AI-генерации видео. Ты создаёшь высокодетализированные, технически точные промпты для генерации видео, оптимизированные для {videoPlatform}.",
+      de: "Du bist ein professioneller Kameramann und Videoproduktionsexperte mit tiefem Wissen über Kamerabewegung, visuelles Storytelling, Pacing und AI-Videogenerierung. Du erstellst hochdetaillierte, technisch präzise Videogenerierungs-Prompts, optimiert für {videoPlatform}."
+    },
+    task: {
+      en: "Create a professional video generation prompt for {videoPlatform}: {description}",
+      ru: "Создай профессиональный промпт для генерации видео в {videoPlatform}: {description}",
+      de: "Erstelle einen professionellen Videogenerierungs-Prompt für {videoPlatform}: {description}"
+    },
+    context: {
+      en: "Additional context: {context}",
+      ru: "Дополнительный контекст: {context}",
+      de: "Zusätzlicher Kontext: {context}"
+    },
+    details: {
+      en: "Target platform: {videoPlatform}\nVideo type: {videoType}\nDuration: {duration}\nAspect ratio: {videoAspect}\n\nScene description:\n- Setting/Environment: describe the location, time of day, weather\n- Subject: main character/object, their appearance, clothing, expression\n- Action/Motion: what happens in the scene, character movement\n\nCinematography:\n- Camera movement: {cameraMove}\n- Camera angle: {videoAngle}\n- Shot type: {shotType}\n- Pacing/Speed: {pacing}\n\nVisual specifications:\n- Lighting: {videoLighting}\n- Color grading and mood: {videoMood}\n- Textures and atmosphere\n- Depth of field and focus transitions\n- VFX elements if any (particles, lens flares, volumetric light)\n\nAudio cues (if supported): ambient sound, music style, voiceover tone\n\nQuality: cinematic, 4K, high detail, smooth motion, professional production value",
+      ru: "Целевая платформа: {videoPlatform}\nТип видео: {videoType}\nДлительность: {duration}\nСоотношение сторон: {videoAspect}\n\nОписание сцены:\n- Место/Окружение: опиши локацию, время суток, погоду\n- Субъект: главный персонаж/объект, внешность, одежда, выражение\n- Действие/Движение: что происходит в сцене, движение персонажа\n\nКинематография:\n- Движение камеры: {cameraMove}\n- Ракурс камеры: {videoAngle}\n- Тип кадра: {shotType}\n- Темп/Скорость: {pacing}\n\nВизуальные параметры:\n- Освещение: {videoLighting}\n- Цветокоррекция и настроение: {videoMood}\n- Текстуры и атмосфера\n- Глубина резкости и переходы фокуса\n- VFX-элементы при необходимости (частицы, блики, объёмный свет)\n\nЗвуковые подсказки (если поддерживается): эмбиент, стиль музыки, тон голоса\n\nКачество: кинематографичное, 4K, высокая детализация, плавное движение, профессиональный уровень",
+      de: "Zielplattform: {videoPlatform}\nVideotyp: {videoType}\nDauer: {duration}\nSeitenverhältnis: {videoAspect}\n\nSzenenbeschreibung:\n- Ort/Umgebung: Beschreibe den Standort, Tageszeit, Wetter\n- Subjekt: Hauptfigur/-objekt, Aussehen, Kleidung, Ausdruck\n- Aktion/Bewegung: was in der Szene passiert, Figurenbewegung\n\nKinematografie:\n- Kamerabewegung: {cameraMove}\n- Kamerawinkel: {videoAngle}\n- Einstellungsgröße: {shotType}\n- Tempo/Geschwindigkeit: {pacing}\n\nVisuelle Spezifikationen:\n- Beleuchtung: {videoLighting}\n- Farbkorrektur und Stimmung: {videoMood}\n- Texturen und Atmosphäre\n- Schärfentiefe und Fokusübergänge\n- VFX-Elemente (Partikel, Lens Flares, volumetrisches Licht)\n\nAudio-Hinweise (falls unterstützt): Ambient-Sound, Musikstil, Voiceover-Ton\n\nQualität: cineastisch, 4K, hohe Detailtreue, flüssige Bewegung, professionelle Produktionsqualität"
+    },
+    format: {
+      en: "Output: A single, ready-to-use video generation prompt optimized for {videoPlatform}. Describe the complete scene in vivid detail — environment, subject, action, camera work, lighting, mood, and pacing. Write as one continuous, flowing prompt that reads like a film director's shot description.",
+      ru: "Вывод: Один готовый промпт для генерации видео, оптимизированный для {videoPlatform}. Опиши полную сцену в ярких деталях — окружение, субъект, действие, работу камеры, свет, настроение и темп. Пиши как одно непрерывное, плавное описание, как режиссёрская раскадровка.",
+      de: "Ausgabe: Ein einzelner, gebrauchsfertiger Videogenerierungs-Prompt, optimiert für {videoPlatform}. Beschreibe die komplette Szene in lebhaften Details — Umgebung, Subjekt, Aktion, Kameraarbeit, Beleuchtung, Stimmung und Pacing. Schreibe als eine zusammenhängende Beschreibung wie eine Regieanweisung."
+    },
+    fields: [
+      {
+        id: "videoPlatform",
+        labelKey: "videoPlatform",
+        type: "pills",
+        options: [
+          { value: "Sora", labelKey: "vidPlatSora" },
+          { value: "Veo 3", labelKey: "vidPlatVeo" },
+          { value: "Kling 3.0", labelKey: "vidPlatKling" },
+          { value: "Runway Gen-4", labelKey: "vidPlatRunway" },
+          { value: "Pika 2.1", labelKey: "vidPlatPika" },
+          { value: "Luma Dream Machine", labelKey: "vidPlatLuma" },
+          { value: "Seedance 2.0", labelKey: "vidPlatSeedance" },
+          { value: "Hailuo AI", labelKey: "vidPlatHailuo" },
+          { value: "HeyGen", labelKey: "vidPlatHeyGen" },
+          { value: "Synthesia", labelKey: "vidPlatSynthesia" }
+        ]
+      },
+      {
+        id: "videoType",
+        labelKey: "videoType",
+        type: "pills",
+        options: [
+          { value: "cinematic", labelKey: "vidTypeCinematic" },
+          { value: "commercial/ad", labelKey: "vidTypeCommercial" },
+          { value: "music video", labelKey: "vidTypeMusicVideo" },
+          { value: "documentary", labelKey: "vidTypeDocumentary" },
+          { value: "animation", labelKey: "vidTypeAnimation" },
+          { value: "social media (Reels/TikTok)", labelKey: "vidTypeSocial" },
+          { value: "product showcase", labelKey: "vidTypeProduct" },
+          { value: "tutorial/explainer", labelKey: "vidTypeTutorial" }
+        ]
+      },
+      {
+        id: "cameraMove",
+        labelKey: "videoCameraMove",
+        type: "pills",
+        options: [
+          { value: "static tripod", labelKey: "camMoveStatic" },
+          { value: "slow dolly in", labelKey: "camMoveDolly" },
+          { value: "tracking/follow", labelKey: "camMoveTracking" },
+          { value: "orbit/360°", labelKey: "camMoveOrbit" },
+          { value: "crane up/down", labelKey: "camMoveCrane" },
+          { value: "handheld", labelKey: "camMoveHandheld" },
+          { value: "drone aerial", labelKey: "camMoveDrone" },
+          { value: "zoom in/out", labelKey: "camMoveZoom" }
+        ]
+      },
+      {
+        id: "videoAngle",
+        labelKey: "videoAngle",
+        type: "pills",
+        options: [
+          { value: "low angle", labelKey: "angleLow" },
+          { value: "eye level", labelKey: "angleEye" },
+          { value: "high angle", labelKey: "angleHigh" },
+          { value: "bird's eye", labelKey: "angleBird" },
+          { value: "worm's eye", labelKey: "angleWorm" }
+        ]
+      },
+      {
+        id: "shotType",
+        labelKey: "videoShotType",
+        type: "pills",
+        options: [
+          { value: "extreme close-up", labelKey: "shotECU" },
+          { value: "close-up", labelKey: "shotCU" },
+          { value: "medium shot", labelKey: "shotMedium" },
+          { value: "full body", labelKey: "shotFull" },
+          { value: "wide/establishing", labelKey: "shotWide" }
+        ]
+      },
+      {
+        id: "videoLighting",
+        labelKey: "videoLighting",
+        type: "pills",
+        options: [
+          { value: "natural daylight", labelKey: "vidLightDay" },
+          { value: "golden hour", labelKey: "vidLightGolden" },
+          { value: "blue hour/twilight", labelKey: "vidLightBlue" },
+          { value: "studio three-point", labelKey: "vidLightStudio" },
+          { value: "neon city lights", labelKey: "vidLightNeon" },
+          { value: "candlelight/warm", labelKey: "vidLightCandle" },
+          { value: "volumetric fog", labelKey: "vidLightFog" }
+        ]
+      },
+      {
+        id: "pacing",
+        labelKey: "videoPacing",
+        type: "pills",
+        options: [
+          { value: "slow motion", labelKey: "paceSlow" },
+          { value: "normal speed", labelKey: "paceNormal" },
+          { value: "fast/dynamic", labelKey: "paceFast" },
+          { value: "time-lapse", labelKey: "paceTimelapse" },
+          { value: "hyperlapse", labelKey: "paceHyperlapse" }
+        ]
+      },
+      {
+        id: "videoMood",
+        labelKey: "videoMood",
+        type: "text",
+        placeholder: "e.g., epic, dreamy, intense, nostalgic, futuristic"
+      },
+      {
+        id: "duration",
+        labelKey: "videoDuration",
+        type: "pills",
+        options: [
+          { value: "3-5 seconds", labelKey: "dur5s" },
+          { value: "10 seconds", labelKey: "dur10s" },
+          { value: "15-30 seconds", labelKey: "dur30s" },
+          { value: "60 seconds", labelKey: "dur60s" }
+        ]
+      },
+      {
+        id: "videoAspect",
+        labelKey: "videoAspect",
+        type: "pills",
+        options: ["16:9", "9:16", "1:1", "4:3", "21:9"]
+      }
+    ]
+  },
+
   chat: {
     role: {
       en: "You are a helpful, knowledgeable assistant ready to have a productive conversation.",
@@ -419,14 +609,14 @@ const PROMPT_TEMPLATES = {
       de: "Nische/Branche: {niche}\nZusätzlicher Kontext: {context}"
     },
     details: {
-      en: "Pin style: {pinStyle}\nTarget audience: {audience}\nSeason/Trend: {season}",
-      ru: "Стиль пина: {pinStyle}\nЦелевая аудитория: {audience}\nСезон/Тренд: {season}",
-      de: "Pin-Stil: {pinStyle}\nZielgruppe: {audience}\nSaison/Trend: {season}"
+      en: "Pin style: {pinStyle}\nTarget audience: {audience}\nSeason/Trend: {season}\nImage generation: {pinImageGen}",
+      ru: "Стиль пина: {pinStyle}\nЦелевая аудитория: {audience}\nСезон/Тренд: {season}\nГенерация изображения: {pinImageGen}",
+      de: "Pin-Stil: {pinStyle}\nZielgruppe: {audience}\nSaison/Trend: {season}\nBildgenerierung: {pinImageGen}"
     },
     format: {
-      en: "Format your response with clear sections: TOPIC ANALYSIS, SEO TITLE, PIN DESCRIPTION (with hashtags), and IMAGE PROMPT. Make each section immediately actionable — the user should be able to copy-paste each part directly.",
-      ru: "Оформи ответ с чёткими секциями: АНАЛИЗ ТЕМЫ, SEO ЗАГОЛОВОК, ОПИСАНИЕ ПИНА (с хэштегами) и ПРОМПТ ДЛЯ ИЗОБРАЖЕНИЯ. Каждая секция должна быть готова к использованию — пользователь должен мочь скопировать и вставить каждую часть напрямую.",
-      de: "Formatiere die Antwort mit klaren Abschnitten: THEMENANALYSE, SEO-TITEL, PIN-BESCHREIBUNG (mit Hashtags) und BILD-PROMPT. Jeder Abschnitt soll sofort nutzbar sein — zum direkten Kopieren."
+      en: "Format your response with clear sections: TOPIC ANALYSIS, SEO TITLE, PIN DESCRIPTION (with hashtags), and IMAGE PROMPT. Make each section immediately actionable — the user should be able to copy-paste each part directly. If Ideogram 2.0 is selected, optimize the IMAGE PROMPT specifically for Ideogram — include precise text overlay instructions with exact wording, font style, placement coordinates, and text hierarchy. Ideogram excels at rendering text on images.",
+      ru: "Оформи ответ с чёткими секциями: АНАЛИЗ ТЕМЫ, SEO ЗАГОЛОВОК, ОПИСАНИЕ ПИНА (с хэштегами) и ПРОМПТ ДЛЯ ИЗОБРАЖЕНИЯ. Каждая секция должна быть готова к использованию. Если выбран Ideogram 2.0, оптимизируй ПРОМПТ ДЛЯ ИЗОБРАЖЕНИЯ специально для Ideogram — включи точные инструкции по наложению текста: точный текст, стиль шрифта, расположение и иерархию текста. Ideogram отлично рендерит текст на изображениях.",
+      de: "Formatiere die Antwort mit klaren Abschnitten: THEMENANALYSE, SEO-TITEL, PIN-BESCHREIBUNG (mit Hashtags) und BILD-PROMPT. Jeder Abschnitt soll sofort nutzbar sein. Wenn Ideogram 2.0 ausgewählt ist, optimiere den BILD-PROMPT speziell für Ideogram — füge präzise Text-Overlay-Anweisungen mit genauem Wortlaut, Schriftstil, Platzierung und Texthierarchie ein. Ideogram eignet sich hervorragend zum Rendern von Text auf Bildern."
     },
     fields: [
       {
@@ -446,6 +636,18 @@ const PROMPT_TEMPLATES = {
           { value: "quote/text overlay", labelKey: "pinStyleQuote" },
           { value: "product showcase", labelKey: "pinStyleProduct" },
           { value: "before/after", labelKey: "pinStyleBeforeAfter" }
+        ]
+      },
+      {
+        id: "pinImageGen",
+        labelKey: "pinImageGen",
+        type: "pills",
+        options: [
+          { value: "Ideogram 2.0 (best for text on images)", labelKey: "pinIdeogram" },
+          { value: "Midjourney v7", labelKey: "platMidjourney" },
+          { value: "DALL-E 3+", labelKey: "platDalle" },
+          { value: "Flux 2 Pro", labelKey: "platFlux" },
+          { value: "any platform", labelKey: "pinAnyPlatform" }
         ]
       },
       {

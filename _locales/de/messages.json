@@ -469,5 +469,268 @@
   },
   "updateDownload": {
     "message": "Update herunterladen →"
+  },
+
+  "catVideo": {
+    "message": "Video"
+  },
+  "catPinterest": {
+    "message": "Pinterest"
+  },
+
+  "imagePlatform": {
+    "message": "Zielplattform"
+  },
+  "platMidjourney": {
+    "message": "Midjourney v7"
+  },
+  "platDalle": {
+    "message": "DALL-E 3+"
+  },
+  "platFlux": {
+    "message": "Flux 2 Pro"
+  },
+  "platSD": {
+    "message": "Stable Diffusion 3.5"
+  },
+  "platFirefly": {
+    "message": "Adobe Firefly"
+  },
+  "platLeonardo": {
+    "message": "Leonardo AI"
+  },
+  "platIdeogram": {
+    "message": "Ideogram 2.0"
+  },
+  "platKrea": {
+    "message": "Krea AI"
+  },
+  "platImagen": {
+    "message": "Imagen 3"
+  },
+  "platSenseNova": {
+    "message": "SenseNova U1"
+  },
+
+  "imageCamera": {
+    "message": "Kamera / Objektiv"
+  },
+  "camCanon85": {
+    "message": "Canon EOS R5, 85mm f/1.4"
+  },
+  "camSony35": {
+    "message": "Sony A7R V, 35mm f/1.4"
+  },
+  "camNikon50": {
+    "message": "Nikon Z9, 50mm f/1.2"
+  },
+  "camHasselblad": {
+    "message": "Hasselblad X2D, 90mm"
+  },
+  "camIphone": {
+    "message": "iPhone 16 Pro"
+  },
+  "camArri": {
+    "message": "ARRI Alexa LF, 85mm"
+  },
+  "styleCinematic": {
+    "message": "Cineastisch Editorial"
+  },
+  "styleFashion": {
+    "message": "Fashion Editorial"
+  },
+  "lightRim": {
+    "message": "Cineastisches Gegenlicht"
+  },
+  "compThreeLayer": {
+    "message": "Dreischichtige Tiefe"
+  },
+  "imageNegative": {
+    "message": "Negative Prompt"
+  },
+
+  "videoPlatform": {
+    "message": "Zielplattform"
+  },
+  "vidPlatSora": {
+    "message": "Sora"
+  },
+  "vidPlatVeo": {
+    "message": "Veo 3"
+  },
+  "vidPlatKling": {
+    "message": "Kling 3.0"
+  },
+  "vidPlatRunway": {
+    "message": "Runway Gen-4"
+  },
+  "vidPlatPika": {
+    "message": "Pika 2.1"
+  },
+  "vidPlatLuma": {
+    "message": "Luma Dream Machine"
+  },
+  "vidPlatSeedance": {
+    "message": "Seedance 2.0"
+  },
+  "vidPlatHailuo": {
+    "message": "Hailuo AI"
+  },
+  "vidPlatHeyGen": {
+    "message": "HeyGen"
+  },
+  "vidPlatSynthesia": {
+    "message": "Synthesia"
+  },
+  "videoType": {
+    "message": "Videotyp"
+  },
+  "vidTypeCinematic": {
+    "message": "Cineastisch"
+  },
+  "vidTypeCommercial": {
+    "message": "Werbung / Spot"
+  },
+  "vidTypeMusicVideo": {
+    "message": "Musikvideo"
+  },
+  "vidTypeDocumentary": {
+    "message": "Dokumentation"
+  },
+  "vidTypeAnimation": {
+    "message": "Animation"
+  },
+  "vidTypeSocial": {
+    "message": "Social Media (Reels/TikTok)"
+  },
+  "vidTypeProduct": {
+    "message": "Produktpräsentation"
+  },
+  "vidTypeTutorial": {
+    "message": "Tutorial / Erklärung"
+  },
+  "videoCameraMove": {
+    "message": "Kamerabewegung"
+  },
+  "camMoveStatic": {
+    "message": "Statisch (Stativ)"
+  },
+  "camMoveDolly": {
+    "message": "Langsame Kamerafahrt"
+  },
+  "camMoveTracking": {
+    "message": "Verfolgung"
+  },
+  "camMoveOrbit": {
+    "message": "Orbit / 360°"
+  },
+  "camMoveCrane": {
+    "message": "Kran hoch/runter"
+  },
+  "camMoveHandheld": {
+    "message": "Handkamera"
+  },
+  "camMoveDrone": {
+    "message": "Drohne (Luftaufnahme)"
+  },
+  "camMoveZoom": {
+    "message": "Zoom rein/raus"
+  },
+  "videoAngle": {
+    "message": "Kamerawinkel"
+  },
+  "angleWorm": {
+    "message": "Froschperspektive"
+  },
+  "videoShotType": {
+    "message": "Einstellungsgröße"
+  },
+  "shotECU": {
+    "message": "Extreme Nahaufnahme"
+  },
+  "shotCU": {
+    "message": "Nahaufnahme"
+  },
+  "shotMedium": {
+    "message": "Halbnahe"
+  },
+  "shotFull": {
+    "message": "Ganzkörper"
+  },
+  "shotWide": {
+    "message": "Totale / Panorama"
+  },
+  "videoLighting": {
+    "message": "Beleuchtung"
+  },
+  "vidLightDay": {
+    "message": "Natürliches Tageslicht"
+  },
+  "vidLightGolden": {
+    "message": "Goldene Stunde"
+  },
+  "vidLightBlue": {
+    "message": "Blaue Stunde / Dämmerung"
+  },
+  "vidLightStudio": {
+    "message": "Studio Dreipunkt"
+  },
+  "vidLightNeon": {
+    "message": "Neon-Stadtlichter"
+  },
+  "vidLightCandle": {
+    "message": "Kerzenlicht / Warm"
+  },
+  "vidLightFog": {
+    "message": "Volumetrischer Nebel"
+  },
+  "videoPacing": {
+    "message": "Tempo / Geschwindigkeit"
+  },
+  "paceSlow": {
+    "message": "Zeitlupe"
+  },
+  "paceNormal": {
+    "message": "Normale Geschwindigkeit"
+  },
+  "paceFast": {
+    "message": "Schnell / Dynamisch"
+  },
+  "paceTimelapse": {
+    "message": "Zeitraffer"
+  },
+  "paceHyperlapse": {
+    "message": "Hyperlapse"
+  },
+  "videoMood": {
+    "message": "Stimmung / Farbkorrektur"
+  },
+  "videoDuration": {
+    "message": "Dauer"
+  },
+  "dur5s": {
+    "message": "3-5 Sekunden"
+  },
+  "dur10s": {
+    "message": "10 Sekunden"
+  },
+  "dur30s": {
+    "message": "15-30 Sekunden"
+  },
+  "dur60s": {
+    "message": "60 Sekunden"
+  },
+  "videoAspect": {
+    "message": "Seitenverhältnis"
+  },
+
+  "pinImageGen": {
+    "message": "Bildgenerator"
+  },
+  "pinIdeogram": {
+    "message": "Ideogram 2.0 (bester für Text)"
+  },
+  "pinAnyPlatform": {
+    "message": "Jede Plattform"
   }
 }

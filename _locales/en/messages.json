@@ -469,5 +469,268 @@
   },
   "updateDownload": {
     "message": "Download update →"
+  },
+
+  "catVideo": {
+    "message": "Video"
+  },
+  "catPinterest": {
+    "message": "Pinterest"
+  },
+
+  "imagePlatform": {
+    "message": "Target Platform"
+  },
+  "platMidjourney": {
+    "message": "Midjourney v7"
+  },
+  "platDalle": {
+    "message": "DALL-E 3+"
+  },
+  "platFlux": {
+    "message": "Flux 2 Pro"
+  },
+  "platSD": {
+    "message": "Stable Diffusion 3.5"
+  },
+  "platFirefly": {
+    "message": "Adobe Firefly"
+  },
+  "platLeonardo": {
+    "message": "Leonardo AI"
+  },
+  "platIdeogram": {
+    "message": "Ideogram 2.0"
+  },
+  "platKrea": {
+    "message": "Krea AI"
+  },
+  "platImagen": {
+    "message": "Imagen 3"
+  },
+  "platSenseNova": {
+    "message": "SenseNova U1"
+  },
+
+  "imageCamera": {
+    "message": "Camera / Lens"
+  },
+  "camCanon85": {
+    "message": "Canon EOS R5, 85mm f/1.4"
+  },
+  "camSony35": {
+    "message": "Sony A7R V, 35mm f/1.4"
+  },
+  "camNikon50": {
+    "message": "Nikon Z9, 50mm f/1.2"
+  },
+  "camHasselblad": {
+    "message": "Hasselblad X2D, 90mm"
+  },
+  "camIphone": {
+    "message": "iPhone 16 Pro"
+  },
+  "camArri": {
+    "message": "ARRI Alexa LF, 85mm"
+  },
+  "styleCinematic": {
+    "message": "Cinematic Editorial"
+  },
+  "styleFashion": {
+    "message": "Fashion Editorial"
+  },
+  "lightRim": {
+    "message": "Cinematic Rim Light"
+  },
+  "compThreeLayer": {
+    "message": "Three-layer Depth"
+  },
+  "imageNegative": {
+    "message": "Negative Prompt"
+  },
+
+  "videoPlatform": {
+    "message": "Target Platform"
+  },
+  "vidPlatSora": {
+    "message": "Sora"
+  },
+  "vidPlatVeo": {
+    "message": "Veo 3"
+  },
+  "vidPlatKling": {
+    "message": "Kling 3.0"
+  },
+  "vidPlatRunway": {
+    "message": "Runway Gen-4"
+  },
+  "vidPlatPika": {
+    "message": "Pika 2.1"
+  },
+  "vidPlatLuma": {
+    "message": "Luma Dream Machine"
+  },
+  "vidPlatSeedance": {
+    "message": "Seedance 2.0"
+  },
+  "vidPlatHailuo": {
+    "message": "Hailuo AI"
+  },
+  "vidPlatHeyGen": {
+    "message": "HeyGen"
+  },
+  "vidPlatSynthesia": {
+    "message": "Synthesia"
+  },
+  "videoType": {
+    "message": "Video Type"
+  },
+  "vidTypeCinematic": {
+    "message": "Cinematic"
+  },
+  "vidTypeCommercial": {
+    "message": "Commercial / Ad"
+  },
+  "vidTypeMusicVideo": {
+    "message": "Music Video"
+  },
+  "vidTypeDocumentary": {
+    "message": "Documentary"
+  },
+  "vidTypeAnimation": {
+    "message": "Animation"
+  },
+  "vidTypeSocial": {
+    "message": "Social Media (Reels/TikTok)"
+  },
+  "vidTypeProduct": {
+    "message": "Product Showcase"
+  },
+  "vidTypeTutorial": {
+    "message": "Tutorial / Explainer"
+  },
+  "videoCameraMove": {
+    "message": "Camera Movement"
+  },
+  "camMoveStatic": {
+    "message": "Static Tripod"
+  },
+  "camMoveDolly": {
+    "message": "Slow Dolly In"
+  },
+  "camMoveTracking": {
+    "message": "Tracking / Follow"
+  },
+  "camMoveOrbit": {
+    "message": "Orbit / 360°"
+  },
+  "camMoveCrane": {
+    "message": "Crane Up/Down"
+  },
+  "camMoveHandheld": {
+    "message": "Handheld"
+  },
+  "camMoveDrone": {
+    "message": "Drone Aerial"
+  },
+  "camMoveZoom": {
+    "message": "Zoom In/Out"
+  },
+  "videoAngle": {
+    "message": "Camera Angle"
+  },
+  "angleWorm": {
+    "message": "Worm's Eye"
+  },
+  "videoShotType": {
+    "message": "Shot Type"
+  },
+  "shotECU": {
+    "message": "Extreme Close-up"
+  },
+  "shotCU": {
+    "message": "Close-up"
+  },
+  "shotMedium": {
+    "message": "Medium Shot"
+  },
+  "shotFull": {
+    "message": "Full Body"
+  },
+  "shotWide": {
+    "message": "Wide / Establishing"
+  },
+  "videoLighting": {
+    "message": "Lighting"
+  },
+  "vidLightDay": {
+    "message": "Natural Daylight"
+  },
+  "vidLightGolden": {
+    "message": "Golden Hour"
+  },
+  "vidLightBlue": {
+    "message": "Blue Hour / Twilight"
+  },
+  "vidLightStudio": {
+    "message": "Studio Three-point"
+  },
+  "vidLightNeon": {
+    "message": "Neon City Lights"
+  },
+  "vidLightCandle": {
+    "message": "Candlelight / Warm"
+  },
+  "vidLightFog": {
+    "message": "Volumetric Fog"
+  },
+  "videoPacing": {
+    "message": "Pacing / Speed"
+  },
+  "paceSlow": {
+    "message": "Slow Motion"
+  },
+  "paceNormal": {
+    "message": "Normal Speed"
+  },
+  "paceFast": {
+    "message": "Fast / Dynamic"
+  },
+  "paceTimelapse": {
+    "message": "Time-lapse"
+  },
+  "paceHyperlapse": {
+    "message": "Hyperlapse"
+  },
+  "videoMood": {
+    "message": "Mood / Color Grading"
+  },
+  "videoDuration": {
+    "message": "Duration"
+  },
+  "dur5s": {
+    "message": "3-5 seconds"
+  },
+  "dur10s": {
+    "message": "10 seconds"
+  },
+  "dur30s": {
+    "message": "15-30 seconds"
+  },
+  "dur60s": {
+    "message": "60 seconds"
+  },
+  "videoAspect": {
+    "message": "Aspect Ratio"
+  },
+
+  "pinImageGen": {
+    "message": "Image Generator"
+  },
+  "pinIdeogram": {
+    "message": "Ideogram 2.0 (best for text)"
+  },
+  "pinAnyPlatform": {
+    "message": "Any Platform"
   }
 }
