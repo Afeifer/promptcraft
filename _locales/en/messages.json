@@ -23,6 +23,33 @@
   "step2Placeholder": {
     "message": "Describe what you need in your own words..."
   },
+  "step2PlaceholderCode": {
+    "message": "Describe what code you need: function, app, script, bug fix..."
+  },
+  "step2PlaceholderText": {
+    "message": "What text do you need? Article, blog post, email, social media post..."
+  },
+  "step2PlaceholderImage": {
+    "message": "Describe the image you want to create: subject, scene, style..."
+  },
+  "step2PlaceholderVideo": {
+    "message": "Describe the video scene: what happens, who is in the frame, where..."
+  },
+  "step2PlaceholderAnalysis": {
+    "message": "What do you need to analyze? Data, market, competitors, trends..."
+  },
+  "step2PlaceholderTranslation": {
+    "message": "Paste the text you want to translate..."
+  },
+  "step2PlaceholderLearning": {
+    "message": "What topic do you want to learn? Programming, marketing, design..."
+  },
+  "step2PlaceholderChat": {
+    "message": "What would you like to discuss or ask about?"
+  },
+  "step2PlaceholderPinterest": {
+    "message": "What is your pin about? Topic, product, idea..."
+  },
   "step4Placeholder": {
     "message": "Is there anything important the AI should know? (optional)"
   },

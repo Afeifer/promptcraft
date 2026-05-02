@@ -174,6 +174,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
+  // Step 2 placeholder per category
+  const step2Placeholders = {
+    code: 'step2PlaceholderCode',
+    text: 'step2PlaceholderText',
+    image: 'step2PlaceholderImage',
+    video: 'step2PlaceholderVideo',
+    analysis: 'step2PlaceholderAnalysis',
+    translation: 'step2PlaceholderTranslation',
+    learning: 'step2PlaceholderLearning',
+    chat: 'step2PlaceholderChat',
+    pinterest: 'step2PlaceholderPinterest',
+    other: 'step2Placeholder'
+  };
+
   // Step 1: Category selection
   document.querySelectorAll('.category-card').forEach(card => {
     card.addEventListener('click', () => {
@@ -181,6 +195,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       card.classList.add('selected');
       selectedCategory = card.dataset.category;
       detailValues = {};
+
+      const textarea = document.getElementById('task-description');
+      const placeholderKey = step2Placeholders[selectedCategory] || 'step2Placeholder';
+      textarea.placeholder = msg(placeholderKey);
+
       setTimeout(() => goToStep(2), 200);
     });
   });

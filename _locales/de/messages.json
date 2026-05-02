@@ -23,6 +23,33 @@
   "step2Placeholder": {
     "message": "Beschreiben Sie in eigenen Worten, was Sie brauchen..."
   },
+  "step2PlaceholderCode": {
+    "message": "Beschreiben Sie den benötigten Code: Funktion, App, Skript, Bugfix..."
+  },
+  "step2PlaceholderText": {
+    "message": "Welchen Text brauchen Sie? Artikel, Blogpost, E-Mail, Social-Media-Post..."
+  },
+  "step2PlaceholderImage": {
+    "message": "Beschreiben Sie das Bild: Motiv, Szene, Stil..."
+  },
+  "step2PlaceholderVideo": {
+    "message": "Beschreiben Sie die Videoszene: Was passiert, wer ist im Bild, wo..."
+  },
+  "step2PlaceholderAnalysis": {
+    "message": "Was soll analysiert werden? Daten, Markt, Wettbewerber, Trends..."
+  },
+  "step2PlaceholderTranslation": {
+    "message": "Fügen Sie den Text zum Übersetzen ein..."
+  },
+  "step2PlaceholderLearning": {
+    "message": "Welches Thema möchten Sie lernen? Programmierung, Marketing, Design..."
+  },
+  "step2PlaceholderChat": {
+    "message": "Worüber möchten Sie sprechen oder fragen?"
+  },
+  "step2PlaceholderPinterest": {
+    "message": "Worum geht es in Ihrem Pin? Thema, Produkt, Idee..."
+  },
   "step4Placeholder": {
     "message": "Gibt es etwas Wichtiges, das die AI wissen sollte? (optional)"
   },

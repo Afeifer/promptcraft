@@ -23,6 +23,33 @@
   "step2Placeholder": {
     "message": "Опишите что вам нужно своими словами..."
   },
+  "step2PlaceholderCode": {
+    "message": "Опишите какой код нужен: функция, приложение, скрипт, исправление бага..."
+  },
+  "step2PlaceholderText": {
+    "message": "Какой текст нужен? Статья, пост, email, пост для соцсетей..."
+  },
+  "step2PlaceholderImage": {
+    "message": "Опишите изображение: объект, сцена, стиль..."
+  },
+  "step2PlaceholderVideo": {
+    "message": "Опишите сцену видео: что происходит, кто в кадре, где..."
+  },
+  "step2PlaceholderAnalysis": {
+    "message": "Что нужно проанализировать? Данные, рынок, конкуренты, тренды..."
+  },
+  "step2PlaceholderTranslation": {
+    "message": "Вставьте текст для перевода..."
+  },
+  "step2PlaceholderLearning": {
+    "message": "Какую тему хотите изучить? Программирование, маркетинг, дизайн..."
+  },
+  "step2PlaceholderChat": {
+    "message": "О чём хотите поговорить или спросить?"
+  },
+  "step2PlaceholderPinterest": {
+    "message": "О чём ваш пин? Тема, продукт, идея..."
+  },
   "step4Placeholder": {
     "message": "Есть что-то важное, что AI должен знать? (необязательно)"
   },
