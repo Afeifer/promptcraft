@@ -449,7 +449,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     div.addEventListener('click', () => {
       currentPrompt = item.prompt;
       currentPromptId = item.id;
+      selectedCategory = item.category;
+      document.getElementById('task-description').value = item.description || '';
       document.getElementById('generated-prompt').textContent = item.prompt;
+
+      const favBtn = document.getElementById('btn-favorite');
+      favBtn.classList.remove('favorited');
+
       showView('builder');
       goToStep(5);
     });
@@ -513,6 +519,32 @@ document.addEventListener('DOMContentLoaded', async () => {
     div.textContent = str;
     return div.innerHTML;
   }
+
+  // ==================== API Key Banner ====================
+
+  async function initApiKeyBanner() {
+    const banner = document.getElementById('api-key-banner');
+    if (!banner) return;
+
+    const settings = await storage.getSettings();
+
+    // Hide if API key is already set or banner was dismissed
+    const dismissed = await new Promise(resolve => {
+      chrome.storage.local.get('apiKeyBannerDismissed', (r) => resolve(r.apiKeyBannerDismissed));
+    });
+
+    if (settings.apiKey || dismissed) {
+      banner.style.display = 'none';
+      return;
+    }
+
+    document.getElementById('api-key-banner-dismiss').addEventListener('click', () => {
+      banner.style.display = 'none';
+      chrome.storage.local.set({ apiKeyBannerDismissed: true });
+    });
+  }
+
+  initApiKeyBanner();
 
   // Initialize
   goToStep(1);

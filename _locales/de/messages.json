@@ -253,5 +253,176 @@
   },
   "deleteConfirm": {
     "message": "Diesen Prompt löschen?"
+  },
+  "catPinterest": {
+    "message": "Pinterest"
+  },
+  "pinNiche": {
+    "message": "Nische / Branche"
+  },
+  "pinStyle": {
+    "message": "Pin-Stil"
+  },
+  "pinAudience": {
+    "message": "Zielgruppe"
+  },
+  "pinSeason": {
+    "message": "Saison / Trend"
+  },
+  "pinStyleLifestyle": {
+    "message": "Lifestyle-Foto"
+  },
+  "pinStyleInfographic": {
+    "message": "Infografik"
+  },
+  "pinStyleStepByStep": {
+    "message": "Schritt-für-Schritt"
+  },
+  "pinStyleQuote": {
+    "message": "Zitat / Text"
+  },
+  "pinStyleProduct": {
+    "message": "Produkt"
+  },
+  "pinStyleBeforeAfter": {
+    "message": "Vorher / Nachher"
+  },
+  "pinSeasonEvergreen": {
+    "message": "Zeitlos"
+  },
+  "pinSeasonSpring": {
+    "message": "Frühling"
+  },
+  "pinSeasonSummer": {
+    "message": "Sommer"
+  },
+  "pinSeasonAutumn": {
+    "message": "Herbst"
+  },
+  "pinSeasonWinter": {
+    "message": "Winter"
+  },
+  "pinSeasonHoliday": {
+    "message": "Feiertage"
+  },
+  "imageLighting": {
+    "message": "Beleuchtung"
+  },
+  "imageLightDir": {
+    "message": "Lichtrichtung"
+  },
+  "imageAngle": {
+    "message": "Kamerawinkel"
+  },
+  "imageFocal": {
+    "message": "Brennweite"
+  },
+  "imageComposition": {
+    "message": "Komposition"
+  },
+  "lightNatural": {
+    "message": "Natürlich"
+  },
+  "lightStudio": {
+    "message": "Studio"
+  },
+  "lightGoldenHour": {
+    "message": "Goldene Stunde"
+  },
+  "lightDramatic": {
+    "message": "Dramatisch"
+  },
+  "lightSoft": {
+    "message": "Weich / Diffus"
+  },
+  "lightNeon": {
+    "message": "Neon / RGB"
+  },
+  "lightDirFront": {
+    "message": "Frontal"
+  },
+  "lightDirSide": {
+    "message": "Seitlich"
+  },
+  "lightDirBack": {
+    "message": "Gegenlicht"
+  },
+  "lightDirTop": {
+    "message": "Von oben"
+  },
+  "lightDirRembrandt": {
+    "message": "Rembrandt"
+  },
+  "angleLow": {
+    "message": "Froschperspektive"
+  },
+  "angleEye": {
+    "message": "Augenhöhe"
+  },
+  "angleHigh": {
+    "message": "Obersicht"
+  },
+  "angleBird": {
+    "message": "Vogelperspektive"
+  },
+  "angleDutch": {
+    "message": "Holländischer Winkel"
+  },
+  "angleMacro": {
+    "message": "Makro"
+  },
+  "focalWide": {
+    "message": "Weitwinkel (14-35mm)"
+  },
+  "focalStandard": {
+    "message": "Standard (50mm)"
+  },
+  "focalPortrait": {
+    "message": "Porträt (85mm)"
+  },
+  "focalTele": {
+    "message": "Tele (200mm+)"
+  },
+  "compRuleOfThirds": {
+    "message": "Drittelregel"
+  },
+  "compCentered": {
+    "message": "Zentriert"
+  },
+  "compLeadingLines": {
+    "message": "Führungslinien"
+  },
+  "compSymmetry": {
+    "message": "Symmetrie"
+  },
+  "compNegativeSpace": {
+    "message": "Negativraum"
+  },
+  "apiKeyBannerTitle": {
+    "message": "Möchten Sie präzisere Prompts?"
+  },
+  "apiKeyBannerText": {
+    "message": "Fügen Sie einen kostenlosen Gemini API-Schlüssel in den Einstellungen hinzu, um AI-gestützte Prompt-Verbesserung freizuschalten — intelligenter, detaillierter und auf Ihre Bedürfnisse zugeschnitten."
+  },
+  "apiKeyBannerDismiss": {
+    "message": "Verstanden"
+  },
+  "settingsApiKeyTitle": {
+    "message": "So erhalten Sie einen kostenlosen API-Schlüssel:"
+  },
+  "settingsApiKeyStep1": {
+    "message": "1. Gehen Sie zu aistudio.google.com"
+  },
+  "settingsApiKeyStep2": {
+    "message": "2. Melden Sie sich mit Ihrem Google-Konto an"
+  },
+  "settingsApiKeyStep3": {
+    "message": "3. Klicken Sie auf \"Get API Key\" → \"Create API Key\""
+  },
+  "settingsApiKeyStep4": {
+    "message": "4. Kopieren Sie den Schlüssel und fügen Sie ihn unten ein"
+  },
+  "settingsApiKeyFree": {
+    "message": "Es ist völlig kostenlos — bis zu 1.500 Anfragen pro Tag!"
   }
 }

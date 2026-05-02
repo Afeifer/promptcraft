@@ -112,14 +112,14 @@ const PROMPT_TEMPLATES = {
 
   image: {
     role: {
-      en: "You are a creative AI art director who crafts detailed, evocative image generation prompts.",
-      ru: "Ты — креативный AI арт-директор, создающий детальные, образные промпты для генерации изображений.",
-      de: "Du bist ein kreativer AI Art Director, der detaillierte, aussagekräftige Bildgenerierungs-Prompts erstellt."
+      en: "You are a professional photographer and AI art director with expertise in lighting, composition, and visual storytelling. You craft highly detailed, technically precise image generation prompts.",
+      ru: "Ты — профессиональный фотограф и AI арт-директор с экспертизой в освещении, композиции и визуальном сторителлинге. Ты создаёшь высокодетализированные, технически точные промпты для генерации изображений.",
+      de: "Du bist ein professioneller Fotograf und AI Art Director mit Expertise in Beleuchtung, Komposition und visuellem Storytelling. Du erstellst hochdetaillierte, technisch präzise Bildgenerierungs-Prompts."
     },
     task: {
-      en: "Create a detailed image generation prompt for: {description}",
-      ru: "Создай детальный промпт для генерации изображения: {description}",
-      de: "Erstelle einen detaillierten Bildgenerierungs-Prompt für: {description}"
+      en: "Create a professional-grade image generation prompt for: {description}",
+      ru: "Создай промпт профессионального уровня для генерации изображения: {description}",
+      de: "Erstelle einen professionellen Bildgenerierungs-Prompt für: {description}"
     },
     context: {
       en: "Additional context: {context}",
@@ -127,14 +127,14 @@ const PROMPT_TEMPLATES = {
       de: "Zusätzlicher Kontext: {context}"
     },
     details: {
-      en: "Style: {style}\nMood/Atmosphere: {mood}\nAspect ratio: {aspect}\n\nInclude details about:\n- Lighting and color palette\n- Composition and perspective\n- Textures and materials\n- Environment and background",
-      ru: "Стиль: {style}\nНастроение/Атмосфера: {mood}\nСоотношение сторон: {aspect}\n\nВключи детали о:\n- Освещении и цветовой палитре\n- Композиции и перспективе\n- Текстурах и материалах\n- Окружении и фоне",
-      de: "Stil: {style}\nStimmung/Atmosphäre: {mood}\nSeitenverhältnis: {aspect}\n\nFüge Details hinzu über:\n- Beleuchtung und Farbpalette\n- Komposition und Perspektive\n- Texturen und Materialien\n- Umgebung und Hintergrund"
+      en: "Visual style: {style}\nMood/Atmosphere: {mood}\nAspect ratio: {aspect}\n\nPhotography specifications:\n- Lighting: {lighting}\n- Light direction: {lightDir}\n- Camera angle: {angle}\n- Focal length/Lens: {focal}\n- Composition: {composition}\n\nInclude in the prompt:\n- Precise color palette and color temperature\n- Depth of field and focus point\n- Textures, materials, and surface details\n- Environment, background, and atmosphere\n- Post-processing style (cinematic color grading, film grain, etc.)",
+      ru: "Визуальный стиль: {style}\nНастроение/Атмосфера: {mood}\nСоотношение сторон: {aspect}\n\nФотографические параметры:\n- Освещение: {lighting}\n- Направление света: {lightDir}\n- Ракурс камеры: {angle}\n- Фокусное расстояние/Объектив: {focal}\n- Композиция: {composition}\n\nВключи в промпт:\n- Точную цветовую палитру и цветовую температуру\n- Глубину резкости и точку фокуса\n- Текстуры, материалы и детали поверхностей\n- Окружение, фон и атмосферу\n- Стиль постобработки (кинематографическая цветокоррекция, зернистость плёнки и т.д.)",
+      de: "Visueller Stil: {style}\nStimmung/Atmosphäre: {mood}\nSeitenverhältnis: {aspect}\n\nFotografie-Spezifikationen:\n- Beleuchtung: {lighting}\n- Lichtrichtung: {lightDir}\n- Kamerawinkel: {angle}\n- Brennweite/Objektiv: {focal}\n- Komposition: {composition}\n\nFüge in den Prompt ein:\n- Präzise Farbpalette und Farbtemperatur\n- Schärfentiefe und Fokuspunkt\n- Texturen, Materialien und Oberflächendetails\n- Umgebung, Hintergrund und Atmosphäre\n- Nachbearbeitungsstil (cineastische Farbkorrektur, Filmkorn usw.)"
     },
     format: {
-      en: "Output: A single, detailed prompt ready to paste into Midjourney, DALL-E, or Stable Diffusion. Use comma-separated descriptors.",
-      ru: "Вывод: Один детальный промпт, готовый для вставки в Midjourney, DALL-E или Stable Diffusion. Используй дескрипторы через запятую.",
-      de: "Ausgabe: Ein einzelner, detaillierter Prompt, bereit zum Einfügen in Midjourney, DALL-E oder Stable Diffusion."
+      en: "Output: A single, professional prompt ready for Midjourney, DALL-E, or Stable Diffusion. Structure it as comma-separated descriptors, starting with subject, then style, lighting, camera settings, mood, and finishing with technical quality tags (8K, ultra-detailed, professional photography).",
+      ru: "Вывод: Один профессиональный промпт для Midjourney, DALL-E или Stable Diffusion. Структурируй как дескрипторы через запятую: сначала объект, затем стиль, освещение, настройки камеры, настроение, и в конце теги качества (8K, ultra-detailed, professional photography).",
+      de: "Ausgabe: Ein einzelner, professioneller Prompt für Midjourney, DALL-E oder Stable Diffusion. Strukturiere ihn als kommagetrennte Deskriptoren: Subjekt, Stil, Beleuchtung, Kameraeinstellungen, Stimmung, und abschließend Qualitäts-Tags (8K, ultra-detailed, professional photography)."
     },
     fields: [
       {
@@ -150,6 +150,67 @@ const PROMPT_TEMPLATES = {
           { value: "minimalist", labelKey: "styleMinimalist" },
           { value: "3D render", labelKey: "style3D" },
           { value: "sketch", labelKey: "styleSketch" }
+        ]
+      },
+      {
+        id: "lighting",
+        labelKey: "imageLighting",
+        type: "pills",
+        options: [
+          { value: "natural light", labelKey: "lightNatural" },
+          { value: "studio lighting", labelKey: "lightStudio" },
+          { value: "golden hour", labelKey: "lightGoldenHour" },
+          { value: "dramatic chiaroscuro", labelKey: "lightDramatic" },
+          { value: "soft diffused", labelKey: "lightSoft" },
+          { value: "neon/RGB", labelKey: "lightNeon" }
+        ]
+      },
+      {
+        id: "lightDir",
+        labelKey: "imageLightDir",
+        type: "pills",
+        options: [
+          { value: "front lighting", labelKey: "lightDirFront" },
+          { value: "side lighting", labelKey: "lightDirSide" },
+          { value: "backlighting", labelKey: "lightDirBack" },
+          { value: "top-down lighting", labelKey: "lightDirTop" },
+          { value: "Rembrandt lighting", labelKey: "lightDirRembrandt" }
+        ]
+      },
+      {
+        id: "angle",
+        labelKey: "imageAngle",
+        type: "pills",
+        options: [
+          { value: "low angle", labelKey: "angleLow" },
+          { value: "eye level", labelKey: "angleEye" },
+          { value: "high angle", labelKey: "angleHigh" },
+          { value: "bird's eye view", labelKey: "angleBird" },
+          { value: "dutch angle", labelKey: "angleDutch" },
+          { value: "macro close-up", labelKey: "angleMacro" }
+        ]
+      },
+      {
+        id: "focal",
+        labelKey: "imageFocal",
+        type: "pills",
+        options: [
+          { value: "wide angle 14-35mm", labelKey: "focalWide" },
+          { value: "standard 50mm", labelKey: "focalStandard" },
+          { value: "portrait 85mm", labelKey: "focalPortrait" },
+          { value: "telephoto 200mm+", labelKey: "focalTele" }
+        ]
+      },
+      {
+        id: "composition",
+        labelKey: "imageComposition",
+        type: "pills",
+        options: [
+          { value: "rule of thirds", labelKey: "compRuleOfThirds" },
+          { value: "centered composition", labelKey: "compCentered" },
+          { value: "leading lines", labelKey: "compLeadingLines" },
+          { value: "symmetry", labelKey: "compSymmetry" },
+          { value: "negative space", labelKey: "compNegativeSpace" }
         ]
       },
       {
@@ -339,6 +400,74 @@ const PROMPT_TEMPLATES = {
       de: "Antworte in einem gesprächigen, aber informativen Ton."
     },
     fields: []
+  },
+
+  pinterest: {
+    role: {
+      en: "You are a Pinterest marketing expert and SEO specialist who creates viral pin content that drives maximum engagement and traffic.",
+      ru: "Ты — эксперт по маркетингу в Pinterest и SEO-специалист, создающий вирусный контент для пинов, который привлекает максимальное вовлечение и трафик.",
+      de: "Du bist ein Pinterest-Marketing-Experte und SEO-Spezialist, der virale Pin-Inhalte erstellt, die maximales Engagement und Traffic erzeugen."
+    },
+    task: {
+      en: "Create a complete Pinterest pin package for the topic: {description}\n\nYou must provide ALL of the following:\n\n1. **TOPIC ANALYSIS** (2-3 sentences): Briefly analyze the topic — what makes it trending, who is the target audience, what search intent exists.\n\n2. **SEO TITLE** (max 100 characters): A compelling, keyword-rich title optimized for Pinterest search. Use power words that drive clicks.\n\n3. **PIN DESCRIPTION** (150-300 characters): An engaging description that includes:\n   - 2-3 relevant keywords naturally woven in\n   - A clear value proposition or call-to-action\n   - 5-10 relevant hashtags at the end (e.g., #PinterestTips #DIY #HomeDecor)\n\n4. **IMAGE PROMPT**: A detailed, professional prompt for generating the pin image, including:\n   - Exact visual composition and layout\n   - Color palette and mood\n   - Typography placement suggestions (where to put overlay text)\n   - Lighting direction and quality (e.g., soft natural light from upper-left, golden hour backlight)\n   - Camera angle and perspective (e.g., flat lay from above, 45° angle, eye-level)\n   - Depth of field and focus points\n   - Style reference (e.g., editorial photography, lifestyle flat lay, infographic)\n   - Aspect ratio: 2:3 (standard Pinterest ratio 1000x1500px)",
+      ru: "Создай полный пакет для Pinterest пина на тему: {description}\n\nТы должен предоставить ВСЁ из следующего:\n\n1. **АНАЛИЗ ТЕМЫ** (2-3 предложения): Кратко проанализируй тему — что делает её трендовой, кто целевая аудитория, какой поисковый запрос существует.\n\n2. **SEO ЗАГОЛОВОК** (макс. 100 символов): Привлекательный, насыщенный ключевыми словами заголовок, оптимизированный для поиска в Pinterest. Используй сильные слова.\n\n3. **ОПИСАНИЕ ПИНА** (150-300 символов): Вовлекающее описание, которое включает:\n   - 2-3 релевантных ключевых слова, естественно вплетённых в текст\n   - Чёткое ценностное предложение или призыв к действию\n   - 5-10 релевантных хэштегов в конце (например, #Pinterest #DIY #Декор)\n\n4. **ПРОМПТ ДЛЯ ИЗОБРАЖЕНИЯ**: Детальный профессиональный промпт для генерации изображения пина, включая:\n   - Точную визуальную композицию и раскладку\n   - Цветовую палитру и настроение\n   - Предложения по размещению текста (где наложить текст)\n   - Направление и качество освещения (например, мягкий естественный свет слева сверху, контровой свет золотого часа)\n   - Ракурс и перспективу камеры (например, плоская раскладка сверху, угол 45°, на уровне глаз)\n   - Глубину резкости и точки фокуса\n   - Стилистическую референс (например, редакционная фотография, лайфстайл, инфографика)\n   - Соотношение сторон: 2:3 (стандарт Pinterest 1000x1500px)",
+      de: "Erstelle ein komplettes Pinterest-Pin-Paket zum Thema: {description}\n\nDu musst ALLES Folgende bereitstellen:\n\n1. **THEMENANALYSE** (2-3 Sätze): Analysiere kurz das Thema — was es zum Trend macht, wer die Zielgruppe ist, welche Suchabsicht existiert.\n\n2. **SEO-TITEL** (max. 100 Zeichen): Ein überzeugender, keyword-reicher Titel, optimiert für die Pinterest-Suche. Verwende Powerwörter.\n\n3. **PIN-BESCHREIBUNG** (150-300 Zeichen): Eine ansprechende Beschreibung mit:\n   - 2-3 relevante Keywords natürlich eingebaut\n   - Klares Wertversprechen oder Call-to-Action\n   - 5-10 relevante Hashtags am Ende (z.B. #Pinterest #DIY #HomeDecor)\n\n4. **BILD-PROMPT**: Ein detaillierter, professioneller Prompt zur Generierung des Pin-Bildes, einschließlich:\n   - Exakte visuelle Komposition und Layout\n   - Farbpalette und Stimmung\n   - Typografie-Platzierung (wo Overlay-Text platziert werden soll)\n   - Lichtrichtung und -qualität (z.B. weiches natürliches Licht von oben links, Golden-Hour-Gegenlicht)\n   - Kamerawinkel und Perspektive (z.B. Flat Lay von oben, 45°-Winkel, Augenhöhe)\n   - Schärfentiefe und Fokuspunkte\n   - Stilreferenz (z.B. redaktionelle Fotografie, Lifestyle, Infografik)\n   - Seitenverhältnis: 2:3 (Pinterest-Standard 1000x1500px)"
+    },
+    context: {
+      en: "Niche/Industry: {niche}\nAdditional context: {context}",
+      ru: "Ниша/Отрасль: {niche}\nДополнительный контекст: {context}",
+      de: "Nische/Branche: {niche}\nZusätzlicher Kontext: {context}"
+    },
+    details: {
+      en: "Pin style: {pinStyle}\nTarget audience: {audience}\nSeason/Trend: {season}",
+      ru: "Стиль пина: {pinStyle}\nЦелевая аудитория: {audience}\nСезон/Тренд: {season}",
+      de: "Pin-Stil: {pinStyle}\nZielgruppe: {audience}\nSaison/Trend: {season}"
+    },
+    format: {
+      en: "Format your response with clear sections: TOPIC ANALYSIS, SEO TITLE, PIN DESCRIPTION (with hashtags), and IMAGE PROMPT. Make each section immediately actionable — the user should be able to copy-paste each part directly.",
+      ru: "Оформи ответ с чёткими секциями: АНАЛИЗ ТЕМЫ, SEO ЗАГОЛОВОК, ОПИСАНИЕ ПИНА (с хэштегами) и ПРОМПТ ДЛЯ ИЗОБРАЖЕНИЯ. Каждая секция должна быть готова к использованию — пользователь должен мочь скопировать и вставить каждую часть напрямую.",
+      de: "Formatiere die Antwort mit klaren Abschnitten: THEMENANALYSE, SEO-TITEL, PIN-BESCHREIBUNG (mit Hashtags) und BILD-PROMPT. Jeder Abschnitt soll sofort nutzbar sein — zum direkten Kopieren."
+    },
+    fields: [
+      {
+        id: "niche",
+        labelKey: "pinNiche",
+        type: "text",
+        placeholder: "e.g., home decor, fitness, recipes, travel"
+      },
+      {
+        id: "pinStyle",
+        labelKey: "pinStyle",
+        type: "pills",
+        options: [
+          { value: "lifestyle photo", labelKey: "pinStyleLifestyle" },
+          { value: "infographic", labelKey: "pinStyleInfographic" },
+          { value: "step-by-step", labelKey: "pinStyleStepByStep" },
+          { value: "quote/text overlay", labelKey: "pinStyleQuote" },
+          { value: "product showcase", labelKey: "pinStyleProduct" },
+          { value: "before/after", labelKey: "pinStyleBeforeAfter" }
+        ]
+      },
+      {
+        id: "audience",
+        labelKey: "pinAudience",
+        type: "text",
+        placeholder: "e.g., women 25-45, DIY enthusiasts, entrepreneurs"
+      },
+      {
+        id: "season",
+        labelKey: "pinSeason",
+        type: "pills",
+        options: [
+          { value: "evergreen", labelKey: "pinSeasonEvergreen" },
+          { value: "spring", labelKey: "pinSeasonSpring" },
+          { value: "summer", labelKey: "pinSeasonSummer" },
+          { value: "autumn", labelKey: "pinSeasonAutumn" },
+          { value: "winter", labelKey: "pinSeasonWinter" },
+          { value: "holiday", labelKey: "pinSeasonHoliday" }
+        ]
+      }
+    ]
   },
 
   other: {

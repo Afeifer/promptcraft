@@ -15,8 +15,9 @@
         <h1 class="app-title">PromptCraft</h1>
       </div>
       <div class="header-right">
-        <button id="btn-settings" class="icon-btn" title="Settings">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <button id="btn-settings" class="settings-btn" title="Settings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span data-i18n="btnSettings">Settings</span>
         </button>
       </div>
     </header>
@@ -45,6 +46,17 @@
       <!-- Step 1: Category -->
       <div class="step active" id="step-1">
         <h2 class="step-title" data-i18n="step1Title">What do you need?</h2>
+
+        <!-- API Key Banner -->
+        <div id="api-key-banner" class="api-key-banner">
+          <div class="api-key-banner-icon">✨</div>
+          <div class="api-key-banner-content">
+            <strong data-i18n="apiKeyBannerTitle">Want more precise prompts?</strong>
+            <p data-i18n="apiKeyBannerText">Add a free Gemini API key in Settings to unlock AI-powered prompt enhancement — smarter, more detailed, and tailored to your needs.</p>
+          </div>
+          <button id="api-key-banner-dismiss" class="api-key-banner-dismiss" data-i18n="apiKeyBannerDismiss">Got it</button>
+        </div>
+
         <div class="category-grid">
           <button class="category-card" data-category="code">
             <span class="category-icon">💻</span>
@@ -73,6 +85,10 @@
           <button class="category-card" data-category="chat">
             <span class="category-icon">💬</span>
             <span class="category-label" data-i18n="catChat">Chat</span>
+          </button>
+          <button class="category-card" data-category="pinterest">
+            <span class="category-icon">📌</span>
+            <span class="category-label" data-i18n="catPinterest">Pinterest</span>
           </button>
           <button class="category-card" data-category="other">
             <span class="category-icon">⚡</span>
@@ -177,8 +193,23 @@
 
       <div class="settings-group">
         <label class="settings-label" data-i18n="settingsApiKey">Gemini API Key (optional)</label>
+
+        <div class="api-key-guide">
+          <h4 data-i18n="settingsApiKeyTitle">How to get a free API key:</h4>
+          <ol class="api-key-steps">
+            <li data-i18n="settingsApiKeyStep1">1. Go to aistudio.google.com</li>
+            <li data-i18n="settingsApiKeyStep2">2. Sign in with your Google account</li>
+            <li data-i18n="settingsApiKeyStep3">3. Click "Get API Key" → "Create API Key"</li>
+            <li data-i18n="settingsApiKeyStep4">4. Copy the key and paste it below</li>
+          </ol>
+          <p class="api-key-free-note" data-i18n="settingsApiKeyFree">It's completely free — up to 1,500 requests per day!</p>
+          <a href="https://aistudio.google.com/apikey" target="_blank" class="api-key-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            aistudio.google.com/apikey
+          </a>
+        </div>
+
         <input type="password" id="settings-api-key" class="input-text" data-i18n-placeholder="settingsApiKeyPlaceholder" placeholder="Paste your Gemini API key here">
-        <a href="https://aistudio.google.com/apikey" target="_blank" class="settings-hint" data-i18n="settingsApiKeyHint">Get a free key at aistudio.google.com</a>
       </div>
 
       <div class="step-actions">

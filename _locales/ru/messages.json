@@ -253,5 +253,176 @@
   },
   "deleteConfirm": {
     "message": "Удалить этот промпт?"
+  },
+  "catPinterest": {
+    "message": "Pinterest"
+  },
+  "pinNiche": {
+    "message": "Ниша / Отрасль"
+  },
+  "pinStyle": {
+    "message": "Стиль пина"
+  },
+  "pinAudience": {
+    "message": "Целевая аудитория"
+  },
+  "pinSeason": {
+    "message": "Сезон / Тренд"
+  },
+  "pinStyleLifestyle": {
+    "message": "Лайфстайл фото"
+  },
+  "pinStyleInfographic": {
+    "message": "Инфографика"
+  },
+  "pinStyleStepByStep": {
+    "message": "Пошаговый"
+  },
+  "pinStyleQuote": {
+    "message": "Цитата / Текст"
+  },
+  "pinStyleProduct": {
+    "message": "Продукт"
+  },
+  "pinStyleBeforeAfter": {
+    "message": "До / После"
+  },
+  "pinSeasonEvergreen": {
+    "message": "Вечнозелёный"
+  },
+  "pinSeasonSpring": {
+    "message": "Весна"
+  },
+  "pinSeasonSummer": {
+    "message": "Лето"
+  },
+  "pinSeasonAutumn": {
+    "message": "Осень"
+  },
+  "pinSeasonWinter": {
+    "message": "Зима"
+  },
+  "pinSeasonHoliday": {
+    "message": "Праздничный"
+  },
+  "imageLighting": {
+    "message": "Освещение"
+  },
+  "imageLightDir": {
+    "message": "Направление света"
+  },
+  "imageAngle": {
+    "message": "Ракурс камеры"
+  },
+  "imageFocal": {
+    "message": "Фокусное расстояние"
+  },
+  "imageComposition": {
+    "message": "Композиция"
+  },
+  "lightNatural": {
+    "message": "Естественный"
+  },
+  "lightStudio": {
+    "message": "Студийный"
+  },
+  "lightGoldenHour": {
+    "message": "Золотой час"
+  },
+  "lightDramatic": {
+    "message": "Драматичный"
+  },
+  "lightSoft": {
+    "message": "Мягкий / Рассеянный"
+  },
+  "lightNeon": {
+    "message": "Неон / RGB"
+  },
+  "lightDirFront": {
+    "message": "Фронтальный"
+  },
+  "lightDirSide": {
+    "message": "Боковой"
+  },
+  "lightDirBack": {
+    "message": "Контровой"
+  },
+  "lightDirTop": {
+    "message": "Сверху"
+  },
+  "lightDirRembrandt": {
+    "message": "Рембрандт"
+  },
+  "angleLow": {
+    "message": "Снизу"
+  },
+  "angleEye": {
+    "message": "На уровне глаз"
+  },
+  "angleHigh": {
+    "message": "Сверху"
+  },
+  "angleBird": {
+    "message": "С высоты птичьего полёта"
+  },
+  "angleDutch": {
+    "message": "Голландский угол"
+  },
+  "angleMacro": {
+    "message": "Макро"
+  },
+  "focalWide": {
+    "message": "Широкий (14-35мм)"
+  },
+  "focalStandard": {
+    "message": "Стандарт (50мм)"
+  },
+  "focalPortrait": {
+    "message": "Портрет (85мм)"
+  },
+  "focalTele": {
+    "message": "Телефото (200мм+)"
+  },
+  "compRuleOfThirds": {
+    "message": "Правило третей"
+  },
+  "compCentered": {
+    "message": "По центру"
+  },
+  "compLeadingLines": {
+    "message": "Ведущие линии"
+  },
+  "compSymmetry": {
+    "message": "Симметрия"
+  },
+  "compNegativeSpace": {
+    "message": "Негативное пространство"
+  },
+  "apiKeyBannerTitle": {
+    "message": "Хотите более точные промпты?"
+  },
+  "apiKeyBannerText": {
+    "message": "Добавьте бесплатный API ключ Gemini в Настройках, чтобы разблокировать AI-улучшение промптов — умнее, детальнее и под ваши задачи."
+  },
+  "apiKeyBannerDismiss": {
+    "message": "Понятно"
+  },
+  "settingsApiKeyTitle": {
+    "message": "Как получить бесплатный API ключ:"
+  },
+  "settingsApiKeyStep1": {
+    "message": "1. Перейдите на aistudio.google.com"
+  },
+  "settingsApiKeyStep2": {
+    "message": "2. Войдите с вашим Google аккаунтом"
+  },
+  "settingsApiKeyStep3": {
+    "message": "3. Нажмите «Get API Key» → «Create API Key»"
+  },
+  "settingsApiKeyStep4": {
+    "message": "4. Скопируйте ключ и вставьте его ниже"
+  },
+  "settingsApiKeyFree": {
+    "message": "Это полностью бесплатно — до 1500 запросов в день!"
   }
 }

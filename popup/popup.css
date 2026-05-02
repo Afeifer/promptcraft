@@ -231,7 +231,7 @@ body::-webkit-scrollbar-thumb {
 /* === Category Grid === */
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
 }
 
@@ -676,6 +676,143 @@ body::-webkit-scrollbar-thumb {
 
 .toast.show {
   transform: translateX(-50%) translateY(0);
+}
+
+/* === Settings Button (prominent) === */
+.settings-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.settings-btn:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.settings-btn svg {
+  flex-shrink: 0;
+}
+
+/* === API Key Banner (Step 1) === */
+.api-key-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(167, 139, 250, 0.08));
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-bottom: 4px;
+  animation: fadeIn 0.3s ease;
+}
+
+.api-key-banner-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.api-key-banner-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.api-key-banner-content strong {
+  display: block;
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.api-key-banner-content p {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.api-key-banner-dismiss {
+  background: rgba(124, 58, 237, 0.2);
+  border: none;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.api-key-banner-dismiss:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* === API Key Guide (Settings) === */
+.api-key-guide {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.api-key-guide h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.api-key-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px 0;
+}
+
+.api-key-steps li {
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding: 3px 0;
+  line-height: 1.4;
+}
+
+.api-key-free-note {
+  font-size: 11px;
+  color: var(--success);
+  font-weight: 600;
+  margin: 6px 0 8px 0;
+}
+
+.api-key-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.api-key-link:hover {
+  text-decoration: underline;
+  color: #a78bfa;
 }
 
 /* === Responsive adjustments === */
