@@ -424,5 +424,23 @@
   },
   "settingsApiKeyFree": {
     "message": "Это полностью бесплатно — до 1500 запросов в день!"
+  },
+  "settingsVersion": {
+    "message": "Версия"
+  },
+  "btnCheckUpdate": {
+    "message": "Проверить обновления"
+  },
+  "updateChecking": {
+    "message": "Проверяю обновления..."
+  },
+  "updateLatest": {
+    "message": "У вас последняя версия!"
+  },
+  "updateAvailable": {
+    "message": "Доступна новая версия:"
+  },
+  "updateDownload": {
+    "message": "Скачать обновление →"
   }
 }

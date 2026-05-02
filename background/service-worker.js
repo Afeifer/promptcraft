@@ -1,10 +1,24 @@
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+const GITHUB_REPO = 'Afeifer/promptcraft';
+const CURRENT_VERSION = '1.1.0';
+
+// Open Side Panel when clicking the extension icon
+chrome.action.onClicked.addListener((tab) => {
+  chrome.sidePanel.open({ tabId: tab.id });
+});
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'enhancePrompt') {
     enhancePrompt(request.prompt, request.apiKey, request.lang)
       .then(result => sendResponse(result))
       .catch(error => sendResponse({ success: false, error: error.message }));
+    return true;
+  }
+
+  if (request.action === 'checkUpdate') {
+    checkForUpdates()
+      .then(result => sendResponse(result))
+      .catch(error => sendResponse({ hasUpdate: false, error: error.message }));
     return true;
   }
 });
@@ -80,4 +94,39 @@ Regeln:
   }
 
   return { success: true, enhanced: enhanced.trim() };
+}
+
+async function checkForUpdates() {
+  const response = await fetch(
+    `https://api.github.com/repos/${GITHUB_REPO}/contents/manifest.json`,
+    { headers: { 'Accept': 'application/vnd.github.v3.raw' } }
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to check for updates');
+  }
+
+  const manifest = await response.json();
+  const latestVersion = manifest.version;
+
+  const hasUpdate = compareVersions(latestVersion, CURRENT_VERSION) > 0;
+
+  return {
+    hasUpdate,
+    currentVersion: CURRENT_VERSION,
+    latestVersion,
+    downloadUrl: `https://github.com/${GITHUB_REPO}/archive/refs/heads/init.zip`
+  };
+}
+
+function compareVersions(a, b) {
+  const pa = a.split('.').map(Number);
+  const pb = b.split('.').map(Number);
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const na = pa[i] || 0;
+    const nb = pb[i] || 0;
+    if (na > nb) return 1;
+    if (na < nb) return -1;
+  }
+  return 0;
 }

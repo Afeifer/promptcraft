@@ -520,6 +520,48 @@ document.addEventListener('DOMContentLoaded', async () => {
     return div.innerHTML;
   }
 
+  // ==================== Update Check ====================
+
+  document.getElementById('btn-check-update').addEventListener('click', async () => {
+    const statusEl = document.getElementById('update-status');
+    const btn = document.getElementById('btn-check-update');
+    btn.disabled = true;
+
+    statusEl.className = 'update-status loading';
+    statusEl.textContent = msg('updateChecking');
+    statusEl.classList.remove('hidden');
+
+    try {
+      const result = await chrome.runtime.sendMessage({ action: 'checkUpdate' });
+
+      if (result.error) {
+        statusEl.className = 'update-status error';
+        statusEl.textContent = result.error;
+      } else if (result.hasUpdate) {
+        statusEl.className = 'update-status update-available';
+        statusEl.innerHTML = `
+          <strong>${msg('updateAvailable')} v${result.latestVersion}</strong>
+          <a href="${result.downloadUrl}" target="_blank" class="update-download-link">
+            ${msg('updateDownload')}
+          </a>
+        `;
+      } else {
+        statusEl.className = 'update-status success';
+        statusEl.textContent = msg('updateLatest');
+      }
+    } catch (e) {
+      statusEl.className = 'update-status error';
+      statusEl.textContent = e.message || 'Failed to check for updates';
+    }
+
+    btn.disabled = false;
+    setTimeout(() => {
+      if (!statusEl.classList.contains('update-available')) {
+        statusEl.classList.add('hidden');
+      }
+    }, 5000);
+  });
+
   // ==================== API Key Banner ====================
 
   async function initApiKeyBanner() {

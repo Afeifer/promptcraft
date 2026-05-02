@@ -212,6 +212,18 @@
         <input type="password" id="settings-api-key" class="input-text" data-i18n-placeholder="settingsApiKeyPlaceholder" placeholder="Paste your Gemini API key here">
       </div>
 
+      <div class="settings-group">
+        <label class="settings-label" data-i18n="settingsVersion">Version</label>
+        <div class="update-check-row">
+          <span class="version-label">v1.1.0</span>
+          <button class="btn btn-update" id="btn-check-update">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M21 21v-5h-5"/></svg>
+            <span data-i18n="btnCheckUpdate">Check for Updates</span>
+          </button>
+        </div>
+        <div id="update-status" class="update-status hidden"></div>
+      </div>
+
       <div class="step-actions">
         <button class="btn btn-secondary" id="btn-settings-back" data-i18n="btnBack">Back</button>
         <button class="btn btn-primary" id="btn-settings-save" data-i18n="settingsSave">Save</button>

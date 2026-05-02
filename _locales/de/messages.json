@@ -424,5 +424,23 @@
   },
   "settingsApiKeyFree": {
     "message": "Es ist völlig kostenlos — bis zu 1.500 Anfragen pro Tag!"
+  },
+  "settingsVersion": {
+    "message": "Version"
+  },
+  "btnCheckUpdate": {
+    "message": "Nach Updates suchen"
+  },
+  "updateChecking": {
+    "message": "Suche nach Updates..."
+  },
+  "updateLatest": {
+    "message": "Sie haben die neueste Version!"
+  },
+  "updateAvailable": {
+    "message": "Neue Version verfügbar:"
+  },
+  "updateDownload": {
+    "message": "Update herunterladen →"
   }
 }

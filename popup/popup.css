@@ -29,7 +29,6 @@
 body {
   width: 400px;
   min-height: 500px;
-  max-height: 580px;
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
@@ -813,6 +812,99 @@ body::-webkit-scrollbar-thumb {
 .api-key-link:hover {
   text-decoration: underline;
   color: #a78bfa;
+}
+
+/* === Update Check === */
+.update-check-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.version-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.btn-update {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-update:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-light);
+}
+
+.btn-update:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.update-status {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
+.update-status.loading {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.update-status.success {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+}
+
+.update-status.error {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+}
+
+.update-status.update-available {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--warning);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.update-download-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.update-download-link:hover {
+  text-decoration: underline;
+}
+
+/* === Side Panel adjustments === */
+@media (min-height: 600px) {
+  body {
+    max-height: none;
+    height: 100vh;
+  }
+
+  .prompt-output {
+    max-height: 350px;
+  }
+
+  .prompt-list {
+    max-height: none;
+    flex: 1;
+  }
 }
 
 /* === Responsive adjustments === */
