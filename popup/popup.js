@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         prompt: currentPrompt,
         apiKey: settings.apiKey,
         lang: promptLang,
-        model: settings.model || 'gemini-2.0-flash'
+        model: settings.model || 'gemini-2.5-flash'
       });
 
       if (response && response.success) {
