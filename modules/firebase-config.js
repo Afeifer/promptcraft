@@ -9,4 +9,4 @@ const FIREBASE_CONFIG = {
 
 // OAuth Client ID — auto-created by Firebase when Google Sign-In was enabled
 // User must set this from Google Cloud Console → Credentials → Web client
-const GOOGLE_OAUTH_CLIENT_ID = '__OAUTH_CLIENT_ID__';
+const GOOGLE_OAUTH_CLIENT_ID = '970524809822-sdte1amtlf18ju3aro6tu8jq1kf8t04l.apps.googleusercontent.com';
