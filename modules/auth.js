@@ -2,6 +2,7 @@ class PromptCraftAuth {
   constructor() {
     this.AUTH_KEY = 'promptcraft_auth';
     this.user = null;
+    this.MAX_RETRIES = 2;
   }
 
   async init() {
@@ -13,16 +14,36 @@ class PromptCraftAuth {
   }
 
   async signIn() {
-    const accessToken = await this._getGoogleToken();
-    const firebaseUser = await this._signInWithFirebase(accessToken);
-    await this._saveUserToFirestore(firebaseUser);
-    this.user = firebaseUser;
-    await this._setStored(firebaseUser);
-    return firebaseUser;
+    // Clear any cached tokens before starting fresh sign-in
+    await this._clearCachedTokens();
+
+    let lastError = null;
+
+    for (let attempt = 0; attempt <= this.MAX_RETRIES; attempt++) {
+      try {
+        const accessToken = await this._getGoogleToken(attempt > 0);
+        const firebaseUser = await this._signInWithFirebase(accessToken);
+        await this._saveUserToFirestore(firebaseUser);
+        this.user = firebaseUser;
+        await this._setStored(firebaseUser);
+        return firebaseUser;
+      } catch (error) {
+        lastError = error;
+        // Clear tokens and retry on auth errors
+        await this._clearCachedTokens();
+
+        if (error.message === 'The user did not approve access.' ||
+            error.message === 'Auth flow was cancelled') {
+          throw error; // User cancelled — don't retry
+        }
+      }
+    }
+
+    throw lastError || new Error('Sign in failed after multiple attempts');
   }
 
   async signOut() {
-    await this._revokeGoogleToken();
+    await this._clearCachedTokens();
     this.user = null;
     await this._clearStored();
   }
@@ -35,16 +56,21 @@ class PromptCraftAuth {
     return this.user;
   }
 
-  async _getGoogleToken() {
+  async _getGoogleToken(isRetry) {
     const redirectUri = `https://${chrome.runtime.id}.chromiumapp.org/`;
     const scopes = 'openid email profile';
 
-    const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
+    // On retry, add login_hint='' to force account chooser
+    let authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
       `client_id=${encodeURIComponent(GOOGLE_OAUTH_CLIENT_ID)}&` +
       `redirect_uri=${encodeURIComponent(redirectUri)}&` +
       `response_type=token&` +
       `scope=${encodeURIComponent(scopes)}&` +
-      `prompt=consent`;
+      `prompt=select_account`;
+
+    if (isRetry) {
+      authUrl += `&_retry=${Date.now()}`;
+    }
 
     return new Promise((resolve, reject) => {
       chrome.identity.launchWebAuthFlow(
@@ -56,6 +82,16 @@ class PromptCraftAuth {
           }
           if (!responseUrl) {
             reject(new Error('Auth flow was cancelled'));
+            return;
+          }
+
+          // Check for error in response
+          if (responseUrl.includes('error=')) {
+            const url = new URL(responseUrl);
+            const params = new URLSearchParams(url.hash.substring(1));
+            const error = params.get('error');
+            const errorDesc = params.get('error_description') || error;
+            reject(new Error(errorDesc));
             return;
           }
 
@@ -90,7 +126,11 @@ class PromptCraftAuth {
 
     if (!response.ok) {
       const error = await response.json().catch(() => ({}));
-      throw new Error(error?.error?.message || 'Firebase auth failed');
+      const msg = error?.error?.message || '';
+      if (msg.includes('INVALID_IDP_RESPONSE')) {
+        throw new Error('Token expired, retrying...');
+      }
+      throw new Error(msg || 'Firebase auth failed');
     }
 
     const data = await response.json();
@@ -120,7 +160,6 @@ class PromptCraftAuth {
     };
 
     try {
-      // Try to get existing doc first to preserve createdAt
       const existing = await fetch(docUrl, {
         headers: { 'Authorization': `Bearer ${user.idToken}` }
       });
@@ -134,34 +173,28 @@ class PromptCraftAuth {
           body.fields.newsletter = doc.fields.newsletter;
         }
       }
-
-      await fetch(docUrl + '?currentDocument.exists=true', {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${user.idToken}`
-        },
-        body: JSON.stringify(body)
-      });
     } catch {
-      // If doc doesn't exist, create it
-      await fetch(docUrl, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${user.idToken}`
-        },
-        body: JSON.stringify(body)
-      });
+      // First time user — use defaults
     }
+
+    await fetch(docUrl, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${user.idToken}`
+      },
+      body: JSON.stringify(body)
+    });
   }
 
-  async _revokeGoogleToken() {
-    try {
-      chrome.identity.clearAllCachedAuthTokens(() => {});
-    } catch {
-      // ignore
-    }
+  async _clearCachedTokens() {
+    return new Promise((resolve) => {
+      try {
+        chrome.identity.clearAllCachedAuthTokens(() => resolve());
+      } catch {
+        resolve();
+      }
+    });
   }
 
   async _getStored() {
