@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PromptCraft — AI Prompt Engineering Assistant</title>
+  <meta name="description" content="Create perfect AI prompts with a 5-step builder. Supports ChatGPT, Claude, Gemini, Midjourney, DALL-E, Sora and 30+ more platforms.">
+  <link rel="icon" type="image/png" href="../icons/icon128.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    a { color: #a29bfe; text-decoration: none; }
+    a:hover { color: #6c5ce7; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%);
+      text-align: center;
+      padding: 80px 20px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: rgba(108, 92, 231, 0.08);
+      filter: blur(120px);
+      top: -200px; right: -100px;
+    }
+    .hero-logo {
+      font-size: 56px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .hero-logo span { font-size: 48px; margin-right: 12px; }
+    .hero-tagline {
+      font-size: 22px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 36px;
+      position: relative;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 6px 18px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+    }
+    .badge.hl {
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      border: none;
+      color: white;
+      font-weight: 600;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 14px 40px;
+      border-radius: 30px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+      color: white;
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      margin-bottom: 50px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 32px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(108, 92, 231, 0.3);
+    }
+    .feature-icon { font-size: 36px; margin-bottom: 16px; }
+    .feature-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .feature-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    /* Screenshots */
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+    .screenshot-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.2s;
+    }
+    .screenshot-card:hover { transform: translateY(-4px); }
+    .screenshot-card img {
+      width: 100%;
+      display: block;
+    }
+    .screenshot-label {
+      padding: 12px 16px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.04);
+      text-align: center;
+    }
+
+    /* Platforms */
+    .platforms-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .platform-tag {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 8px 18px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* Support */
+    .support-section {
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .support-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .support-content p {
+      margin-bottom: 16px;
+      color: rgba(255,255,255,0.6);
+    }
+    .support-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 12px 24px;
+      margin: 8px;
+      font-size: 15px;
+      transition: border-color 0.2s;
+    }
+    .support-link:hover { border-color: #6c5ce7; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: rgba(255,255,255,0.3);
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 50px 16px 40px; }
+      .hero-logo { font-size: 36px; }
+      .hero-tagline { font-size: 18px; }
+      .section { padding: 50px 16px; }
+      .section-title { font-size: 28px; }
+      .features { grid-template-columns: 1fr; }
+      .screenshots { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-logo"><span>&#9889;</span>PromptCraft</div>
+    <div class="hero-tagline">Your AI Prompt Engineering Assistant</div>
+    <div class="hero-sub">Create perfect prompts for any AI model in 5 simple steps. Free &amp; open source.</div>
+    <div class="hero-badges">
+      <span class="badge hl">ChatGPT</span>
+      <span class="badge hl">Claude</span>
+      <span class="badge hl">Gemini</span>
+      <span class="badge hl">Midjourney</span>
+      <span class="badge hl">DALL-E</span>
+      <span class="badge hl">Sora</span>
+      <span class="badge">DeepSeek</span>
+      <span class="badge">Stable Diffusion</span>
+      <span class="badge">+25 more</span>
+    </div>
+    <a class="cta-btn" href="https://chromewebstore.google.com" target="_blank">Install from Chrome Web Store</a>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <h2 class="section-title">Everything You Need</h2>
+    <p class="section-sub">A complete toolkit for crafting professional AI prompts across all major platforms.</p>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">&#128187;</div>
+        <div class="feature-title">10 Categories</div>
+        <div class="feature-desc">Code, Text, Images, Video, Analysis, Translation, Learning, Chat, Pinterest, and more. Each with specialized fields.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#129302;</div>
+        <div class="feature-title">LLM-Optimized Prompts</div>
+        <div class="feature-desc">Select your target AI (ChatGPT, Claude, Gemini, DeepSeek, Llama, Grok, Mistral, Copilot) and get prompts formatted specifically for that model.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#127912;</div>
+        <div class="feature-title">Pro Image &amp; Video</div>
+        <div class="feature-desc">10 image platforms (Midjourney, DALL-E, Flux, SD) and 10 video platforms (Sora, Veo 3, Kling, Runway) with camera, lighting, and composition options.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128247;</div>
+        <div class="feature-title">Professional Camera Presets</div>
+        <div class="feature-desc">Canon EOS R5, Sony A7R V, Hasselblad X2D, ARRI Alexa — choose camera, lens, focal length for photorealistic prompts.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#10024;</div>
+        <div class="feature-title">AI Enhancement</div>
+        <div class="feature-desc">Optional Gemini API integration to supercharge your prompts. Free from Google — up to 1500 requests per day.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#127760;</div>
+        <div class="feature-title">3 Languages</div>
+        <div class="feature-desc">Full interface in English, Russian, and German. Image and video prompts are always generated in English for best results.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="section" style="padding-top: 0;">
+    <h2 class="section-title">See It in Action</h2>
+    <p class="section-sub">A clean, intuitive interface that guides you step by step.</p>
+    <div class="screenshots">
+      <div class="screenshot-card">
+        <img src="screenshot-categories.png" alt="PromptCraft categories" loading="lazy">
+        <div class="screenshot-label">Choose from 10 categories</div>
+      </div>
+      <div class="screenshot-card">
+        <img src="screenshot-llm.png" alt="LLM selector" loading="lazy">
+        <div class="screenshot-label">Select your target LLM</div>
+      </div>
+      <div class="screenshot-card">
+        <img src="screenshot-image.png" alt="Image details" loading="lazy">
+        <div class="screenshot-label">Professional image prompt builder</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supported Platforms -->
+  <section class="section" style="padding-top: 0;">
+    <h2 class="section-title">30+ Platforms Supported</h2>
+    <p class="section-sub">Optimized prompt formats for every major AI model and generator.</p>
+    <div class="platforms-grid">
+      <span class="platform-tag">ChatGPT</span>
+      <span class="platform-tag">Claude</span>
+      <span class="platform-tag">Gemini</span>
+      <span class="platform-tag">DeepSeek</span>
+      <span class="platform-tag">Llama</span>
+      <span class="platform-tag">Grok</span>
+      <span class="platform-tag">Mistral</span>
+      <span class="platform-tag">Copilot</span>
+      <span class="platform-tag">Midjourney v7</span>
+      <span class="platform-tag">DALL-E 3+</span>
+      <span class="platform-tag">Flux 2 Pro</span>
+      <span class="platform-tag">Stable Diffusion 3.5</span>
+      <span class="platform-tag">Adobe Firefly</span>
+      <span class="platform-tag">Leonardo AI</span>
+      <span class="platform-tag">Ideogram 2.0</span>
+      <span class="platform-tag">Krea AI</span>
+      <span class="platform-tag">Imagen 3</span>
+      <span class="platform-tag">SenseNova U1</span>
+      <span class="platform-tag">Sora</span>
+      <span class="platform-tag">Veo 3</span>
+      <span class="platform-tag">Kling 3.0</span>
+      <span class="platform-tag">Runway Gen-4</span>
+      <span class="platform-tag">Pika 2.1</span>
+      <span class="platform-tag">Luma Dream Machine</span>
+      <span class="platform-tag">Seedance 2.0</span>
+      <span class="platform-tag">Hailuo AI</span>
+      <span class="platform-tag">HeyGen</span>
+      <span class="platform-tag">Synthesia</span>
+    </div>
+  </section>
+
+  <!-- Support -->
+  <section id="support" class="support-section">
+    <div class="section" style="padding-bottom: 60px;">
+      <div class="support-content">
+        <h2 class="section-title">Support</h2>
+        <p style="margin-top: 16px;">Have questions, found a bug, or want to suggest a feature? We'd love to hear from you.</p>
+        <div style="margin-top: 24px;">
+          <a class="support-link" href="mailto:alexfeifer9@gmail.com">
+            &#9993; alexfeifer9@gmail.com
+          </a>
+          <a class="support-link" href="https://github.com/Afeifer/promptcraft/issues" target="_blank">
+            &#128196; GitHub Issues
+          </a>
+        </div>
+        <p style="margin-top: 24px; font-size: 14px;">
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 PromptCraft. Open source on <a href="https://github.com/Afeifer/promptcraft">GitHub</a>.</p>
+  </footer>
+
+</body>
+</html>
