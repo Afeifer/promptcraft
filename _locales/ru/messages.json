@@ -799,5 +799,33 @@
   },
   "pinAnyPlatform": {
     "message": "Любая платформа"
+  },
+
+  "targetLLM": {
+    "message": "Целевая LLM"
+  },
+  "llmChatGPT": {
+    "message": "ChatGPT"
+  },
+  "llmClaude": {
+    "message": "Claude"
+  },
+  "llmGemini": {
+    "message": "Gemini"
+  },
+  "llmDeepSeek": {
+    "message": "DeepSeek"
+  },
+  "llmLlama": {
+    "message": "Llama (Meta)"
+  },
+  "llmGrok": {
+    "message": "Grok (xAI)"
+  },
+  "llmMistral": {
+    "message": "Mistral"
+  },
+  "llmCopilot": {
+    "message": "Copilot"
   }
 }
