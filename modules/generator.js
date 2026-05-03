@@ -3,9 +3,13 @@ class PromptGenerator {
     this.templates = PROMPT_TEMPLATES;
   }
 
+  // Categories where prompts are always generated in English
+  // (AI image/video generators work best with English prompts)
+  static ENGLISH_ONLY_CATEGORIES = ['image', 'video'];
+
   generate(data) {
     const { category, description, details, context, promptLang } = data;
-    const lang = promptLang || 'en';
+    const lang = PromptGenerator.ENGLISH_ONLY_CATEGORIES.includes(category) ? 'en' : (promptLang || 'en');
     const template = this.templates[category];
 
     if (!template) {
