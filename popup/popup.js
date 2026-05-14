@@ -459,7 +459,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('history-list');
 
     if (history.length === 0) {
-      container.innerHTML = `<p class="empty-state">${msg('historyEmpty')}</p>`;
+      container.innerHTML = '';
+      const p = document.createElement('p');
+      p.className = 'empty-state';
+      p.textContent = msg('historyEmpty');
+      container.appendChild(p);
       return;
     }
 
@@ -476,7 +480,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('favorites-list');
 
     if (favorites.length === 0) {
-      container.innerHTML = `<p class="empty-state">${msg('favoritesEmpty')}</p>`;
+      container.innerHTML = '';
+      const p = document.createElement('p');
+      p.className = 'empty-state';
+      p.textContent = msg('favoritesEmpty');
+      container.appendChild(p);
       return;
     }
 
@@ -501,22 +509,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     const categoryName = msg(`cat${item.category.charAt(0).toUpperCase() + item.category.slice(1)}`) || item.category;
     const preview = item.prompt.substring(0, 120) + (item.prompt.length > 120 ? '...' : '');
 
-    div.innerHTML = `
+    div.innerHTML = sanitizeHTML(`
       <div class="prompt-item-header">
-        <span class="prompt-item-category">${categoryName}</span>
-        <span class="prompt-item-date">${dateStr}</span>
+        <span class="prompt-item-category">${escapeHtml(categoryName)}</span>
+        <span class="prompt-item-date">${escapeHtml(dateStr)}</span>
       </div>
       <div class="prompt-item-preview">${escapeHtml(preview)}</div>
       <div class="prompt-item-actions">
-        <button class="prompt-item-btn copy-btn" title="${msg('btnCopy')}">
+        <button class="prompt-item-btn copy-btn" title="${escapeHtml(msg('btnCopy'))}">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-          ${msg('btnCopy')}
+          ${escapeHtml(msg('btnCopy'))}
         </button>
-        <button class="prompt-item-btn delete" title="${msg('deleteConfirm')}">
+        <button class="prompt-item-btn delete" title="${escapeHtml(msg('deleteConfirm'))}">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
         </button>
       </div>
-    `;
+    `);
 
     // Copy
     div.querySelector('.copy-btn').addEventListener('click', async (e) => {
@@ -615,6 +623,71 @@ document.addEventListener('DOMContentLoaded', async () => {
     return div.innerHTML;
   }
 
+  /**
+   * Sanitize HTML string — allow only safe tags and attributes.
+   * Used when innerHTML is necessary (e.g., for inline SVG or links).
+   */
+  function sanitizeHTML(html) {
+    const allowedTags = ['strong', 'em', 'a', 'span', 'br', 'div', 'button', 'p', 'svg', 'path', 'rect', 'circle', 'line', 'polyline', 'g'];
+    const allowedAttrs = {
+      'a': ['href', 'target', 'class', 'rel'],
+      'span': ['class'],
+      'div': ['class'],
+      'button': ['class', 'title'],
+      'p': ['class'],
+      'svg': ['width', 'height', 'viewBox', 'fill', 'stroke', 'stroke-width', 'class'],
+      'path': ['d', 'fill', 'stroke', 'stroke-width'],
+      'rect': ['x', 'y', 'width', 'height', 'rx', 'ry', 'fill', 'stroke', 'stroke-width'],
+      'circle': ['cx', 'cy', 'r', 'fill', 'stroke'],
+      'line': ['x1', 'y1', 'x2', 'y2', 'stroke'],
+      'polyline': ['points', 'fill', 'stroke'],
+      'g': ['transform', 'fill', 'stroke']
+    };
+
+    const template = document.createElement('template');
+    template.innerHTML = html;
+    const fragment = template.content;
+
+    function sanitizeNode(node) {
+      const walker = document.createTreeWalker(node, NodeFilter.SHOW_ELEMENT);
+      const toRemove = [];
+
+      let el;
+      while (el = walker.nextNode()) {
+        const tagName = el.tagName.toLowerCase();
+        if (!allowedTags.includes(tagName)) {
+          toRemove.push(el);
+          continue;
+        }
+        // Remove disallowed attributes
+        const allowed = allowedAttrs[tagName] || [];
+        for (const attr of Array.from(el.attributes)) {
+          if (!allowed.includes(attr.name)) {
+            el.removeAttribute(attr.name);
+          }
+          // Block javascript: URLs
+          if (attr.name === 'href' && attr.value.trim().toLowerCase().startsWith('javascript:')) {
+            el.setAttribute('href', '#');
+          }
+        }
+        // Force rel=noopener on links with target=_blank
+        if (tagName === 'a' && el.getAttribute('target') === '_blank') {
+          el.setAttribute('rel', 'noopener noreferrer');
+        }
+      }
+
+      toRemove.forEach(el => {
+        // Replace dangerous elements with their text content
+        el.replaceWith(document.createTextNode(el.textContent));
+      });
+    }
+
+    sanitizeNode(fragment);
+    const wrapper = document.createElement('div');
+    wrapper.appendChild(fragment);
+    return wrapper.innerHTML;
+  }
+
   // ==================== Update Check ====================
 
   document.getElementById('btn-check-update').addEventListener('click', async () => {
@@ -634,12 +707,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         statusEl.textContent = result.error;
       } else if (result.hasUpdate) {
         statusEl.className = 'update-status update-available';
-        statusEl.innerHTML = `
-          <strong>${msg('updateAvailable')} v${result.latestVersion}</strong>
-          <a href="${result.downloadUrl}" target="_blank" class="update-download-link">
-            ${msg('updateDownload')}
-          </a>
-        `;
+        // Build update UI safely using DOM methods to prevent XSS from GitHub API data
+        statusEl.textContent = '';
+        const strong = document.createElement('strong');
+        strong.textContent = `${msg('updateAvailable')} v${result.latestVersion}`;
+        const link = document.createElement('a');
+        link.href = result.downloadUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.className = 'update-download-link';
+        link.textContent = msg('updateDownload');
+        statusEl.appendChild(strong);
+        statusEl.appendChild(document.createTextNode(' '));
+        statusEl.appendChild(link);
       } else {
         statusEl.className = 'update-status success';
         statusEl.textContent = msg('updateLatest');
