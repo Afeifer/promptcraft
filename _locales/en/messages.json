@@ -501,9 +501,6 @@
   "catVideo": {
     "message": "Video"
   },
-  "catPinterest": {
-    "message": "Pinterest"
-  },
 
   "imagePlatform": {
     "message": "Target Platform"
@@ -799,5 +796,33 @@
   },
   "pinAnyPlatform": {
     "message": "Any Platform"
+  },
+
+  "targetLLM": {
+    "message": "Target LLM"
+  },
+  "llmChatGPT": {
+    "message": "ChatGPT"
+  },
+  "llmClaude": {
+    "message": "Claude"
+  },
+  "llmGemini": {
+    "message": "Gemini"
+  },
+  "llmDeepSeek": {
+    "message": "DeepSeek"
+  },
+  "llmLlama": {
+    "message": "Llama (Meta)"
+  },
+  "llmGrok": {
+    "message": "Grok (xAI)"
+  },
+  "llmMistral": {
+    "message": "Mistral"
+  },
+  "llmCopilot": {
+    "message": "Copilot"
   }
 }

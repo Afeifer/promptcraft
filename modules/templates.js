@@ -1,3 +1,20 @@
+// Target LLM field shared by text-based categories
+const TARGET_LLM_FIELD = {
+  id: "targetLLM",
+  labelKey: "targetLLM",
+  type: "pills",
+  options: [
+    { value: "chatgpt", labelKey: "llmChatGPT" },
+    { value: "claude", labelKey: "llmClaude" },
+    { value: "gemini", labelKey: "llmGemini" },
+    { value: "deepseek", labelKey: "llmDeepSeek" },
+    { value: "llama", labelKey: "llmLlama" },
+    { value: "grok", labelKey: "llmGrok" },
+    { value: "mistral", labelKey: "llmMistral" },
+    { value: "copilot", labelKey: "llmCopilot" }
+  ]
+};
+
 const PROMPT_TEMPLATES = {
   code: {
     role: {
@@ -26,6 +43,7 @@ const PROMPT_TEMPLATES = {
       de: "Ausgabeformat: Stelle den vollständigen Code mit Kommentaren bereit, die die wichtigsten Abschnitte erklären. Wenn mehrere Dateien benötigt werden, trenne sie deutlich."
     },
     fields: [
+      TARGET_LLM_FIELD,
       {
         id: "language",
         labelKey: "langCode",
@@ -78,6 +96,7 @@ const PROMPT_TEMPLATES = {
       de: "Ausgabeformat: Gut strukturierter Text mit Überschriften, Unterüberschriften und Absätzen."
     },
     fields: [
+      TARGET_LLM_FIELD,
       {
         id: "tone",
         labelKey: "textTone",
@@ -306,6 +325,7 @@ const PROMPT_TEMPLATES = {
       de: "Strukturiere die Analyse mit: Zusammenfassung, Wichtigste Ergebnisse, Detailanalyse, Empfehlungen."
     },
     fields: [
+      TARGET_LLM_FIELD,
       {
         id: "depth",
         labelKey: "analysisDepth",
@@ -405,6 +425,7 @@ const PROMPT_TEMPLATES = {
       de: "Struktur: Beginne mit einem kurzen Überblick, erkläre dann Schritt für Schritt, füge Beispiele hinzu und schließe mit einer Zusammenfassung und Übungsaufgaben."
     },
     fields: [
+      TARGET_LLM_FIELD,
       {
         id: "level",
         labelKey: "learnLevel",
@@ -611,7 +632,7 @@ const PROMPT_TEMPLATES = {
       ru: "Отвечай в разговорном, но информативном тоне.",
       de: "Antworte in einem gesprächigen, aber informativen Ton."
     },
-    fields: []
+    fields: [TARGET_LLM_FIELD]
   },
 
   pinterest: {
