@@ -35,8 +35,22 @@ class PromptStorage {
 
   async addToHistory(entry) {
     const history = await this.getHistory();
+
+    // If entry has an id, try to update existing record
+    if (entry.id) {
+      const existingIndex = history.findIndex(item => item.id === entry.id);
+      if (existingIndex !== -1) {
+        history[existingIndex].prompt = entry.prompt;
+        history[existingIndex].description = entry.description;
+        history[existingIndex].details = entry.details || history[existingIndex].details;
+        return new Promise((resolve) => {
+          chrome.storage.local.set({ [this.HISTORY_KEY]: history }, () => resolve(history[existingIndex]));
+        });
+      }
+    }
+
     const item = {
-      id: Date.now().toString(),
+      id: entry.id || Date.now().toString(),
       category: entry.category,
       description: entry.description,
       prompt: entry.prompt,

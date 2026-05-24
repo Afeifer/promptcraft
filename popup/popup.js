@@ -101,6 +101,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
       const url = chrome.runtime.getURL(`_locales/${lang}/messages.json`);
       const response = await fetch(url);
+      if (!response.ok) {
+        console.warn('Failed to load messages for', lang, '- status:', response.status);
+        return;
+      }
       messages = await response.json();
     } catch (e) {
       console.warn('Failed to load messages for', lang, e);
@@ -570,7 +574,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('settings-prompt-lang').value = promptLang;
     storage.getSettings().then(s => {
       document.getElementById('settings-api-key').value = s.apiKey || '';
-      document.getElementById('settings-model').value = s.model || 'gemini-2.0-flash';
+      document.getElementById('settings-model').value = s.model || 'gemini-2.5-flash';
     });
   }
 
