@@ -101,6 +101,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
       const url = chrome.runtime.getURL(`_locales/${lang}/messages.json`);
       const response = await fetch(url);
+      if (!response.ok) {
+        console.warn('Failed to load messages for', lang, '- status:', response.status);
+        return;
+      }
       messages = await response.json();
     } catch (e) {
       console.warn('Failed to load messages for', lang, e);
@@ -503,16 +507,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     div.innerHTML = `
       <div class="prompt-item-header">
-        <span class="prompt-item-category">${categoryName}</span>
-        <span class="prompt-item-date">${dateStr}</span>
+        <span class="prompt-item-category">${escapeHtml(categoryName)}</span>
+        <span class="prompt-item-date">${escapeHtml(dateStr)}</span>
       </div>
       <div class="prompt-item-preview">${escapeHtml(preview)}</div>
       <div class="prompt-item-actions">
-        <button class="prompt-item-btn copy-btn" title="${msg('btnCopy')}">
+        <button class="prompt-item-btn copy-btn" title="${escapeHtml(msg('btnCopy'))}">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-          ${msg('btnCopy')}
+          ${escapeHtml(msg('btnCopy'))}
         </button>
-        <button class="prompt-item-btn delete" title="${msg('deleteConfirm')}">
+        <button class="prompt-item-btn delete" title="${escapeHtml(msg('deleteConfirm'))}">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
         </button>
       </div>
@@ -562,7 +566,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('settings-prompt-lang').value = promptLang;
     storage.getSettings().then(s => {
       document.getElementById('settings-api-key').value = s.apiKey || '';
-      document.getElementById('settings-model').value = s.model || 'gemini-2.0-flash';
+      document.getElementById('settings-model').value = s.model || 'gemini-2.5-flash';
     });
   }
 

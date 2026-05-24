@@ -151,7 +151,7 @@ async function checkForUpdates() {
     hasUpdate,
     currentVersion: CURRENT_VERSION,
     latestVersion,
-    downloadUrl: `https://github.com/${GITHUB_REPO}/archive/refs/heads/init.zip`
+    downloadUrl: `https://github.com/${GITHUB_REPO}/archive/refs/heads/main.zip`
   };
 }
 
