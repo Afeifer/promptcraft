@@ -1,0 +1,40 @@
+{
+  "name": "promptcraft",
+  "version": "1.2.0",
+  "description": "Create perfect AI prompts for any task. Step-by-step builder + AI enhancement.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable",
+    "pack": "electron-builder --dir"
+  },
+  "author": "Afeifer",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.0"
+  },
+  "dependencies": {
+    "electron-store": "^8.2.0"
+  },
+  "build": {
+    "appId": "com.promptcraft.app",
+    "productName": "PromptCraft",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "src/assets/icon.png"
+    },
+    "portable": {
+      "artifactName": "PromptCraft-${version}-portable.exe"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "node_modules/**/*"
+    ]
+  }
+}

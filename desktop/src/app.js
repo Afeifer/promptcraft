@@ -99,8 +99,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function loadMessages(lang) {
     try {
-      const url = chrome.runtime.getURL(`_locales/${lang}/messages.json`);
-      const response = await fetch(url);
+      const response = await fetch(`locales/${lang}/messages.json`);
       if (!response.ok) {
         console.warn('Failed to load messages for', lang, '- status:', response.status);
         return;
@@ -115,7 +114,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (messages[key] && messages[key].message) {
       return messages[key].message;
     }
-    return chrome.i18n.getMessage(key) || key;
+    return key;
   }
 
   function applyI18n() {
@@ -166,7 +165,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
     document.getElementById(`step-${step}`).classList.add('active');
 
-    // Update progress
     const progressPercent = (step / 5) * 100;
     document.getElementById('progress-bar').style.setProperty('--progress', `${progressPercent}%`);
 
@@ -178,7 +176,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // Step 2 placeholder per category
   const step2Placeholders = {
     code: 'step2PlaceholderCode',
     text: 'step2PlaceholderText',
@@ -208,7 +205,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
-  // Step 2: Next/Back
+  // Step 2
   document.getElementById('btn-next-2').addEventListener('click', () => {
     const desc = document.getElementById('task-description').value.trim();
     if (!desc) {
@@ -220,15 +217,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   document.getElementById('btn-back-2').addEventListener('click', () => goToStep(1));
 
-  // Step 3: Next/Back
+  // Step 3
   document.getElementById('btn-next-3').addEventListener('click', () => goToStep(4));
   document.getElementById('btn-back-3').addEventListener('click', () => goToStep(2));
 
-  // Step 4: Generate/Back
+  // Step 4
   document.getElementById('btn-back-4').addEventListener('click', () => goToStep(3));
   document.getElementById('btn-generate').addEventListener('click', generatePrompt);
 
-  // Step 5: New prompt
+  // Step 5
   document.getElementById('btn-new-prompt').addEventListener('click', resetBuilder);
 
   // ==================== Details Fields ====================
@@ -329,7 +326,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     document.getElementById('generated-prompt').textContent = currentPrompt;
 
-    // Reset buttons
     const copyBtn = document.getElementById('btn-copy');
     copyBtn.classList.remove('copied');
     copyBtn.querySelector('span').textContent = msg('btnCopy');
@@ -339,7 +335,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     document.getElementById('enhance-status').classList.add('hidden');
 
-    // Save to history
     await storage.addToHistory({
       id: currentPromptId,
       category: selectedCategory,
@@ -355,7 +350,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   document.getElementById('btn-copy').addEventListener('click', async () => {
     try {
-      await navigator.clipboard.writeText(currentPrompt);
+      await window.electronAPI.clipboardWrite(currentPrompt);
       const btn = document.getElementById('btn-copy');
       btn.classList.add('copied');
       btn.querySelector('span').textContent = msg('btnCopied');
@@ -403,8 +398,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     statusEl.classList.remove('hidden');
 
     try {
-      const response = await chrome.runtime.sendMessage({
-        action: 'enhancePrompt',
+      const response = await window.electronAPI.enhancePrompt({
         prompt: currentPrompt,
         apiKey: settings.apiKey,
         lang: promptLang,
@@ -420,7 +414,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                                currentLang === 'de' ? 'Prompt verbessert!' :
                                'Prompt enhanced!') + modelUsed;
 
-        // Update history with enhanced version
         await storage.addToHistory({
           id: currentPromptId,
           category: selectedCategory,
@@ -490,7 +483,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // ==================== Prompt Item Component ====================
+  // ==================== Prompt Item ====================
 
   function createPromptItem(item, source) {
     const div = document.createElement('div');
@@ -522,14 +515,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       </div>
     `;
 
-    // Copy
     div.querySelector('.copy-btn').addEventListener('click', async (e) => {
       e.stopPropagation();
-      await navigator.clipboard.writeText(item.prompt);
+      await window.electronAPI.clipboardWrite(item.prompt);
       showToast(msg('btnCopied'));
     });
 
-    // Delete
     div.querySelector('.delete').addEventListener('click', async (e) => {
       e.stopPropagation();
       if (source === 'history') {
@@ -541,7 +532,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
 
-    // Click to view full prompt
     div.addEventListener('click', () => {
       currentPrompt = item.prompt;
       currentPromptId = item.id;
@@ -631,7 +621,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     statusEl.classList.remove('hidden');
 
     try {
-      const result = await chrome.runtime.sendMessage({ action: 'checkUpdate' });
+      const result = await window.electronAPI.checkUpdate();
 
       if (result.error) {
         statusEl.className = 'update-status error';
@@ -668,11 +658,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!banner) return;
 
     const settings = await storage.getSettings();
-
-    // Hide if API key is already set or banner was dismissed
-    const dismissed = await new Promise(resolve => {
-      chrome.storage.local.get('apiKeyBannerDismissed', (r) => resolve(r.apiKeyBannerDismissed));
-    });
+    const dismissed = await window.electronAPI.storeGet('apiKeyBannerDismissed', false);
 
     if (settings.apiKey || dismissed) {
       banner.style.display = 'none';
@@ -681,7 +667,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     document.getElementById('api-key-banner-dismiss').addEventListener('click', () => {
       banner.style.display = 'none';
-      chrome.storage.local.set({ apiKeyBannerDismissed: true });
+      window.electronAPI.storeSet('apiKeyBannerDismissed', true);
     });
   }
 

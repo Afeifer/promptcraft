@@ -7,30 +7,21 @@ class PromptStorage {
   }
 
   async getSettings() {
-    return new Promise((resolve) => {
-      chrome.storage.local.get(this.SETTINGS_KEY, (result) => {
-        resolve(result[this.SETTINGS_KEY] || {
-          lang: 'en',
-          promptLang: 'en',
-          apiKey: '',
-          model: 'gemini-2.5-flash'
-        });
-      });
+    const result = await window.electronAPI.storeGet(this.SETTINGS_KEY, {
+      lang: 'en',
+      promptLang: 'en',
+      apiKey: '',
+      model: 'gemini-2.5-flash'
     });
+    return result;
   }
 
   async saveSettings(settings) {
-    return new Promise((resolve) => {
-      chrome.storage.local.set({ [this.SETTINGS_KEY]: settings }, resolve);
-    });
+    await window.electronAPI.storeSet(this.SETTINGS_KEY, settings);
   }
 
   async getHistory() {
-    return new Promise((resolve) => {
-      chrome.storage.local.get(this.HISTORY_KEY, (result) => {
-        resolve(result[this.HISTORY_KEY] || []);
-      });
-    });
+    return await window.electronAPI.storeGet(this.HISTORY_KEY, []);
   }
 
   async addToHistory(entry) {
@@ -43,9 +34,8 @@ class PromptStorage {
         history[existingIndex].prompt = entry.prompt;
         history[existingIndex].description = entry.description;
         history[existingIndex].details = entry.details || history[existingIndex].details;
-        return new Promise((resolve) => {
-          chrome.storage.local.set({ [this.HISTORY_KEY]: history }, () => resolve(history[existingIndex]));
-        });
+        await window.electronAPI.storeSet(this.HISTORY_KEY, history);
+        return history[existingIndex];
       }
     }
 
@@ -61,25 +51,18 @@ class PromptStorage {
     if (history.length > this.MAX_HISTORY) {
       history.pop();
     }
-    return new Promise((resolve) => {
-      chrome.storage.local.set({ [this.HISTORY_KEY]: history }, () => resolve(item));
-    });
+    await window.electronAPI.storeSet(this.HISTORY_KEY, history);
+    return item;
   }
 
   async removeFromHistory(id) {
     const history = await this.getHistory();
     const filtered = history.filter(item => item.id !== id);
-    return new Promise((resolve) => {
-      chrome.storage.local.set({ [this.HISTORY_KEY]: filtered }, resolve);
-    });
+    await window.electronAPI.storeSet(this.HISTORY_KEY, filtered);
   }
 
   async getFavorites() {
-    return new Promise((resolve) => {
-      chrome.storage.local.get(this.FAVORITES_KEY, (result) => {
-        resolve(result[this.FAVORITES_KEY] || []);
-      });
-    });
+    return await window.electronAPI.storeGet(this.FAVORITES_KEY, []);
   }
 
   async addToFavorites(entry) {
@@ -95,17 +78,13 @@ class PromptStorage {
       timestamp: entry.timestamp || new Date().toISOString()
     };
     favorites.unshift(item);
-    return new Promise((resolve) => {
-      chrome.storage.local.set({ [this.FAVORITES_KEY]: favorites }, resolve);
-    });
+    await window.electronAPI.storeSet(this.FAVORITES_KEY, favorites);
   }
 
   async removeFromFavorites(id) {
     const favorites = await this.getFavorites();
     const filtered = favorites.filter(item => item.id !== id);
-    return new Promise((resolve) => {
-      chrome.storage.local.set({ [this.FAVORITES_KEY]: filtered }, resolve);
-    });
+    await window.electronAPI.storeSet(this.FAVORITES_KEY, filtered);
   }
 
   async isFavorite(id) {

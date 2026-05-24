@@ -27,8 +27,8 @@
 }
 
 body {
-  width: 400px;
-  min-height: 500px;
+  width: 100%;
+  min-height: 100vh;
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
