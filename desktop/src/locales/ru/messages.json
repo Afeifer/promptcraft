@@ -1,0 +1,800 @@
+{
+  "extName": {
+    "message": "PromptCraft"
+  },
+  "extDescription": {
+    "message": "Создавайте идеальные AI-промпты для любой задачи. Пошаговый конструктор + улучшение через AI."
+  },
+  "step1Title": {
+    "message": "Что вам нужно?"
+  },
+  "step2Title": {
+    "message": "Опишите задачу"
+  },
+  "step3Title": {
+    "message": "Детали"
+  },
+  "step4Title": {
+    "message": "Контекст"
+  },
+  "step5Title": {
+    "message": "Ваш промпт готов!"
+  },
+  "step2Placeholder": {
+    "message": "Опишите что вам нужно своими словами..."
+  },
+  "step2PlaceholderCode": {
+    "message": "Опишите какой код нужен: функция, приложение, скрипт, исправление бага..."
+  },
+  "step2PlaceholderText": {
+    "message": "Какой текст нужен? Статья, пост, email, пост для соцсетей..."
+  },
+  "step2PlaceholderImage": {
+    "message": "Опишите изображение: объект, сцена, стиль..."
+  },
+  "step2PlaceholderVideo": {
+    "message": "Опишите сцену видео: что происходит, кто в кадре, где..."
+  },
+  "step2PlaceholderAnalysis": {
+    "message": "Что нужно проанализировать? Данные, рынок, конкуренты, тренды..."
+  },
+  "step2PlaceholderTranslation": {
+    "message": "Вставьте текст для перевода..."
+  },
+  "step2PlaceholderLearning": {
+    "message": "Какую тему хотите изучить? Программирование, маркетинг, дизайн..."
+  },
+  "step2PlaceholderChat": {
+    "message": "О чём хотите поговорить или спросить?"
+  },
+  "step2PlaceholderPinterest": {
+    "message": "О чём ваш пин? Тема, продукт, идея..."
+  },
+  "step4Placeholder": {
+    "message": "Есть что-то важное, что AI должен знать? (необязательно)"
+  },
+  "catCode": {
+    "message": "Код"
+  },
+  "catText": {
+    "message": "Текст"
+  },
+  "catImage": {
+    "message": "Изображения"
+  },
+  "catAnalysis": {
+    "message": "Анализ"
+  },
+  "catTranslation": {
+    "message": "Перевод"
+  },
+  "catLearning": {
+    "message": "Обучение"
+  },
+  "catChat": {
+    "message": "Общение"
+  },
+  "catOther": {
+    "message": "Другое"
+  },
+  "btnNext": {
+    "message": "Далее"
+  },
+  "btnBack": {
+    "message": "Назад"
+  },
+  "btnGenerate": {
+    "message": "Создать промпт"
+  },
+  "btnCopy": {
+    "message": "Копировать"
+  },
+  "btnCopied": {
+    "message": "Скопировано!"
+  },
+  "btnEnhance": {
+    "message": "Улучшить с AI"
+  },
+  "btnNewPrompt": {
+    "message": "Новый промпт"
+  },
+  "btnHistory": {
+    "message": "История"
+  },
+  "btnSettings": {
+    "message": "Настройки"
+  },
+  "btnFavorite": {
+    "message": "В избранное"
+  },
+  "btnFavorited": {
+    "message": "Сохранено!"
+  },
+  "settingsTitle": {
+    "message": "Настройки"
+  },
+  "settingsApiKey": {
+    "message": "Gemini API ключ (необязательно)"
+  },
+  "settingsApiKeyPlaceholder": {
+    "message": "Вставьте ваш Gemini API ключ"
+  },
+  "settingsApiKeyHint": {
+    "message": "Получите бесплатный ключ на aistudio.google.com"
+  },
+  "settingsLanguage": {
+    "message": "Язык интерфейса"
+  },
+  "settingsPromptLang": {
+    "message": "Язык промпта"
+  },
+  "settingsSave": {
+    "message": "Сохранить"
+  },
+  "settingsSaved": {
+    "message": "Сохранено!"
+  },
+  "historyTitle": {
+    "message": "История промптов"
+  },
+  "historyEmpty": {
+    "message": "Пока нет промптов. Создайте первый!"
+  },
+  "favoritesTitle": {
+    "message": "Избранное"
+  },
+  "favoritesEmpty": {
+    "message": "Пока нет избранных. Нажмите звёздочку, чтобы сохранить промпт."
+  },
+  "enhancing": {
+    "message": "AI улучшает ваш промпт..."
+  },
+  "enhanceNoKey": {
+    "message": "Добавьте Gemini API ключ в Настройках для улучшения через AI"
+  },
+  "langCode": {
+    "message": "Язык"
+  },
+  "langFramework": {
+    "message": "Фреймворк"
+  },
+  "langComplexity": {
+    "message": "Сложность"
+  },
+  "textTone": {
+    "message": "Тон"
+  },
+  "textAudience": {
+    "message": "Аудитория"
+  },
+  "textLength": {
+    "message": "Длина"
+  },
+  "imageStyle": {
+    "message": "Стиль"
+  },
+  "imageMood": {
+    "message": "Настроение"
+  },
+  "imageAspect": {
+    "message": "Соотношение сторон"
+  },
+  "analysisDepth": {
+    "message": "Глубина"
+  },
+  "analysisFormat": {
+    "message": "Формат вывода"
+  },
+  "transFrom": {
+    "message": "С"
+  },
+  "transTo": {
+    "message": "На"
+  },
+  "transStyle": {
+    "message": "Стиль"
+  },
+  "learnLevel": {
+    "message": "Уровень"
+  },
+  "learnStyle": {
+    "message": "Стиль обучения"
+  },
+  "complexityBeginner": {
+    "message": "Начинающий"
+  },
+  "complexityIntermediate": {
+    "message": "Средний"
+  },
+  "complexityAdvanced": {
+    "message": "Продвинутый"
+  },
+  "toneFormal": {
+    "message": "Формальный"
+  },
+  "toneCasual": {
+    "message": "Разговорный"
+  },
+  "toneCreative": {
+    "message": "Креативный"
+  },
+  "toneProfessional": {
+    "message": "Профессиональный"
+  },
+  "toneAcademic": {
+    "message": "Академический"
+  },
+  "lengthShort": {
+    "message": "Короткий"
+  },
+  "lengthMedium": {
+    "message": "Средний"
+  },
+  "lengthLong": {
+    "message": "Длинный"
+  },
+  "lengthDetailed": {
+    "message": "Очень детальный"
+  },
+  "depthOverview": {
+    "message": "Краткий обзор"
+  },
+  "depthStandard": {
+    "message": "Стандартный"
+  },
+  "depthDeep": {
+    "message": "Глубокий анализ"
+  },
+  "stylePhotorealistic": {
+    "message": "Фотореализм"
+  },
+  "styleDigitalArt": {
+    "message": "Цифровое искусство"
+  },
+  "styleOilPainting": {
+    "message": "Масляная живопись"
+  },
+  "styleWatercolor": {
+    "message": "Акварель"
+  },
+  "styleAnime": {
+    "message": "Аниме"
+  },
+  "styleMinimalist": {
+    "message": "Минимализм"
+  },
+  "style3D": {
+    "message": "3D рендер"
+  },
+  "styleSketch": {
+    "message": "Скетч"
+  },
+  "tabBuilder": {
+    "message": "Конструктор"
+  },
+  "tabHistory": {
+    "message": "История"
+  },
+  "tabFavorites": {
+    "message": "Избранное"
+  },
+  "deleteConfirm": {
+    "message": "Удалить этот промпт?"
+  },
+  "catPinterest": {
+    "message": "Pinterest"
+  },
+  "pinNiche": {
+    "message": "Ниша / Отрасль"
+  },
+  "pinStyle": {
+    "message": "Стиль пина"
+  },
+  "pinAudience": {
+    "message": "Целевая аудитория"
+  },
+  "pinSeason": {
+    "message": "Сезон / Тренд"
+  },
+  "pinStyleLifestyle": {
+    "message": "Лайфстайл фото"
+  },
+  "pinStyleInfographic": {
+    "message": "Инфографика"
+  },
+  "pinStyleStepByStep": {
+    "message": "Пошаговый"
+  },
+  "pinStyleQuote": {
+    "message": "Цитата / Текст"
+  },
+  "pinStyleProduct": {
+    "message": "Продукт"
+  },
+  "pinStyleBeforeAfter": {
+    "message": "До / После"
+  },
+  "pinSeasonEvergreen": {
+    "message": "Вечнозелёный"
+  },
+  "pinSeasonSpring": {
+    "message": "Весна"
+  },
+  "pinSeasonSummer": {
+    "message": "Лето"
+  },
+  "pinSeasonAutumn": {
+    "message": "Осень"
+  },
+  "pinSeasonWinter": {
+    "message": "Зима"
+  },
+  "pinSeasonHoliday": {
+    "message": "Праздничный"
+  },
+  "imageLighting": {
+    "message": "Освещение"
+  },
+  "imageLightDir": {
+    "message": "Направление света"
+  },
+  "imageAngle": {
+    "message": "Ракурс камеры"
+  },
+  "imageFocal": {
+    "message": "Фокусное расстояние"
+  },
+  "imageComposition": {
+    "message": "Композиция"
+  },
+  "lightNatural": {
+    "message": "Естественный"
+  },
+  "lightStudio": {
+    "message": "Студийный"
+  },
+  "lightGoldenHour": {
+    "message": "Золотой час"
+  },
+  "lightDramatic": {
+    "message": "Драматичный"
+  },
+  "lightSoft": {
+    "message": "Мягкий / Рассеянный"
+  },
+  "lightNeon": {
+    "message": "Неон / RGB"
+  },
+  "lightDirFront": {
+    "message": "Фронтальный"
+  },
+  "lightDirSide": {
+    "message": "Боковой"
+  },
+  "lightDirBack": {
+    "message": "Контровой"
+  },
+  "lightDirTop": {
+    "message": "Сверху"
+  },
+  "lightDirRembrandt": {
+    "message": "Рембрандт"
+  },
+  "angleLow": {
+    "message": "Снизу"
+  },
+  "angleEye": {
+    "message": "На уровне глаз"
+  },
+  "angleHigh": {
+    "message": "Сверху"
+  },
+  "angleBird": {
+    "message": "С высоты птичьего полёта"
+  },
+  "angleDutch": {
+    "message": "Голландский угол"
+  },
+  "angleMacro": {
+    "message": "Макро"
+  },
+  "focalWide": {
+    "message": "Широкий (14-35мм)"
+  },
+  "focalStandard": {
+    "message": "Стандарт (50мм)"
+  },
+  "focalPortrait": {
+    "message": "Портрет (85мм)"
+  },
+  "focalTele": {
+    "message": "Телефото (200мм+)"
+  },
+  "compRuleOfThirds": {
+    "message": "Правило третей"
+  },
+  "compCentered": {
+    "message": "По центру"
+  },
+  "compLeadingLines": {
+    "message": "Ведущие линии"
+  },
+  "compSymmetry": {
+    "message": "Симметрия"
+  },
+  "compNegativeSpace": {
+    "message": "Негативное пространство"
+  },
+  "apiKeyBannerTitle": {
+    "message": "Хотите более точные промпты?"
+  },
+  "apiKeyBannerText": {
+    "message": "Добавьте бесплатный API ключ Gemini в Настройках, чтобы разблокировать AI-улучшение промптов — умнее, детальнее и под ваши задачи."
+  },
+  "apiKeyBannerDismiss": {
+    "message": "Понятно"
+  },
+  "settingsApiKeyTitle": {
+    "message": "Как получить бесплатный API ключ:"
+  },
+  "settingsApiKeyStep1": {
+    "message": "1. Перейдите на aistudio.google.com"
+  },
+  "settingsApiKeyStep2": {
+    "message": "2. Войдите с вашим Google аккаунтом"
+  },
+  "settingsApiKeyStep3": {
+    "message": "3. Нажмите «Get API Key» → «Create API Key»"
+  },
+  "settingsApiKeyStep4": {
+    "message": "4. Скопируйте ключ и вставьте его ниже"
+  },
+  "settingsApiKeyFree": {
+    "message": "Это полностью бесплатно — до 1500 запросов в день!"
+  },
+  "btnLogin": {
+    "message": "Войти"
+  },
+  "btnGoogleSignIn": {
+    "message": "Войти через Google"
+  },
+  "btnSignOut": {
+    "message": "Выйти"
+  },
+  "settingsAccount": {
+    "message": "Аккаунт"
+  },
+  "settingsLoginHint": {
+    "message": "Войдите, чтобы синхронизировать данные и получать новости о новых функциях."
+  },
+  "loginSuccess": {
+    "message": "Вход выполнен!"
+  },
+  "logoutSuccess": {
+    "message": "Выход выполнен"
+  },
+  "settingsModel": {
+    "message": "AI Модель"
+  },
+  "settingsModelHint": {
+    "message": "Если у выбранной модели закончится квота, расширение автоматически попробует другие модели."
+  },
+  "settingsVersion": {
+    "message": "Версия"
+  },
+  "btnCheckUpdate": {
+    "message": "Проверить обновления"
+  },
+  "updateChecking": {
+    "message": "Проверяю обновления..."
+  },
+  "updateLatest": {
+    "message": "У вас последняя версия!"
+  },
+  "updateAvailable": {
+    "message": "Доступна новая версия:"
+  },
+  "updateDownload": {
+    "message": "Скачать обновление →"
+  },
+
+  "catVideo": {
+    "message": "Видео"
+  },
+
+  "imagePlatform": {
+    "message": "Целевая платформа"
+  },
+  "platMidjourney": {
+    "message": "Midjourney v7"
+  },
+  "platDalle": {
+    "message": "DALL-E 3+"
+  },
+  "platFlux": {
+    "message": "Flux 2 Pro"
+  },
+  "platSD": {
+    "message": "Stable Diffusion 3.5"
+  },
+  "platFirefly": {
+    "message": "Adobe Firefly"
+  },
+  "platLeonardo": {
+    "message": "Leonardo AI"
+  },
+  "platIdeogram": {
+    "message": "Ideogram 2.0"
+  },
+  "platKrea": {
+    "message": "Krea AI"
+  },
+  "platImagen": {
+    "message": "Imagen 3"
+  },
+  "platSenseNova": {
+    "message": "SenseNova U1"
+  },
+
+  "imageCamera": {
+    "message": "Камера / Объектив"
+  },
+  "camCanon85": {
+    "message": "Canon EOS R5, 85mm f/1.4"
+  },
+  "camSony35": {
+    "message": "Sony A7R V, 35mm f/1.4"
+  },
+  "camNikon50": {
+    "message": "Nikon Z9, 50mm f/1.2"
+  },
+  "camHasselblad": {
+    "message": "Hasselblad X2D, 90mm"
+  },
+  "camIphone": {
+    "message": "iPhone 16 Pro"
+  },
+  "camArri": {
+    "message": "ARRI Alexa LF, 85mm"
+  },
+  "styleCinematic": {
+    "message": "Кинематографичный"
+  },
+  "styleFashion": {
+    "message": "Фэшн-съёмка"
+  },
+  "lightRim": {
+    "message": "Кинематографичный контровой"
+  },
+  "compThreeLayer": {
+    "message": "Трёхслойная глубина"
+  },
+  "imageNegative": {
+    "message": "Negative Prompt"
+  },
+
+  "videoPlatform": {
+    "message": "Целевая платформа"
+  },
+  "vidPlatSora": {
+    "message": "Sora"
+  },
+  "vidPlatVeo": {
+    "message": "Veo 3"
+  },
+  "vidPlatKling": {
+    "message": "Kling 3.0"
+  },
+  "vidPlatRunway": {
+    "message": "Runway Gen-4"
+  },
+  "vidPlatPika": {
+    "message": "Pika 2.1"
+  },
+  "vidPlatLuma": {
+    "message": "Luma Dream Machine"
+  },
+  "vidPlatSeedance": {
+    "message": "Seedance 2.0"
+  },
+  "vidPlatHailuo": {
+    "message": "Hailuo AI"
+  },
+  "vidPlatHeyGen": {
+    "message": "HeyGen"
+  },
+  "vidPlatSynthesia": {
+    "message": "Synthesia"
+  },
+  "videoType": {
+    "message": "Тип видео"
+  },
+  "vidTypeCinematic": {
+    "message": "Кинематографичное"
+  },
+  "vidTypeCommercial": {
+    "message": "Рекламное"
+  },
+  "vidTypeMusicVideo": {
+    "message": "Музыкальный клип"
+  },
+  "vidTypeDocumentary": {
+    "message": "Документальное"
+  },
+  "vidTypeAnimation": {
+    "message": "Анимация"
+  },
+  "vidTypeSocial": {
+    "message": "Соцсети (Reels/TikTok)"
+  },
+  "vidTypeProduct": {
+    "message": "Обзор продукта"
+  },
+  "vidTypeTutorial": {
+    "message": "Туториал / Объяснение"
+  },
+  "videoCameraMove": {
+    "message": "Движение камеры"
+  },
+  "camMoveStatic": {
+    "message": "Статика (штатив)"
+  },
+  "camMoveDolly": {
+    "message": "Медленный наезд"
+  },
+  "camMoveTracking": {
+    "message": "Слежение"
+  },
+  "camMoveOrbit": {
+    "message": "Облёт / 360°"
+  },
+  "camMoveCrane": {
+    "message": "Кран вверх/вниз"
+  },
+  "camMoveHandheld": {
+    "message": "Ручная камера"
+  },
+  "camMoveDrone": {
+    "message": "Дрон (аэросъёмка)"
+  },
+  "camMoveZoom": {
+    "message": "Зум вход/выход"
+  },
+  "videoAngle": {
+    "message": "Ракурс камеры"
+  },
+  "angleWorm": {
+    "message": "Снизу вверх (червячный)"
+  },
+  "videoShotType": {
+    "message": "Тип кадра"
+  },
+  "shotECU": {
+    "message": "Экстремальный крупный"
+  },
+  "shotCU": {
+    "message": "Крупный план"
+  },
+  "shotMedium": {
+    "message": "Средний план"
+  },
+  "shotFull": {
+    "message": "Полный рост"
+  },
+  "shotWide": {
+    "message": "Общий / Панорамный"
+  },
+  "videoLighting": {
+    "message": "Освещение"
+  },
+  "vidLightDay": {
+    "message": "Дневной свет"
+  },
+  "vidLightGolden": {
+    "message": "Золотой час"
+  },
+  "vidLightBlue": {
+    "message": "Синий час / Сумерки"
+  },
+  "vidLightStudio": {
+    "message": "Студийный трёхточечный"
+  },
+  "vidLightNeon": {
+    "message": "Неоновые огни города"
+  },
+  "vidLightCandle": {
+    "message": "Свечи / Тёплый"
+  },
+  "vidLightFog": {
+    "message": "Объёмный туман"
+  },
+  "videoPacing": {
+    "message": "Темп / Скорость"
+  },
+  "paceSlow": {
+    "message": "Замедленная съёмка"
+  },
+  "paceNormal": {
+    "message": "Нормальная скорость"
+  },
+  "paceFast": {
+    "message": "Быстрая / Динамичная"
+  },
+  "paceTimelapse": {
+    "message": "Таймлапс"
+  },
+  "paceHyperlapse": {
+    "message": "Гиперлапс"
+  },
+  "videoMood": {
+    "message": "Настроение / Цветокоррекция"
+  },
+  "videoDuration": {
+    "message": "Длительность"
+  },
+  "dur5s": {
+    "message": "3-5 секунд"
+  },
+  "dur10s": {
+    "message": "10 секунд"
+  },
+  "dur30s": {
+    "message": "15-30 секунд"
+  },
+  "dur60s": {
+    "message": "60 секунд"
+  },
+  "videoAspect": {
+    "message": "Соотношение сторон"
+  },
+
+  "moodDramatic": {
+    "message": "Драматичный кинематографичный"
+  },
+  "moodPeaceful": {
+    "message": "Спокойный умиротворённый"
+  },
+  "moodMysterious": {
+    "message": "Загадочный тёмный"
+  },
+  "moodVibrant": {
+    "message": "Яркий красочный"
+  },
+  "moodNostalgic": {
+    "message": "Ностальгический винтаж"
+  },
+  "moodFuturistic": {
+    "message": "Футуристичный киберпанк"
+  },
+  "moodRomantic": {
+    "message": "Романтичный мягкий"
+  },
+  "moodEpic": {
+    "message": "Эпичный героический"
+  },
+  "moodMinimalist": {
+    "message": "Минималистичный чистый"
+  },
+  "moodHorror": {
+    "message": "Ужасы жуткий"
+  },
+  "moodDreamy": {
+    "message": "Мечтательный воздушный"
+  },
+  "moodDark": {
+    "message": "Тёмный мрачный"
+  },
+  "moodDocumentary": {
+    "message": "Документальный натуральный"
+  },
+
+  "pinImageGen": {
+    "message": "Генератор изображения"
+  },
+  "pinIdeogram": {
+    "message": "Ideogram 2.0 (лучший для текста)"
+  },
+  "pinAnyPlatform": {
+    "message": "Любая платформа"
+  }
+}
