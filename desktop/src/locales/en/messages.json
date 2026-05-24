@@ -1,0 +1,800 @@
+{
+  "extName": {
+    "message": "PromptCraft"
+  },
+  "extDescription": {
+    "message": "Create perfect AI prompts for any task. Step-by-step builder + optional AI enhancement."
+  },
+  "step1Title": {
+    "message": "What do you need?"
+  },
+  "step2Title": {
+    "message": "Describe your task"
+  },
+  "step3Title": {
+    "message": "Details"
+  },
+  "step4Title": {
+    "message": "Context"
+  },
+  "step5Title": {
+    "message": "Your prompt is ready!"
+  },
+  "step2Placeholder": {
+    "message": "Describe what you need in your own words..."
+  },
+  "step2PlaceholderCode": {
+    "message": "Describe what code you need: function, app, script, bug fix..."
+  },
+  "step2PlaceholderText": {
+    "message": "What text do you need? Article, blog post, email, social media post..."
+  },
+  "step2PlaceholderImage": {
+    "message": "Describe the image you want to create: subject, scene, style..."
+  },
+  "step2PlaceholderVideo": {
+    "message": "Describe the video scene: what happens, who is in the frame, where..."
+  },
+  "step2PlaceholderAnalysis": {
+    "message": "What do you need to analyze? Data, market, competitors, trends..."
+  },
+  "step2PlaceholderTranslation": {
+    "message": "Paste the text you want to translate..."
+  },
+  "step2PlaceholderLearning": {
+    "message": "What topic do you want to learn? Programming, marketing, design..."
+  },
+  "step2PlaceholderChat": {
+    "message": "What would you like to discuss or ask about?"
+  },
+  "step2PlaceholderPinterest": {
+    "message": "What is your pin about? Topic, product, idea..."
+  },
+  "step4Placeholder": {
+    "message": "Is there anything important the AI should know? (optional)"
+  },
+  "catCode": {
+    "message": "Code"
+  },
+  "catText": {
+    "message": "Text"
+  },
+  "catImage": {
+    "message": "Images"
+  },
+  "catAnalysis": {
+    "message": "Analysis"
+  },
+  "catTranslation": {
+    "message": "Translation"
+  },
+  "catLearning": {
+    "message": "Learning"
+  },
+  "catChat": {
+    "message": "Chat"
+  },
+  "catOther": {
+    "message": "Other"
+  },
+  "btnNext": {
+    "message": "Next"
+  },
+  "btnBack": {
+    "message": "Back"
+  },
+  "btnGenerate": {
+    "message": "Generate Prompt"
+  },
+  "btnCopy": {
+    "message": "Copy"
+  },
+  "btnCopied": {
+    "message": "Copied!"
+  },
+  "btnEnhance": {
+    "message": "Enhance with AI"
+  },
+  "btnNewPrompt": {
+    "message": "New Prompt"
+  },
+  "btnHistory": {
+    "message": "History"
+  },
+  "btnSettings": {
+    "message": "Settings"
+  },
+  "btnFavorite": {
+    "message": "Save to favorites"
+  },
+  "btnFavorited": {
+    "message": "Saved!"
+  },
+  "settingsTitle": {
+    "message": "Settings"
+  },
+  "settingsApiKey": {
+    "message": "Gemini API Key (optional)"
+  },
+  "settingsApiKeyPlaceholder": {
+    "message": "Paste your Gemini API key here"
+  },
+  "settingsApiKeyHint": {
+    "message": "Get a free key at aistudio.google.com"
+  },
+  "settingsLanguage": {
+    "message": "Interface Language"
+  },
+  "settingsPromptLang": {
+    "message": "Prompt Language"
+  },
+  "settingsSave": {
+    "message": "Save"
+  },
+  "settingsSaved": {
+    "message": "Saved!"
+  },
+  "historyTitle": {
+    "message": "Prompt History"
+  },
+  "historyEmpty": {
+    "message": "No prompts yet. Create your first one!"
+  },
+  "favoritesTitle": {
+    "message": "Favorites"
+  },
+  "favoritesEmpty": {
+    "message": "No favorites yet. Star a prompt to save it here."
+  },
+  "enhancing": {
+    "message": "AI is improving your prompt..."
+  },
+  "enhanceNoKey": {
+    "message": "Add a Gemini API key in Settings to use AI enhancement"
+  },
+  "langCode": {
+    "message": "Language"
+  },
+  "langFramework": {
+    "message": "Framework"
+  },
+  "langComplexity": {
+    "message": "Complexity"
+  },
+  "textTone": {
+    "message": "Tone"
+  },
+  "textAudience": {
+    "message": "Audience"
+  },
+  "textLength": {
+    "message": "Length"
+  },
+  "imageStyle": {
+    "message": "Style"
+  },
+  "imageMood": {
+    "message": "Mood"
+  },
+  "imageAspect": {
+    "message": "Aspect Ratio"
+  },
+  "analysisDepth": {
+    "message": "Depth"
+  },
+  "analysisFormat": {
+    "message": "Output Format"
+  },
+  "transFrom": {
+    "message": "From"
+  },
+  "transTo": {
+    "message": "To"
+  },
+  "transStyle": {
+    "message": "Style"
+  },
+  "learnLevel": {
+    "message": "Level"
+  },
+  "learnStyle": {
+    "message": "Teaching Style"
+  },
+  "complexityBeginner": {
+    "message": "Beginner"
+  },
+  "complexityIntermediate": {
+    "message": "Intermediate"
+  },
+  "complexityAdvanced": {
+    "message": "Advanced"
+  },
+  "toneFormal": {
+    "message": "Formal"
+  },
+  "toneCasual": {
+    "message": "Casual"
+  },
+  "toneCreative": {
+    "message": "Creative"
+  },
+  "toneProfessional": {
+    "message": "Professional"
+  },
+  "toneAcademic": {
+    "message": "Academic"
+  },
+  "lengthShort": {
+    "message": "Short"
+  },
+  "lengthMedium": {
+    "message": "Medium"
+  },
+  "lengthLong": {
+    "message": "Long"
+  },
+  "lengthDetailed": {
+    "message": "Very Detailed"
+  },
+  "depthOverview": {
+    "message": "Quick Overview"
+  },
+  "depthStandard": {
+    "message": "Standard"
+  },
+  "depthDeep": {
+    "message": "Deep Dive"
+  },
+  "stylePhotorealistic": {
+    "message": "Photorealistic"
+  },
+  "styleDigitalArt": {
+    "message": "Digital Art"
+  },
+  "styleOilPainting": {
+    "message": "Oil Painting"
+  },
+  "styleWatercolor": {
+    "message": "Watercolor"
+  },
+  "styleAnime": {
+    "message": "Anime"
+  },
+  "styleMinimalist": {
+    "message": "Minimalist"
+  },
+  "style3D": {
+    "message": "3D Render"
+  },
+  "styleSketch": {
+    "message": "Sketch"
+  },
+  "tabBuilder": {
+    "message": "Builder"
+  },
+  "tabHistory": {
+    "message": "History"
+  },
+  "tabFavorites": {
+    "message": "Favorites"
+  },
+  "deleteConfirm": {
+    "message": "Delete this prompt?"
+  },
+  "catPinterest": {
+    "message": "Pinterest"
+  },
+  "pinNiche": {
+    "message": "Niche / Industry"
+  },
+  "pinStyle": {
+    "message": "Pin Style"
+  },
+  "pinAudience": {
+    "message": "Target Audience"
+  },
+  "pinSeason": {
+    "message": "Season / Trend"
+  },
+  "pinStyleLifestyle": {
+    "message": "Lifestyle Photo"
+  },
+  "pinStyleInfographic": {
+    "message": "Infographic"
+  },
+  "pinStyleStepByStep": {
+    "message": "Step-by-Step"
+  },
+  "pinStyleQuote": {
+    "message": "Quote / Text"
+  },
+  "pinStyleProduct": {
+    "message": "Product"
+  },
+  "pinStyleBeforeAfter": {
+    "message": "Before / After"
+  },
+  "pinSeasonEvergreen": {
+    "message": "Evergreen"
+  },
+  "pinSeasonSpring": {
+    "message": "Spring"
+  },
+  "pinSeasonSummer": {
+    "message": "Summer"
+  },
+  "pinSeasonAutumn": {
+    "message": "Autumn"
+  },
+  "pinSeasonWinter": {
+    "message": "Winter"
+  },
+  "pinSeasonHoliday": {
+    "message": "Holiday"
+  },
+  "imageLighting": {
+    "message": "Lighting"
+  },
+  "imageLightDir": {
+    "message": "Light Direction"
+  },
+  "imageAngle": {
+    "message": "Camera Angle"
+  },
+  "imageFocal": {
+    "message": "Focal Length"
+  },
+  "imageComposition": {
+    "message": "Composition"
+  },
+  "lightNatural": {
+    "message": "Natural"
+  },
+  "lightStudio": {
+    "message": "Studio"
+  },
+  "lightGoldenHour": {
+    "message": "Golden Hour"
+  },
+  "lightDramatic": {
+    "message": "Dramatic"
+  },
+  "lightSoft": {
+    "message": "Soft / Diffused"
+  },
+  "lightNeon": {
+    "message": "Neon / RGB"
+  },
+  "lightDirFront": {
+    "message": "Front"
+  },
+  "lightDirSide": {
+    "message": "Side"
+  },
+  "lightDirBack": {
+    "message": "Backlight"
+  },
+  "lightDirTop": {
+    "message": "Top-Down"
+  },
+  "lightDirRembrandt": {
+    "message": "Rembrandt"
+  },
+  "angleLow": {
+    "message": "Low Angle"
+  },
+  "angleEye": {
+    "message": "Eye Level"
+  },
+  "angleHigh": {
+    "message": "High Angle"
+  },
+  "angleBird": {
+    "message": "Bird's Eye"
+  },
+  "angleDutch": {
+    "message": "Dutch Tilt"
+  },
+  "angleMacro": {
+    "message": "Macro"
+  },
+  "focalWide": {
+    "message": "Wide (14-35mm)"
+  },
+  "focalStandard": {
+    "message": "Standard (50mm)"
+  },
+  "focalPortrait": {
+    "message": "Portrait (85mm)"
+  },
+  "focalTele": {
+    "message": "Telephoto (200mm+)"
+  },
+  "compRuleOfThirds": {
+    "message": "Rule of Thirds"
+  },
+  "compCentered": {
+    "message": "Centered"
+  },
+  "compLeadingLines": {
+    "message": "Leading Lines"
+  },
+  "compSymmetry": {
+    "message": "Symmetry"
+  },
+  "compNegativeSpace": {
+    "message": "Negative Space"
+  },
+  "apiKeyBannerTitle": {
+    "message": "Want more precise prompts?"
+  },
+  "apiKeyBannerText": {
+    "message": "Add a free Gemini API key in Settings to unlock AI-powered prompt enhancement — smarter, more detailed, and tailored to your needs."
+  },
+  "apiKeyBannerDismiss": {
+    "message": "Got it"
+  },
+  "settingsApiKeyTitle": {
+    "message": "How to get a free API key:"
+  },
+  "settingsApiKeyStep1": {
+    "message": "1. Go to aistudio.google.com"
+  },
+  "settingsApiKeyStep2": {
+    "message": "2. Sign in with your Google account"
+  },
+  "settingsApiKeyStep3": {
+    "message": "3. Click \"Get API Key\" → \"Create API Key\""
+  },
+  "settingsApiKeyStep4": {
+    "message": "4. Copy the key and paste it below"
+  },
+  "settingsApiKeyFree": {
+    "message": "It's completely free — up to 1,500 requests per day!"
+  },
+  "btnLogin": {
+    "message": "Sign In"
+  },
+  "btnGoogleSignIn": {
+    "message": "Sign in with Google"
+  },
+  "btnSignOut": {
+    "message": "Sign Out"
+  },
+  "settingsAccount": {
+    "message": "Account"
+  },
+  "settingsLoginHint": {
+    "message": "Sign in to sync your data and receive updates about new features."
+  },
+  "loginSuccess": {
+    "message": "Signed in successfully!"
+  },
+  "logoutSuccess": {
+    "message": "Signed out"
+  },
+  "settingsModel": {
+    "message": "AI Model"
+  },
+  "settingsModelHint": {
+    "message": "If the selected model hits its quota limit, the extension will automatically try other models."
+  },
+  "settingsVersion": {
+    "message": "Version"
+  },
+  "btnCheckUpdate": {
+    "message": "Check for Updates"
+  },
+  "updateChecking": {
+    "message": "Checking for updates..."
+  },
+  "updateLatest": {
+    "message": "You have the latest version!"
+  },
+  "updateAvailable": {
+    "message": "New version available:"
+  },
+  "updateDownload": {
+    "message": "Download update →"
+  },
+
+  "catVideo": {
+    "message": "Video"
+  },
+
+  "imagePlatform": {
+    "message": "Target Platform"
+  },
+  "platMidjourney": {
+    "message": "Midjourney v7"
+  },
+  "platDalle": {
+    "message": "DALL-E 3+"
+  },
+  "platFlux": {
+    "message": "Flux 2 Pro"
+  },
+  "platSD": {
+    "message": "Stable Diffusion 3.5"
+  },
+  "platFirefly": {
+    "message": "Adobe Firefly"
+  },
+  "platLeonardo": {
+    "message": "Leonardo AI"
+  },
+  "platIdeogram": {
+    "message": "Ideogram 2.0"
+  },
+  "platKrea": {
+    "message": "Krea AI"
+  },
+  "platImagen": {
+    "message": "Imagen 3"
+  },
+  "platSenseNova": {
+    "message": "SenseNova U1"
+  },
+
+  "imageCamera": {
+    "message": "Camera / Lens"
+  },
+  "camCanon85": {
+    "message": "Canon EOS R5, 85mm f/1.4"
+  },
+  "camSony35": {
+    "message": "Sony A7R V, 35mm f/1.4"
+  },
+  "camNikon50": {
+    "message": "Nikon Z9, 50mm f/1.2"
+  },
+  "camHasselblad": {
+    "message": "Hasselblad X2D, 90mm"
+  },
+  "camIphone": {
+    "message": "iPhone 16 Pro"
+  },
+  "camArri": {
+    "message": "ARRI Alexa LF, 85mm"
+  },
+  "styleCinematic": {
+    "message": "Cinematic Editorial"
+  },
+  "styleFashion": {
+    "message": "Fashion Editorial"
+  },
+  "lightRim": {
+    "message": "Cinematic Rim Light"
+  },
+  "compThreeLayer": {
+    "message": "Three-layer Depth"
+  },
+  "imageNegative": {
+    "message": "Negative Prompt"
+  },
+
+  "videoPlatform": {
+    "message": "Target Platform"
+  },
+  "vidPlatSora": {
+    "message": "Sora"
+  },
+  "vidPlatVeo": {
+    "message": "Veo 3"
+  },
+  "vidPlatKling": {
+    "message": "Kling 3.0"
+  },
+  "vidPlatRunway": {
+    "message": "Runway Gen-4"
+  },
+  "vidPlatPika": {
+    "message": "Pika 2.1"
+  },
+  "vidPlatLuma": {
+    "message": "Luma Dream Machine"
+  },
+  "vidPlatSeedance": {
+    "message": "Seedance 2.0"
+  },
+  "vidPlatHailuo": {
+    "message": "Hailuo AI"
+  },
+  "vidPlatHeyGen": {
+    "message": "HeyGen"
+  },
+  "vidPlatSynthesia": {
+    "message": "Synthesia"
+  },
+  "videoType": {
+    "message": "Video Type"
+  },
+  "vidTypeCinematic": {
+    "message": "Cinematic"
+  },
+  "vidTypeCommercial": {
+    "message": "Commercial / Ad"
+  },
+  "vidTypeMusicVideo": {
+    "message": "Music Video"
+  },
+  "vidTypeDocumentary": {
+    "message": "Documentary"
+  },
+  "vidTypeAnimation": {
+    "message": "Animation"
+  },
+  "vidTypeSocial": {
+    "message": "Social Media (Reels/TikTok)"
+  },
+  "vidTypeProduct": {
+    "message": "Product Showcase"
+  },
+  "vidTypeTutorial": {
+    "message": "Tutorial / Explainer"
+  },
+  "videoCameraMove": {
+    "message": "Camera Movement"
+  },
+  "camMoveStatic": {
+    "message": "Static Tripod"
+  },
+  "camMoveDolly": {
+    "message": "Slow Dolly In"
+  },
+  "camMoveTracking": {
+    "message": "Tracking / Follow"
+  },
+  "camMoveOrbit": {
+    "message": "Orbit / 360°"
+  },
+  "camMoveCrane": {
+    "message": "Crane Up/Down"
+  },
+  "camMoveHandheld": {
+    "message": "Handheld"
+  },
+  "camMoveDrone": {
+    "message": "Drone Aerial"
+  },
+  "camMoveZoom": {
+    "message": "Zoom In/Out"
+  },
+  "videoAngle": {
+    "message": "Camera Angle"
+  },
+  "angleWorm": {
+    "message": "Worm's Eye"
+  },
+  "videoShotType": {
+    "message": "Shot Type"
+  },
+  "shotECU": {
+    "message": "Extreme Close-up"
+  },
+  "shotCU": {
+    "message": "Close-up"
+  },
+  "shotMedium": {
+    "message": "Medium Shot"
+  },
+  "shotFull": {
+    "message": "Full Body"
+  },
+  "shotWide": {
+    "message": "Wide / Establishing"
+  },
+  "videoLighting": {
+    "message": "Lighting"
+  },
+  "vidLightDay": {
+    "message": "Natural Daylight"
+  },
+  "vidLightGolden": {
+    "message": "Golden Hour"
+  },
+  "vidLightBlue": {
+    "message": "Blue Hour / Twilight"
+  },
+  "vidLightStudio": {
+    "message": "Studio Three-point"
+  },
+  "vidLightNeon": {
+    "message": "Neon City Lights"
+  },
+  "vidLightCandle": {
+    "message": "Candlelight / Warm"
+  },
+  "vidLightFog": {
+    "message": "Volumetric Fog"
+  },
+  "videoPacing": {
+    "message": "Pacing / Speed"
+  },
+  "paceSlow": {
+    "message": "Slow Motion"
+  },
+  "paceNormal": {
+    "message": "Normal Speed"
+  },
+  "paceFast": {
+    "message": "Fast / Dynamic"
+  },
+  "paceTimelapse": {
+    "message": "Time-lapse"
+  },
+  "paceHyperlapse": {
+    "message": "Hyperlapse"
+  },
+  "videoMood": {
+    "message": "Mood / Color Grading"
+  },
+  "videoDuration": {
+    "message": "Duration"
+  },
+  "dur5s": {
+    "message": "3-5 seconds"
+  },
+  "dur10s": {
+    "message": "10 seconds"
+  },
+  "dur30s": {
+    "message": "15-30 seconds"
+  },
+  "dur60s": {
+    "message": "60 seconds"
+  },
+  "videoAspect": {
+    "message": "Aspect Ratio"
+  },
+
+  "moodDramatic": {
+    "message": "Dramatic Cinematic"
+  },
+  "moodPeaceful": {
+    "message": "Peaceful Serene"
+  },
+  "moodMysterious": {
+    "message": "Mysterious Dark"
+  },
+  "moodVibrant": {
+    "message": "Vibrant Colorful"
+  },
+  "moodNostalgic": {
+    "message": "Nostalgic Vintage"
+  },
+  "moodFuturistic": {
+    "message": "Futuristic Cyberpunk"
+  },
+  "moodRomantic": {
+    "message": "Romantic Soft Glow"
+  },
+  "moodEpic": {
+    "message": "Epic Heroic"
+  },
+  "moodMinimalist": {
+    "message": "Minimalist Clean"
+  },
+  "moodHorror": {
+    "message": "Horror Eerie"
+  },
+  "moodDreamy": {
+    "message": "Dreamy Ethereal"
+  },
+  "moodDark": {
+    "message": "Dark Moody"
+  },
+  "moodDocumentary": {
+    "message": "Documentary Natural"
+  },
+
+  "pinImageGen": {
+    "message": "Image Generator"
+  },
+  "pinIdeogram": {
+    "message": "Ideogram 2.0 (best for text)"
+  },
+  "pinAnyPlatform": {
+    "message": "Any Platform"
+  }
+}

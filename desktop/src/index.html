@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https:;">
+  <title>PromptCraft</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <span class="logo">⚡</span>
+        <h1 class="app-title">PromptCraft</h1>
+      </div>
+      <div class="header-right">
+        <button id="btn-login" class="login-btn" title="Sign in with Google">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span data-i18n="btnLogin">Sign In</span>
+        </button>
+        <div id="user-profile" class="user-profile hidden">
+          <img id="user-avatar" class="user-avatar" src="" alt="">
+          <span id="user-name" class="user-name"></span>
+        </div>
+        <button id="btn-settings" class="settings-btn" title="Settings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span data-i18n="btnSettings">Settings</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="builder" data-i18n="tabBuilder">Builder</button>
+      <button class="tab" data-tab="history" data-i18n="tabHistory">History</button>
+      <button class="tab" data-tab="favorites" data-i18n="tabFavorites">Favorites</button>
+    </nav>
+
+    <!-- Builder View -->
+    <div id="view-builder" class="view active">
+      <!-- Progress bar -->
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar"></div>
+        <div class="progress-steps">
+          <span class="progress-step active" data-step="1">1</span>
+          <span class="progress-step" data-step="2">2</span>
+          <span class="progress-step" data-step="3">3</span>
+          <span class="progress-step" data-step="4">4</span>
+          <span class="progress-step" data-step="5">5</span>
+        </div>
+      </div>
+
+      <!-- Step 1: Category -->
+      <div class="step active" id="step-1">
+        <h2 class="step-title" data-i18n="step1Title">What do you need?</h2>
+
+        <!-- API Key Banner -->
+        <div id="api-key-banner" class="api-key-banner">
+          <div class="api-key-banner-icon">✨</div>
+          <div class="api-key-banner-content">
+            <strong data-i18n="apiKeyBannerTitle">Want more precise prompts?</strong>
+            <p data-i18n="apiKeyBannerText">Add a free Gemini API key in Settings to unlock AI-powered prompt enhancement — smarter, more detailed, and tailored to your needs.</p>
+          </div>
+          <button id="api-key-banner-dismiss" class="api-key-banner-dismiss" data-i18n="apiKeyBannerDismiss">Got it</button>
+        </div>
+
+        <div class="category-grid">
+          <button class="category-card" data-category="code">
+            <span class="category-icon">💻</span>
+            <span class="category-label" data-i18n="catCode">Code</span>
+          </button>
+          <button class="category-card" data-category="text">
+            <span class="category-icon">✍️</span>
+            <span class="category-label" data-i18n="catText">Text</span>
+          </button>
+          <button class="category-card" data-category="image">
+            <span class="category-icon">🎨</span>
+            <span class="category-label" data-i18n="catImage">Images</span>
+          </button>
+          <button class="category-card" data-category="video">
+            <span class="category-icon">🎬</span>
+            <span class="category-label" data-i18n="catVideo">Video</span>
+          </button>
+          <button class="category-card" data-category="analysis">
+            <span class="category-icon">📊</span>
+            <span class="category-label" data-i18n="catAnalysis">Analysis</span>
+          </button>
+          <button class="category-card" data-category="translation">
+            <span class="category-icon">🌐</span>
+            <span class="category-label" data-i18n="catTranslation">Translation</span>
+          </button>
+          <button class="category-card" data-category="learning">
+            <span class="category-icon">🎓</span>
+            <span class="category-label" data-i18n="catLearning">Learning</span>
+          </button>
+          <button class="category-card" data-category="chat">
+            <span class="category-icon">💬</span>
+            <span class="category-label" data-i18n="catChat">Chat</span>
+          </button>
+          <button class="category-card" data-category="pinterest">
+            <span class="category-icon">📌</span>
+            <span class="category-label" data-i18n="catPinterest">Pinterest</span>
+          </button>
+          <button class="category-card" data-category="other">
+            <span class="category-icon">⚡</span>
+            <span class="category-label" data-i18n="catOther">Other</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Task Description -->
+      <div class="step" id="step-2">
+        <h2 class="step-title" data-i18n="step2Title">Describe your task</h2>
+        <textarea id="task-description" class="input-textarea" rows="5" data-i18n-placeholder="step2Placeholder" placeholder="Describe what you need in your own words..."></textarea>
+        <div class="step-actions">
+          <button class="btn btn-secondary" id="btn-back-2" data-i18n="btnBack">Back</button>
+          <button class="btn btn-primary" id="btn-next-2" data-i18n="btnNext">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Details (dynamic based on category) -->
+      <div class="step" id="step-3">
+        <h2 class="step-title" data-i18n="step3Title">Details</h2>
+        <div id="details-fields" class="details-container">
+          <!-- Dynamically populated -->
+        </div>
+        <div class="step-actions">
+          <button class="btn btn-secondary" id="btn-back-3" data-i18n="btnBack">Back</button>
+          <button class="btn btn-primary" id="btn-next-3" data-i18n="btnNext">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Context -->
+      <div class="step" id="step-4">
+        <h2 class="step-title" data-i18n="step4Title">Context</h2>
+        <textarea id="task-context" class="input-textarea" rows="4" data-i18n-placeholder="step4Placeholder" placeholder="Is there anything important the AI should know? (optional)"></textarea>
+        <div class="step-actions">
+          <button class="btn btn-secondary" id="btn-back-4" data-i18n="btnBack">Back</button>
+          <button class="btn btn-primary btn-generate" id="btn-generate" data-i18n="btnGenerate">Generate Prompt</button>
+        </div>
+      </div>
+
+      <!-- Step 5: Result -->
+      <div class="step" id="step-5">
+        <h2 class="step-title" data-i18n="step5Title">Your prompt is ready!</h2>
+        <div class="result-container">
+          <div id="generated-prompt" class="prompt-output"></div>
+          <div class="result-actions">
+            <button class="btn btn-primary btn-copy" id="btn-copy">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <span data-i18n="btnCopy">Copy</span>
+            </button>
+            <button class="btn btn-accent" id="btn-enhance">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              <span data-i18n="btnEnhance">Enhance with AI</span>
+            </button>
+            <button class="btn btn-icon" id="btn-favorite" title="Save to favorites">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </button>
+          </div>
+          <div id="enhance-status" class="enhance-status hidden"></div>
+        </div>
+        <div class="step-actions">
+          <button class="btn btn-secondary" id="btn-new-prompt" data-i18n="btnNewPrompt">New Prompt</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- History View -->
+    <div id="view-history" class="view">
+      <div id="history-list" class="prompt-list">
+        <p class="empty-state" data-i18n="historyEmpty">No prompts yet. Create your first one!</p>
+      </div>
+    </div>
+
+    <!-- Favorites View -->
+    <div id="view-favorites" class="view">
+      <div id="favorites-list" class="prompt-list">
+        <p class="empty-state" data-i18n="favoritesEmpty">No favorites yet. Star a prompt to save it here.</p>
+      </div>
+    </div>
+
+    <!-- Settings View -->
+    <div id="view-settings" class="view">
+      <h2 class="step-title" data-i18n="settingsTitle">Settings</h2>
+
+      <div class="settings-group">
+        <label class="settings-label" data-i18n="settingsLanguage">Interface Language</label>
+        <select id="settings-lang" class="input-select">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </div>
+
+      <div class="settings-group">
+        <label class="settings-label" data-i18n="settingsPromptLang">Prompt Language</label>
+        <select id="settings-prompt-lang" class="input-select">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </div>
+
+      <div class="settings-group">
+        <label class="settings-label" data-i18n="settingsApiKey">Gemini API Key (optional)</label>
+
+        <div class="api-key-guide">
+          <h4 data-i18n="settingsApiKeyTitle">How to get a free API key:</h4>
+          <ol class="api-key-steps">
+            <li data-i18n="settingsApiKeyStep1">1. Go to aistudio.google.com</li>
+            <li data-i18n="settingsApiKeyStep2">2. Sign in with your Google account</li>
+            <li data-i18n="settingsApiKeyStep3">3. Click "Get API Key" → "Create API Key"</li>
+            <li data-i18n="settingsApiKeyStep4">4. Copy the key and paste it below</li>
+          </ol>
+          <p class="api-key-free-note" data-i18n="settingsApiKeyFree">It's completely free — up to 1,500 requests per day!</p>
+          <a href="https://aistudio.google.com/apikey" target="_blank" class="api-key-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            aistudio.google.com/apikey
+          </a>
+        </div>
+
+        <input type="password" id="settings-api-key" class="input-text" data-i18n-placeholder="settingsApiKeyPlaceholder" placeholder="Paste your Gemini API key here">
+      </div>
+
+      <div class="settings-group">
+        <label class="settings-label" data-i18n="settingsModel">AI Model</label>
+        <select id="settings-model" class="input-select">
+          <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+          <option value="gemini-2.5-flash-lite">Gemini 2.5 Flash-Lite</option>
+          <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+        </select>
+        <p class="settings-hint" data-i18n="settingsModelHint">If the selected model hits its quota limit, the extension will automatically try other models.</p>
+      </div>
+
+      <div class="settings-group">
+        <label class="settings-label" data-i18n="settingsVersion">Version</label>
+        <div class="update-check-row">
+          <span class="version-label">v1.2.0</span>
+          <button class="btn btn-update" id="btn-check-update">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M21 21v-5h-5"/></svg>
+            <span data-i18n="btnCheckUpdate">Check for Updates</span>
+          </button>
+        </div>
+        <div id="update-status" class="update-status hidden"></div>
+      </div>
+
+      <div class="settings-group">
+        <label class="settings-label" data-i18n="settingsAccount">Account</label>
+        <div id="settings-auth-section">
+          <div id="settings-logged-out" class="auth-section">
+            <p class="settings-hint" data-i18n="settingsLoginHint">Sign in to sync your data and receive updates about new features.</p>
+            <button class="btn btn-google" id="btn-google-signin">
+              <svg width="16" height="16" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span data-i18n="btnGoogleSignIn">Sign in with Google</span>
+            </button>
+          </div>
+          <div id="settings-logged-in" class="auth-section hidden">
+            <div class="auth-user-info">
+              <img id="settings-user-avatar" class="settings-user-avatar" src="" alt="">
+              <div class="settings-user-details">
+                <span id="settings-user-name" class="settings-user-name"></span>
+                <span id="settings-user-email" class="settings-user-email"></span>
+              </div>
+            </div>
+            <button class="btn btn-secondary btn-small" id="btn-signout" data-i18n="btnSignOut">Sign Out</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-actions">
+        <button class="btn btn-secondary" id="btn-settings-back" data-i18n="btnBack">Back</button>
+        <button class="btn btn-primary" id="btn-settings-save" data-i18n="settingsSave">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="modules/templates.js"></script>
+  <script src="modules/generator.js"></script>
+  <script src="modules/storage.js"></script>
+  <script src="modules/auth.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

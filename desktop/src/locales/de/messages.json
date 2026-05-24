@@ -1,0 +1,800 @@
+{
+  "extName": {
+    "message": "PromptCraft"
+  },
+  "extDescription": {
+    "message": "Erstellen Sie perfekte AI-Prompts für jede Aufgabe. Schritt-für-Schritt-Builder + optionale AI-Verbesserung."
+  },
+  "step1Title": {
+    "message": "Was brauchen Sie?"
+  },
+  "step2Title": {
+    "message": "Beschreiben Sie Ihre Aufgabe"
+  },
+  "step3Title": {
+    "message": "Details"
+  },
+  "step4Title": {
+    "message": "Kontext"
+  },
+  "step5Title": {
+    "message": "Ihr Prompt ist fertig!"
+  },
+  "step2Placeholder": {
+    "message": "Beschreiben Sie in eigenen Worten, was Sie brauchen..."
+  },
+  "step2PlaceholderCode": {
+    "message": "Beschreiben Sie den benötigten Code: Funktion, App, Skript, Bugfix..."
+  },
+  "step2PlaceholderText": {
+    "message": "Welchen Text brauchen Sie? Artikel, Blogpost, E-Mail, Social-Media-Post..."
+  },
+  "step2PlaceholderImage": {
+    "message": "Beschreiben Sie das Bild: Motiv, Szene, Stil..."
+  },
+  "step2PlaceholderVideo": {
+    "message": "Beschreiben Sie die Videoszene: Was passiert, wer ist im Bild, wo..."
+  },
+  "step2PlaceholderAnalysis": {
+    "message": "Was soll analysiert werden? Daten, Markt, Wettbewerber, Trends..."
+  },
+  "step2PlaceholderTranslation": {
+    "message": "Fügen Sie den Text zum Übersetzen ein..."
+  },
+  "step2PlaceholderLearning": {
+    "message": "Welches Thema möchten Sie lernen? Programmierung, Marketing, Design..."
+  },
+  "step2PlaceholderChat": {
+    "message": "Worüber möchten Sie sprechen oder fragen?"
+  },
+  "step2PlaceholderPinterest": {
+    "message": "Worum geht es in Ihrem Pin? Thema, Produkt, Idee..."
+  },
+  "step4Placeholder": {
+    "message": "Gibt es etwas Wichtiges, das die AI wissen sollte? (optional)"
+  },
+  "catCode": {
+    "message": "Code"
+  },
+  "catText": {
+    "message": "Text"
+  },
+  "catImage": {
+    "message": "Bilder"
+  },
+  "catAnalysis": {
+    "message": "Analyse"
+  },
+  "catTranslation": {
+    "message": "Übersetzung"
+  },
+  "catLearning": {
+    "message": "Lernen"
+  },
+  "catChat": {
+    "message": "Chat"
+  },
+  "catOther": {
+    "message": "Sonstiges"
+  },
+  "btnNext": {
+    "message": "Weiter"
+  },
+  "btnBack": {
+    "message": "Zurück"
+  },
+  "btnGenerate": {
+    "message": "Prompt erstellen"
+  },
+  "btnCopy": {
+    "message": "Kopieren"
+  },
+  "btnCopied": {
+    "message": "Kopiert!"
+  },
+  "btnEnhance": {
+    "message": "Mit AI verbessern"
+  },
+  "btnNewPrompt": {
+    "message": "Neuer Prompt"
+  },
+  "btnHistory": {
+    "message": "Verlauf"
+  },
+  "btnSettings": {
+    "message": "Einstellungen"
+  },
+  "btnFavorite": {
+    "message": "Zu Favoriten"
+  },
+  "btnFavorited": {
+    "message": "Gespeichert!"
+  },
+  "settingsTitle": {
+    "message": "Einstellungen"
+  },
+  "settingsApiKey": {
+    "message": "Gemini API-Schlüssel (optional)"
+  },
+  "settingsApiKeyPlaceholder": {
+    "message": "Fügen Sie Ihren Gemini API-Schlüssel ein"
+  },
+  "settingsApiKeyHint": {
+    "message": "Holen Sie sich einen kostenlosen Schlüssel auf aistudio.google.com"
+  },
+  "settingsLanguage": {
+    "message": "Sprache der Oberfläche"
+  },
+  "settingsPromptLang": {
+    "message": "Prompt-Sprache"
+  },
+  "settingsSave": {
+    "message": "Speichern"
+  },
+  "settingsSaved": {
+    "message": "Gespeichert!"
+  },
+  "historyTitle": {
+    "message": "Prompt-Verlauf"
+  },
+  "historyEmpty": {
+    "message": "Noch keine Prompts. Erstellen Sie Ihren ersten!"
+  },
+  "favoritesTitle": {
+    "message": "Favoriten"
+  },
+  "favoritesEmpty": {
+    "message": "Noch keine Favoriten. Markieren Sie einen Prompt mit einem Stern."
+  },
+  "enhancing": {
+    "message": "AI verbessert Ihren Prompt..."
+  },
+  "enhanceNoKey": {
+    "message": "Fügen Sie einen Gemini API-Schlüssel in den Einstellungen hinzu"
+  },
+  "langCode": {
+    "message": "Sprache"
+  },
+  "langFramework": {
+    "message": "Framework"
+  },
+  "langComplexity": {
+    "message": "Komplexität"
+  },
+  "textTone": {
+    "message": "Ton"
+  },
+  "textAudience": {
+    "message": "Zielgruppe"
+  },
+  "textLength": {
+    "message": "Länge"
+  },
+  "imageStyle": {
+    "message": "Stil"
+  },
+  "imageMood": {
+    "message": "Stimmung"
+  },
+  "imageAspect": {
+    "message": "Seitenverhältnis"
+  },
+  "analysisDepth": {
+    "message": "Tiefe"
+  },
+  "analysisFormat": {
+    "message": "Ausgabeformat"
+  },
+  "transFrom": {
+    "message": "Von"
+  },
+  "transTo": {
+    "message": "Nach"
+  },
+  "transStyle": {
+    "message": "Stil"
+  },
+  "learnLevel": {
+    "message": "Niveau"
+  },
+  "learnStyle": {
+    "message": "Lehrstil"
+  },
+  "complexityBeginner": {
+    "message": "Anfänger"
+  },
+  "complexityIntermediate": {
+    "message": "Fortgeschritten"
+  },
+  "complexityAdvanced": {
+    "message": "Experte"
+  },
+  "toneFormal": {
+    "message": "Formell"
+  },
+  "toneCasual": {
+    "message": "Locker"
+  },
+  "toneCreative": {
+    "message": "Kreativ"
+  },
+  "toneProfessional": {
+    "message": "Professionell"
+  },
+  "toneAcademic": {
+    "message": "Akademisch"
+  },
+  "lengthShort": {
+    "message": "Kurz"
+  },
+  "lengthMedium": {
+    "message": "Mittel"
+  },
+  "lengthLong": {
+    "message": "Lang"
+  },
+  "lengthDetailed": {
+    "message": "Sehr detailliert"
+  },
+  "depthOverview": {
+    "message": "Schnellüberblick"
+  },
+  "depthStandard": {
+    "message": "Standard"
+  },
+  "depthDeep": {
+    "message": "Tiefenanalyse"
+  },
+  "stylePhotorealistic": {
+    "message": "Fotorealistisch"
+  },
+  "styleDigitalArt": {
+    "message": "Digitale Kunst"
+  },
+  "styleOilPainting": {
+    "message": "Ölmalerei"
+  },
+  "styleWatercolor": {
+    "message": "Aquarell"
+  },
+  "styleAnime": {
+    "message": "Anime"
+  },
+  "styleMinimalist": {
+    "message": "Minimalistisch"
+  },
+  "style3D": {
+    "message": "3D-Rendering"
+  },
+  "styleSketch": {
+    "message": "Skizze"
+  },
+  "tabBuilder": {
+    "message": "Builder"
+  },
+  "tabHistory": {
+    "message": "Verlauf"
+  },
+  "tabFavorites": {
+    "message": "Favoriten"
+  },
+  "deleteConfirm": {
+    "message": "Diesen Prompt löschen?"
+  },
+  "catPinterest": {
+    "message": "Pinterest"
+  },
+  "pinNiche": {
+    "message": "Nische / Branche"
+  },
+  "pinStyle": {
+    "message": "Pin-Stil"
+  },
+  "pinAudience": {
+    "message": "Zielgruppe"
+  },
+  "pinSeason": {
+    "message": "Saison / Trend"
+  },
+  "pinStyleLifestyle": {
+    "message": "Lifestyle-Foto"
+  },
+  "pinStyleInfographic": {
+    "message": "Infografik"
+  },
+  "pinStyleStepByStep": {
+    "message": "Schritt-für-Schritt"
+  },
+  "pinStyleQuote": {
+    "message": "Zitat / Text"
+  },
+  "pinStyleProduct": {
+    "message": "Produkt"
+  },
+  "pinStyleBeforeAfter": {
+    "message": "Vorher / Nachher"
+  },
+  "pinSeasonEvergreen": {
+    "message": "Zeitlos"
+  },
+  "pinSeasonSpring": {
+    "message": "Frühling"
+  },
+  "pinSeasonSummer": {
+    "message": "Sommer"
+  },
+  "pinSeasonAutumn": {
+    "message": "Herbst"
+  },
+  "pinSeasonWinter": {
+    "message": "Winter"
+  },
+  "pinSeasonHoliday": {
+    "message": "Feiertage"
+  },
+  "imageLighting": {
+    "message": "Beleuchtung"
+  },
+  "imageLightDir": {
+    "message": "Lichtrichtung"
+  },
+  "imageAngle": {
+    "message": "Kamerawinkel"
+  },
+  "imageFocal": {
+    "message": "Brennweite"
+  },
+  "imageComposition": {
+    "message": "Komposition"
+  },
+  "lightNatural": {
+    "message": "Natürlich"
+  },
+  "lightStudio": {
+    "message": "Studio"
+  },
+  "lightGoldenHour": {
+    "message": "Goldene Stunde"
+  },
+  "lightDramatic": {
+    "message": "Dramatisch"
+  },
+  "lightSoft": {
+    "message": "Weich / Diffus"
+  },
+  "lightNeon": {
+    "message": "Neon / RGB"
+  },
+  "lightDirFront": {
+    "message": "Frontal"
+  },
+  "lightDirSide": {
+    "message": "Seitlich"
+  },
+  "lightDirBack": {
+    "message": "Gegenlicht"
+  },
+  "lightDirTop": {
+    "message": "Von oben"
+  },
+  "lightDirRembrandt": {
+    "message": "Rembrandt"
+  },
+  "angleLow": {
+    "message": "Froschperspektive"
+  },
+  "angleEye": {
+    "message": "Augenhöhe"
+  },
+  "angleHigh": {
+    "message": "Obersicht"
+  },
+  "angleBird": {
+    "message": "Vogelperspektive"
+  },
+  "angleDutch": {
+    "message": "Holländischer Winkel"
+  },
+  "angleMacro": {
+    "message": "Makro"
+  },
+  "focalWide": {
+    "message": "Weitwinkel (14-35mm)"
+  },
+  "focalStandard": {
+    "message": "Standard (50mm)"
+  },
+  "focalPortrait": {
+    "message": "Porträt (85mm)"
+  },
+  "focalTele": {
+    "message": "Tele (200mm+)"
+  },
+  "compRuleOfThirds": {
+    "message": "Drittelregel"
+  },
+  "compCentered": {
+    "message": "Zentriert"
+  },
+  "compLeadingLines": {
+    "message": "Führungslinien"
+  },
+  "compSymmetry": {
+    "message": "Symmetrie"
+  },
+  "compNegativeSpace": {
+    "message": "Negativraum"
+  },
+  "apiKeyBannerTitle": {
+    "message": "Möchten Sie präzisere Prompts?"
+  },
+  "apiKeyBannerText": {
+    "message": "Fügen Sie einen kostenlosen Gemini API-Schlüssel in den Einstellungen hinzu, um AI-gestützte Prompt-Verbesserung freizuschalten — intelligenter, detaillierter und auf Ihre Bedürfnisse zugeschnitten."
+  },
+  "apiKeyBannerDismiss": {
+    "message": "Verstanden"
+  },
+  "settingsApiKeyTitle": {
+    "message": "So erhalten Sie einen kostenlosen API-Schlüssel:"
+  },
+  "settingsApiKeyStep1": {
+    "message": "1. Gehen Sie zu aistudio.google.com"
+  },
+  "settingsApiKeyStep2": {
+    "message": "2. Melden Sie sich mit Ihrem Google-Konto an"
+  },
+  "settingsApiKeyStep3": {
+    "message": "3. Klicken Sie auf \"Get API Key\" → \"Create API Key\""
+  },
+  "settingsApiKeyStep4": {
+    "message": "4. Kopieren Sie den Schlüssel und fügen Sie ihn unten ein"
+  },
+  "settingsApiKeyFree": {
+    "message": "Es ist völlig kostenlos — bis zu 1.500 Anfragen pro Tag!"
+  },
+  "btnLogin": {
+    "message": "Anmelden"
+  },
+  "btnGoogleSignIn": {
+    "message": "Mit Google anmelden"
+  },
+  "btnSignOut": {
+    "message": "Abmelden"
+  },
+  "settingsAccount": {
+    "message": "Konto"
+  },
+  "settingsLoginHint": {
+    "message": "Melden Sie sich an, um Ihre Daten zu synchronisieren und Updates zu neuen Funktionen zu erhalten."
+  },
+  "loginSuccess": {
+    "message": "Erfolgreich angemeldet!"
+  },
+  "logoutSuccess": {
+    "message": "Abgemeldet"
+  },
+  "settingsModel": {
+    "message": "AI-Modell"
+  },
+  "settingsModelHint": {
+    "message": "Wenn das gewählte Modell sein Kontingent erreicht, wechselt die Erweiterung automatisch zu anderen Modellen."
+  },
+  "settingsVersion": {
+    "message": "Version"
+  },
+  "btnCheckUpdate": {
+    "message": "Nach Updates suchen"
+  },
+  "updateChecking": {
+    "message": "Suche nach Updates..."
+  },
+  "updateLatest": {
+    "message": "Sie haben die neueste Version!"
+  },
+  "updateAvailable": {
+    "message": "Neue Version verfügbar:"
+  },
+  "updateDownload": {
+    "message": "Update herunterladen →"
+  },
+
+  "catVideo": {
+    "message": "Video"
+  },
+
+  "imagePlatform": {
+    "message": "Zielplattform"
+  },
+  "platMidjourney": {
+    "message": "Midjourney v7"
+  },
+  "platDalle": {
+    "message": "DALL-E 3+"
+  },
+  "platFlux": {
+    "message": "Flux 2 Pro"
+  },
+  "platSD": {
+    "message": "Stable Diffusion 3.5"
+  },
+  "platFirefly": {
+    "message": "Adobe Firefly"
+  },
+  "platLeonardo": {
+    "message": "Leonardo AI"
+  },
+  "platIdeogram": {
+    "message": "Ideogram 2.0"
+  },
+  "platKrea": {
+    "message": "Krea AI"
+  },
+  "platImagen": {
+    "message": "Imagen 3"
+  },
+  "platSenseNova": {
+    "message": "SenseNova U1"
+  },
+
+  "imageCamera": {
+    "message": "Kamera / Objektiv"
+  },
+  "camCanon85": {
+    "message": "Canon EOS R5, 85mm f/1.4"
+  },
+  "camSony35": {
+    "message": "Sony A7R V, 35mm f/1.4"
+  },
+  "camNikon50": {
+    "message": "Nikon Z9, 50mm f/1.2"
+  },
+  "camHasselblad": {
+    "message": "Hasselblad X2D, 90mm"
+  },
+  "camIphone": {
+    "message": "iPhone 16 Pro"
+  },
+  "camArri": {
+    "message": "ARRI Alexa LF, 85mm"
+  },
+  "styleCinematic": {
+    "message": "Cineastisch Editorial"
+  },
+  "styleFashion": {
+    "message": "Fashion Editorial"
+  },
+  "lightRim": {
+    "message": "Cineastisches Gegenlicht"
+  },
+  "compThreeLayer": {
+    "message": "Dreischichtige Tiefe"
+  },
+  "imageNegative": {
+    "message": "Negative Prompt"
+  },
+
+  "videoPlatform": {
+    "message": "Zielplattform"
+  },
+  "vidPlatSora": {
+    "message": "Sora"
+  },
+  "vidPlatVeo": {
+    "message": "Veo 3"
+  },
+  "vidPlatKling": {
+    "message": "Kling 3.0"
+  },
+  "vidPlatRunway": {
+    "message": "Runway Gen-4"
+  },
+  "vidPlatPika": {
+    "message": "Pika 2.1"
+  },
+  "vidPlatLuma": {
+    "message": "Luma Dream Machine"
+  },
+  "vidPlatSeedance": {
+    "message": "Seedance 2.0"
+  },
+  "vidPlatHailuo": {
+    "message": "Hailuo AI"
+  },
+  "vidPlatHeyGen": {
+    "message": "HeyGen"
+  },
+  "vidPlatSynthesia": {
+    "message": "Synthesia"
+  },
+  "videoType": {
+    "message": "Videotyp"
+  },
+  "vidTypeCinematic": {
+    "message": "Cineastisch"
+  },
+  "vidTypeCommercial": {
+    "message": "Werbung / Spot"
+  },
+  "vidTypeMusicVideo": {
+    "message": "Musikvideo"
+  },
+  "vidTypeDocumentary": {
+    "message": "Dokumentation"
+  },
+  "vidTypeAnimation": {
+    "message": "Animation"
+  },
+  "vidTypeSocial": {
+    "message": "Social Media (Reels/TikTok)"
+  },
+  "vidTypeProduct": {
+    "message": "Produktpräsentation"
+  },
+  "vidTypeTutorial": {
+    "message": "Tutorial / Erklärung"
+  },
+  "videoCameraMove": {
+    "message": "Kamerabewegung"
+  },
+  "camMoveStatic": {
+    "message": "Statisch (Stativ)"
+  },
+  "camMoveDolly": {
+    "message": "Langsame Kamerafahrt"
+  },
+  "camMoveTracking": {
+    "message": "Verfolgung"
+  },
+  "camMoveOrbit": {
+    "message": "Orbit / 360°"
+  },
+  "camMoveCrane": {
+    "message": "Kran hoch/runter"
+  },
+  "camMoveHandheld": {
+    "message": "Handkamera"
+  },
+  "camMoveDrone": {
+    "message": "Drohne (Luftaufnahme)"
+  },
+  "camMoveZoom": {
+    "message": "Zoom rein/raus"
+  },
+  "videoAngle": {
+    "message": "Kamerawinkel"
+  },
+  "angleWorm": {
+    "message": "Froschperspektive"
+  },
+  "videoShotType": {
+    "message": "Einstellungsgröße"
+  },
+  "shotECU": {
+    "message": "Extreme Nahaufnahme"
+  },
+  "shotCU": {
+    "message": "Nahaufnahme"
+  },
+  "shotMedium": {
+    "message": "Halbnahe"
+  },
+  "shotFull": {
+    "message": "Ganzkörper"
+  },
+  "shotWide": {
+    "message": "Totale / Panorama"
+  },
+  "videoLighting": {
+    "message": "Beleuchtung"
+  },
+  "vidLightDay": {
+    "message": "Natürliches Tageslicht"
+  },
+  "vidLightGolden": {
+    "message": "Goldene Stunde"
+  },
+  "vidLightBlue": {
+    "message": "Blaue Stunde / Dämmerung"
+  },
+  "vidLightStudio": {
+    "message": "Studio Dreipunkt"
+  },
+  "vidLightNeon": {
+    "message": "Neon-Stadtlichter"
+  },
+  "vidLightCandle": {
+    "message": "Kerzenlicht / Warm"
+  },
+  "vidLightFog": {
+    "message": "Volumetrischer Nebel"
+  },
+  "videoPacing": {
+    "message": "Tempo / Geschwindigkeit"
+  },
+  "paceSlow": {
+    "message": "Zeitlupe"
+  },
+  "paceNormal": {
+    "message": "Normale Geschwindigkeit"
+  },
+  "paceFast": {
+    "message": "Schnell / Dynamisch"
+  },
+  "paceTimelapse": {
+    "message": "Zeitraffer"
+  },
+  "paceHyperlapse": {
+    "message": "Hyperlapse"
+  },
+  "videoMood": {
+    "message": "Stimmung / Farbkorrektur"
+  },
+  "videoDuration": {
+    "message": "Dauer"
+  },
+  "dur5s": {
+    "message": "3-5 Sekunden"
+  },
+  "dur10s": {
+    "message": "10 Sekunden"
+  },
+  "dur30s": {
+    "message": "15-30 Sekunden"
+  },
+  "dur60s": {
+    "message": "60 Sekunden"
+  },
+  "videoAspect": {
+    "message": "Seitenverhältnis"
+  },
+
+  "moodDramatic": {
+    "message": "Dramatisch Cineastisch"
+  },
+  "moodPeaceful": {
+    "message": "Friedlich Ruhig"
+  },
+  "moodMysterious": {
+    "message": "Geheimnisvoll Dunkel"
+  },
+  "moodVibrant": {
+    "message": "Lebendig Farbenfroh"
+  },
+  "moodNostalgic": {
+    "message": "Nostalgisch Vintage"
+  },
+  "moodFuturistic": {
+    "message": "Futuristisch Cyberpunk"
+  },
+  "moodRomantic": {
+    "message": "Romantisch Sanfter Schein"
+  },
+  "moodEpic": {
+    "message": "Episch Heroisch"
+  },
+  "moodMinimalist": {
+    "message": "Minimalistisch Sauber"
+  },
+  "moodHorror": {
+    "message": "Horror Unheimlich"
+  },
+  "moodDreamy": {
+    "message": "Verträumt Ätherisch"
+  },
+  "moodDark": {
+    "message": "Dunkel Stimmungsvoll"
+  },
+  "moodDocumentary": {
+    "message": "Dokumentarisch Natürlich"
+  },
+
+  "pinImageGen": {
+    "message": "Bildgenerator"
+  },
+  "pinIdeogram": {
+    "message": "Ideogram 2.0 (bester für Text)"
+  },
+  "pinAnyPlatform": {
+    "message": "Jede Plattform"
+  }
+}
