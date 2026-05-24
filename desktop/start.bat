@@ -1,0 +1,3 @@
+@echo off
+echo Starting PromptCraft...
+call npm start
